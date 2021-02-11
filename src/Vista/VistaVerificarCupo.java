@@ -29,8 +29,8 @@ public class VistaVerificarCupo extends JFrame {
 
     private final JComboBox boxTipoAutomovil;
 
-    public final JButton btnVolver = new JButton("Volver");
-    public final JButton btnReservar = new JButton("Reservar");
+    private final JButton btnVolver = new JButton("Volver");
+    private final JButton btnReservar = new JButton("Reservar");
 
     private final String tipoVehiculo[] = {"Campero", "Camión"};
 
@@ -77,6 +77,18 @@ public class VistaVerificarCupo extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
+    }
+    
+    public String getTipoAutomovil() {
+        return boxTipoAutomovil.getSelectedItem().toString();
+    }
+
+    public JButton getBtnVolver() {
+        return btnVolver;
+    }
+
+    public JButton getBtnReservar() {
+        return btnReservar;
     }
 
 }

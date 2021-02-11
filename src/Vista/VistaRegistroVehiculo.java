@@ -27,8 +27,8 @@ public class VistaRegistroVehiculo extends JFrame {
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
 
-    public final JButton btnVolver = new JButton("Volver");
-    public final JButton btnRegistrar = new JButton("Continuar Registro");
+    private final JButton btnVolver = new JButton("Volver");
+    private final JButton btnRegistrar = new JButton("Continuar Registro");
 
     private final JTextField fldNomParqueadero = new JTextField();
     private final JComboBox boxLocalidad;
@@ -36,27 +36,12 @@ public class VistaRegistroVehiculo extends JFrame {
     private final JCheckBox checkNo = new JCheckBox("No");
     private final JTextField fldNumNiveles = new JTextField();
 
-    private final Tarifa[] localidad = new Tarifa[]{
-        new Tarifa("Usaquen", "1"),
-        new Tarifa("Chapinero", "2"),
-        new Tarifa("Santa Fe", "3"),
-        new Tarifa("San Cristobal", "4"),
-        new Tarifa("Usme", "5"),
-        new Tarifa("Tunjuelito", "6"),
-        new Tarifa("Bosa", "7"),
-        new Tarifa("Kennedy", "8"),
-        new Tarifa("Fontibón", "9"),
-        new Tarifa("Engativá", "10"),
-        new Tarifa("Suba", "11"),
-        new Tarifa("Barrios Unidos", "12"),
-        new Tarifa("Teusaquillo", "13"),
-        new Tarifa("Los Mártires", "14"),
-        new Tarifa("Antonio Nariño", "15"),
-        new Tarifa("Puente Aranda", "16"),
-        new Tarifa("La Candelaría", "17"),
-        new Tarifa("Rafael Uribe Uribe", "18"),
-        new Tarifa("Ciudad Bolivar", "19"),
-        new Tarifa("Sumapaz", "20"),};
+    private final String localidad[] = {"Usaquen, 1", "Chapinero, 2", "Santa Fe, 3",
+        "San Cristobal, 4", "Usme, 5", "Tunjuelito, 6", "Bosa, 7", "Kennedy, 8",
+        "Fontibón, 9", "Engativá, 10", "Suba, 11", "Barrios Unidos, 12",
+        "Teusaquillo, 13", "Los Mártires, 14", "Antonio Nariño, 15", "Puente Aranda, 16",
+        "La Candelaría, 17", "Rafael Uribe Uribe, 18", "Ciudad Bolivar, 19", "Sumapaz, 20"
+    };
 
     public VistaRegistroVehiculo() throws HeadlessException {
         super("Parqueé Aquí");
@@ -138,6 +123,14 @@ public class VistaRegistroVehiculo extends JFrame {
 
     public String getNumNiveles() {
         return this.fldNumNiveles.toString();
+    }
+
+    public JButton getBtnVolver() {
+        return btnVolver;
+    }
+
+    public JButton getBtnRegistrar() {
+        return btnRegistrar;
     }
 
     public void asignaOyentes(ControladorTarifa c) {

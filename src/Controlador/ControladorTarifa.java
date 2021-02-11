@@ -16,8 +16,8 @@ import java.awt.event.ActionListener;
  */
 public class ControladorTarifa implements ActionListener {
 
-    private VistaRegistroVehiculo vista;
-    private Tarifa modelo;
+    private final VistaRegistroVehiculo vista;
+    private final Tarifa modelo;
 
     public ControladorTarifa(VistaRegistroVehiculo vista, Tarifa modelo) {
         this.vista = vista;
@@ -26,7 +26,7 @@ public class ControladorTarifa implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource().equals(vista.btnRegistrar)) {
+        if (ae.getSource().equals(vista.getBtnRegistrar())) {
             System.out.println("Entró a botón registrar");
             if (vista.getNomParqueadero().equals("") || vista.getNumNiveles().equals("")) {
                 vista.mensajeAlerta();

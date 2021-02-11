@@ -10,13 +10,14 @@ package Modelo;
  * @author fedc
  */
 public class Tarifa {
-    
+
     private String localidad;
     private String numLocalidad;
     private int factorZona;
     private int numNiveles;
     private int tarifa;
     private boolean subterraneo;
+    private String tipoVehiculo;
 
     public Tarifa() {
         localidad = null;
@@ -26,13 +27,13 @@ public class Tarifa {
         subterraneo = false;
     }
 
-    public void setSubterraneo(boolean iSubterraneo) {
-        this.subterraneo = iSubterraneo;
-    }
-
     public Tarifa(String Localidad, String num) {
         this.localidad = Localidad;
         this.numLocalidad = num;
+    }
+
+    public void setSubterraneo(boolean iSubterraneo) {
+        this.subterraneo = iSubterraneo;
     }
 
     public void setLocalidad(String localidad) {
@@ -53,15 +54,9 @@ public class Tarifa {
         this.numNiveles = numNiveles;
         System.out.println(this.numNiveles);
     }
-    
+
     public int calcularTarifa() {
         return this.tarifa;
     }
-    
-    @Override
-    public String toString() {
-        return localidad + ", " + numLocalidad;
-    }
-    
-    
+
 }

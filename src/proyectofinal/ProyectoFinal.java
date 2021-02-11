@@ -9,6 +9,7 @@ import Controlador.ControladorRegistroSalida;
 import Controlador.ControladorTarifa;
 import Modelo.RegistroSalida;
 import Modelo.Tarifa;
+import Vista.VistaHome;
 import Vista.VistaRegistroSalida;
 import Vista.VistaRegistroVehiculo;
 import Vista.VistaVerificarCupo;
@@ -37,7 +38,10 @@ public class ProyectoFinal {
         VistaRegistroSalida vii = new VistaRegistroSalida();
         ControladorRegistroSalida cii = new ControladorRegistroSalida(vii, mii);
         vii.asignaOyentes(cii);
-        vii.mostrar();
+        //vii.mostrar();
+        
+        VistaHome viii = new VistaHome();
+        viii.mostrar();
     }
     
 }
