@@ -105,11 +105,16 @@ public class VistaRegistroSalida extends JFrame {
         lblFechaSalida.setFont(fontTexto);
         lblFechaSalida.setBounds(570, 350, 250, 25);
         
+        fldNomCliente.setEditable(false);
         fldNomCliente.setBounds(230, 150, 150, 25);
+        fldMarcaVehiculo.setEditable(false);
         fldMarcaVehiculo.setBounds(230, 200, 150, 25);
+        fldModeloVehiculo.setEditable(false);
         fldModeloVehiculo.setBounds(230, 250, 150, 25);
+        fldCedula.setEditable(false);
         fldCedula.setBounds(520, 150, 150, 25);
         fldPlaca.setBounds(520, 200, 150, 25);
+        fldColor.setEditable(false);
         fldColor.setBounds(520, 250, 150, 25);
         
         boxTipoContrato.setBounds(230, 300, 150, 25);

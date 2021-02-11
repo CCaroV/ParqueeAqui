@@ -16,7 +16,7 @@ import javax.swing.*;
  *
  * @author fedc
  */
-public class VistaRegistroVehiculo extends JFrame {
+public class VistaRegistroParqueadero extends JFrame {
 
     private final JLabel lblTitulo = new JLabel("Registro de parqueadero:");
     private final JLabel lblNomParqueadero = new JLabel("Nombre del parqueadero:");
@@ -43,7 +43,7 @@ public class VistaRegistroVehiculo extends JFrame {
         "La Candelaría, 17", "Rafael Uribe Uribe, 18", "Ciudad Bolivar, 19", "Sumapaz, 20"
     };
 
-    public VistaRegistroVehiculo() throws HeadlessException {
+    public VistaRegistroParqueadero() throws HeadlessException {
         super("Parqueé Aquí");
         this.boxLocalidad = new JComboBox(localidad);
 

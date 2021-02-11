@@ -11,7 +11,7 @@ import Modelo.RegistroSalida;
 import Modelo.Tarifa;
 import Vista.VistaHome;
 import Vista.VistaRegistroSalida;
-import Vista.VistaRegistroVehiculo;
+import Vista.VistaRegistroParqueadero;
 import Vista.VistaVerificarCupo;
 import javax.swing.UIManager;
 
@@ -33,19 +33,19 @@ public class ProyectoFinal {
         }
 
         Tarifa m = new Tarifa();
-        VistaRegistroVehiculo v = new VistaRegistroVehiculo();
+        VistaRegistroParqueadero v = new VistaRegistroParqueadero();
         ControladorTarifa c = new ControladorTarifa(v, m);
         v.asignaOyentes(c);
-        //v.mostrar();
+        v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
-        //vi.mostrar();
+        vi.mostrar();
 
         RegistroSalida mii = new RegistroSalida();
         VistaRegistroSalida vii = new VistaRegistroSalida();
         ControladorRegistroSalida cii = new ControladorRegistroSalida(vii, mii);
         vii.asignaOyentes(cii);
-        //vii.mostrar();
+        vii.mostrar();
 
         VistaHome viii = new VistaHome();
         viii.mostrar();

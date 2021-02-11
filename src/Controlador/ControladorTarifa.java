@@ -6,7 +6,7 @@
 package Controlador;
 
 import Modelo.Tarifa;
-import Vista.VistaRegistroVehiculo;
+import Vista.VistaRegistroParqueadero;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,10 +16,10 @@ import java.awt.event.ActionListener;
  */
 public class ControladorTarifa implements ActionListener {
 
-    private final VistaRegistroVehiculo vista;
+    private final VistaRegistroParqueadero vista;
     private final Tarifa modelo;
 
-    public ControladorTarifa(VistaRegistroVehiculo vista, Tarifa modelo) {
+    public ControladorTarifa(VistaRegistroParqueadero vista, Tarifa modelo) {
         this.vista = vista;
         this.modelo = modelo;
     }
