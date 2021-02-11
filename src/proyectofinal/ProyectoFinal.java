@@ -13,6 +13,7 @@ import Vista.VistaHome;
 import Vista.VistaRegistroSalida;
 import Vista.VistaRegistroVehiculo;
 import Vista.VistaVerificarCupo;
+import javax.swing.UIManager;
 
 /**
  *
@@ -24,24 +25,30 @@ public class ProyectoFinal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
         Tarifa m = new Tarifa();
         VistaRegistroVehiculo v = new VistaRegistroVehiculo();
         ControladorTarifa c = new ControladorTarifa(v, m);
         v.asignaOyentes(c);
         //v.mostrar();
-        
+
         VistaVerificarCupo vi = new VistaVerificarCupo();
         //vi.mostrar();
-        
+
         RegistroSalida mii = new RegistroSalida();
         VistaRegistroSalida vii = new VistaRegistroSalida();
         ControladorRegistroSalida cii = new ControladorRegistroSalida(vii, mii);
         vii.asignaOyentes(cii);
         //vii.mostrar();
-        
+
         VistaHome viii = new VistaHome();
         viii.mostrar();
     }
-    
+
 }
