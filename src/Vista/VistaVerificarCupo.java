@@ -26,33 +26,33 @@ public class VistaVerificarCupo extends JFrame {
 
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
-    
+
     private final JComboBox boxTipoAutomovil;
-    
+
     public final JButton btnVolver = new JButton("Volver");
     public final JButton btnReservar = new JButton("Reservar");
 
-    String tipoVehiculo[] = {"Campero", "Camión"};
+    private final String tipoVehiculo[] = {"Campero", "Camión"};
 
     public VistaVerificarCupo() throws HeadlessException {
         super("Parqueé Aquí");
         this.boxTipoAutomovil = new JComboBox(tipoVehiculo);
-        
+
         Container c = getContentPane();
         c.setLayout(null);
-        
+
         c.add(lblTitulo);
         c.add(lblTipoVehiculo);
         c.add(lblTxtTarifa);
         c.add(lblTxtCuposDisp);
         c.add(lblTarifa);
         c.add(lblCuposDisp);
-        
+
         c.add(boxTipoAutomovil);
-        
+
         c.add(btnVolver);
         c.add(btnReservar);
-        
+
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(110, 50, 450, 30);
         lblTipoVehiculo.setFont(fontTexto);
@@ -62,13 +62,16 @@ public class VistaVerificarCupo extends JFrame {
         lblTxtCuposDisp.setFont(fontTexto);
         lblTxtCuposDisp.setBounds(70, 250, 250, 20);
         lblTarifa.setFont(fontTexto);
-        lblTarifa.setBounds(70, 200, 250, 20);
+        lblTarifa.setBounds(310, 200, 250, 20);
         lblCuposDisp.setFont(fontTexto);
-        lblCuposDisp.setBounds(70, 250, 250, 20);
-        
-        boxTipoAutomovil.setBounds(300, 150, 200, 20);
+        lblCuposDisp.setBounds(310, 250, 250, 20);
+
+        boxTipoAutomovil.setBounds(310, 150, 200, 20);
+
+        btnVolver.setBounds(150, 300, 90, 25);
+        btnReservar.setBounds(300, 300, 110, 25);
     }
-    
+
     public void mostrar() {
         setSize(570, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
