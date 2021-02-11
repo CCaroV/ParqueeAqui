@@ -5,9 +5,13 @@
  */
 package proyectofinal;
 
+import Controlador.ControladorRegistroSalida;
 import Controlador.ControladorTarifa;
+import Modelo.RegistroSalida;
 import Modelo.Tarifa;
+import Vista.VistaRegistroSalida;
 import Vista.VistaRegistroVehiculo;
+import Vista.VistaVerificarCupo;
 
 /**
  *
@@ -20,11 +24,20 @@ public class ProyectoFinal {
      */
     public static void main(String[] args) {
         
-        Tarifa t = new Tarifa();
+        Tarifa m = new Tarifa();
         VistaRegistroVehiculo v = new VistaRegistroVehiculo();
-        ControladorTarifa c = new ControladorTarifa(v, t);
+        ControladorTarifa c = new ControladorTarifa(v, m);
         v.asignaOyentes(c);
-        v.mostrar();
+        //v.mostrar();
+        
+        VistaVerificarCupo vi = new VistaVerificarCupo();
+        //vi.mostrar();
+        
+        RegistroSalida mii = new RegistroSalida();
+        VistaRegistroSalida vii = new VistaRegistroSalida();
+        ControladorRegistroSalida cii = new ControladorRegistroSalida(vii, mii);
+        vii.asignaOyentes(cii);
+        vii.mostrar();
     }
     
 }
