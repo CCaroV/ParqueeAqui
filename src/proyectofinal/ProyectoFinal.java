@@ -5,8 +5,10 @@
  */
 package proyectofinal;
 
+import Controlador.ControladorHome;
 import Controlador.ControladorRegistroSalida;
 import Controlador.ControladorTarifa;
+import Modelo.Home;
 import Modelo.RegistroSalida;
 import Modelo.Tarifa;
 import Vista.VistaHome;
@@ -38,7 +40,7 @@ public class ProyectoFinal {
         VistaRegistroParqueadero v = new VistaRegistroParqueadero();
         ControladorTarifa c = new ControladorTarifa(v, m);
         v.asignaOyentes(c);
-        v.mostrar();
+        //v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
         //vi.mostrar();
@@ -49,8 +51,11 @@ public class ProyectoFinal {
         vii.asignaOyentes(cii);
         //vii.mostrar();
 
+        Home miii = new Home();
         VistaHome viii = new VistaHome();
-        //viii.mostrar();
+        ControladorHome ciii = new ControladorHome(viii, miii);
+        viii.asignaOyentes(ciii);
+        viii.mostrar();
         
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
         //viv.mostrar();

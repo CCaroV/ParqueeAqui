@@ -101,7 +101,7 @@ public class VistaRegistroParqueadero extends JFrame {
 
     public void mostrar() {
         setSize(600, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
