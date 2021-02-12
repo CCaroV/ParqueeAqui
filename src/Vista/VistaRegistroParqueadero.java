@@ -77,22 +77,22 @@ public class VistaRegistroParqueadero extends JFrame {
         lblNomParqueadero.setFont(fontTexto);
         lblNomParqueadero.setBounds(80, 150, 300, 20);
         lblLocalidad.setFont(fontTexto);
-        lblLocalidad.setBounds(80, 200, 300, 20);
+        lblLocalidad.setBounds(80, 210, 300, 20);
         lblSubterraneo.setFont(fontTexto);
-        lblSubterraneo.setBounds(80, 250, 300, 20);
+        lblSubterraneo.setBounds(80, 260, 300, 20);
         lblNumNiveles.setFont(fontTexto);
-        lblNumNiveles.setBounds(80, 300, 300, 20);
+        lblNumNiveles.setBounds(80, 310, 300, 20);
 
         //Posición de los botones
         btnVolver.setBounds(150, 370, 85, 25);
         btnRegistrar.setBounds(250, 370, 170, 25);
 
         //Posición de las cajas de texto
-        fldNomParqueadero.setBounds(300, 150, 150, 20);
-        boxLocalidad.setBounds(300, 200, 150, 20);
-        checkSi.setBounds(300, 250, 40, 20);
-        checkNo.setBounds(350, 250, 45, 20);
-        fldNumNiveles.setBounds(300, 300, 150, 20);
+        fldNomParqueadero.setBounds(300, 150, 150, 30);
+        boxLocalidad.setBounds(300, 200, 150, 30);
+        checkSi.setBounds(300, 250, 40, 30);
+        checkNo.setBounds(350, 250, 45, 30);
+        fldNumNiveles.setBounds(300, 300, 150, 30);
 
     }
 

@@ -13,6 +13,7 @@ import Vista.VistaHome;
 import Vista.VistaRegistroSalida;
 import Vista.VistaRegistroParqueadero;
 import Vista.VistaVerificarCupo;
+import Vista.VistaRegistrarVehiculo;
 import javax.swing.UIManager;
 
 /**
@@ -49,6 +50,10 @@ public class ProyectoFinal {
 
         VistaHome viii = new VistaHome();
         viii.mostrar();
+        
+        VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
+        viv.mostrar();
+        
     }
 
 }

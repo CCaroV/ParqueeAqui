@@ -40,19 +40,23 @@ public class VistaVerificarCupo extends JFrame {
 
         Container c = getContentPane();
         c.setLayout(null);
-
+        
+        //Agrega los textos
         c.add(lblTitulo);
         c.add(lblTipoVehiculo);
         c.add(lblTxtTarifa);
         c.add(lblTxtCuposDisp);
         c.add(lblTarifa);
         c.add(lblCuposDisp);
-
+        
+        //Agrega los combobox
         c.add(boxTipoAutomovil);
-
+        
+        //Agrega los botones
         c.add(btnVolver);
         c.add(btnReservar);
-
+        
+        // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(110, 50, 450, 30);
         lblTipoVehiculo.setFont(fontTexto);
@@ -65,9 +69,11 @@ public class VistaVerificarCupo extends JFrame {
         lblTarifa.setBounds(310, 200, 250, 20);
         lblCuposDisp.setFont(fontTexto);
         lblCuposDisp.setBounds(310, 250, 250, 20);
-
+        
+        //Posición de los combobox
         boxTipoAutomovil.setBounds(310, 150, 200, 20);
-
+        
+        //Posición de los botones
         btnVolver.setBounds(150, 300, 90, 25);
         btnReservar.setBounds(300, 300, 110, 25);
     }
