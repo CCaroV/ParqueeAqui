@@ -4,10 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/proyectofinal/ProyectoFinal.java</file>
-            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaRegistroVehiculo.java</file>
-            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Modelo/Tarifa.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorRegistroSalida.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaRegistrarAreas.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaRegistrarVehiculo.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaHome.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaRegistroSalida.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaRegistroParqueadero.java</file>
             <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaVerificarCupo.java</file>
-            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorTarifa.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaFactura.java</file>
         </group>
     </open-files>
 </project-private>

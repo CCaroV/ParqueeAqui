@@ -38,7 +38,7 @@ public class ProyectoFinal {
         VistaRegistroParqueadero v = new VistaRegistroParqueadero();
         ControladorTarifa c = new ControladorTarifa(v, m);
         v.asignaOyentes(c);
-        //v.mostrar();
+        v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
         //vi.mostrar();
@@ -56,7 +56,7 @@ public class ProyectoFinal {
         //viv.mostrar();
         
         VistaRegistrarAreas vv = new VistaRegistrarAreas();
-        vv.mostrar();
+        //vv.mostrar();
         
     }
 

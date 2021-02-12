@@ -32,7 +32,7 @@ public class ControladorTarifa implements ActionListener {
                 vista.mensajeAlerta();
             } else {
                 modelo.setNumNiveles(Integer.parseInt(vista.getNumNiveles()));
-                String dividido[] = vista.getLocalidad().split(",");
+                String dividido[] = vista.getLocalidad().split(", ");
                 modelo.setLocalidad(dividido[0]);
                 modelo.setNumLocalidad(dividido[1]);
 
