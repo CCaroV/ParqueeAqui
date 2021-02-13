@@ -20,8 +20,8 @@ public class VistaRegistrarVehiculo extends JFrame{
     private final JLabel lblPlaca = new JLabel("Placa:");
     private final JLabel lblHoraEntrada = new JLabel("Hora de entrada:");
     private final JLabel lblFechaEntrada = new JLabel("Fecha de Entrada:");
-    private final JLabel lblHora = new JLabel("00:00:00");
-    private final JLabel lblFecha = new JLabel("00/00/0000");
+    private JLabel lblHora = new JLabel();
+    private JLabel lblFecha = new JLabel();
     
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);

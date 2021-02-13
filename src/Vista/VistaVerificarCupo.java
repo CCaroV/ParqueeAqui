@@ -32,7 +32,7 @@ public class VistaVerificarCupo extends JFrame {
     private final JButton btnVolver = new JButton("Volver");
     private final JButton btnReservar = new JButton("Reservar");
 
-    private final String tipoVehiculo[] = {"Campero", "Camión"};
+    private final String tipoVehiculo[] = {"Automovil", "Campero","Camioneta","Vehículo Pesado","Motocicleta","Bicicleta"};
 
     public VistaVerificarCupo() throws HeadlessException {
         super("Parqueé Aquí");
