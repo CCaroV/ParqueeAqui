@@ -5,8 +5,10 @@
  */
 package proyectofinal;
 
+import Controlador.ControladorParqueadero_VistaRegistroParqueadero;
 import Controlador.ControladorRegistroSalida;
 import Controlador.ControladorTarifa;
+import Modelo.Parqueadero;
 import Modelo.RegistroSalida;
 import Modelo.Tarifa;
 import Vista.VistaHome;
@@ -34,9 +36,9 @@ public class ProyectoFinal {
             System.out.println(e);
         }
 
-        Tarifa m = new Tarifa();
+        Parqueadero m = new Parqueadero();
         VistaRegistroParqueadero v = new VistaRegistroParqueadero();
-        ControladorTarifa c = new ControladorTarifa(v, m);
+        ControladorParqueadero_VistaRegistroParqueadero c = new ControladorParqueadero_VistaRegistroParqueadero(m, v);
         v.asignaOyentes(c);
         //v.mostrar();
 

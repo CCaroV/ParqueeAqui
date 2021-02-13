@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.ControladorParqueadero_VistaRegistroParqueadero;
 import Controlador.ControladorTarifa;
 import Modelo.Tarifa;
 import java.awt.Container;
@@ -133,7 +134,7 @@ public class VistaRegistroParqueadero extends JFrame {
         return btnRegistrar;
     }
 
-    public void asignaOyentes(ControladorTarifa c) {
+    public void asignaOyentes(ControladorParqueadero_VistaRegistroParqueadero c) {
         btnRegistrar.addActionListener(c);
         //btnVolver.addActionListener(c);
     }
