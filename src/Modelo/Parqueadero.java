@@ -14,9 +14,7 @@ public class Parqueadero {
     private String n_localidad;
     private String n_parqueadero;
     private int k_parqueadero;
-    private String n_calle;
-    private String n_numero;
-    private String n_barrio;
+    private String n_direccion;
 
     public void setN_nivelServicio(String n_nivelServicio) {
         this.n_nivelServicio = n_nivelServicio;
@@ -33,25 +31,14 @@ public class Parqueadero {
     public void setK_parqueadero(int k_parqueadero) {
         this.k_parqueadero = k_parqueadero;
     }
-
-    public void setN_calle(String n_calle) {
-        this.n_calle = n_calle;
-    }
-
-    public void setN_numero(String n_numero) {
-        this.n_numero = n_numero;
-    }
-
-    public void setN_barrio(String n_barrio) {
-        this.n_barrio = n_barrio;
+    public void setN_direccion(String n_direccion) {
+        this.n_direccion = n_direccion;
     }
     public Parqueadero(){
         this.k_parqueadero=0;
-        this.n_barrio=null;
-        this.n_calle=null;
         this.n_localidad=null;
         this.n_nivelServicio=null;
-        this.n_numero=null;
+        this.n_direccion=null;
         this.n_parqueadero=null;
     }
 }   

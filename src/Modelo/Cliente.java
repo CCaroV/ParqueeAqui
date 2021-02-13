@@ -16,9 +16,7 @@ public class Cliente {
     private String n_nombre;
     private String n_apellido;
     private ArrayList<String> v_telefono= new ArrayList<String>();
-    private String n_calle;
-    private String n_numero;
-    private String n_barrio;
+    private String n_direccion;
 
     public void setK_cliente(int k_cliente) {
         this.k_cliente = k_cliente;
@@ -35,25 +33,12 @@ public class Cliente {
     public void setV_telefono(ArrayList<String> v_telefono) {
         this.v_telefono = v_telefono;
     }
-
-    public void setN_calle(String n_calle) {
-        this.n_calle = n_calle;
-    }
-
-    public void setN_numero(String n_numero) {
-        this.n_numero = n_numero;
-    }
-
-    public void setN_barrio(String n_barrio) {
-        this.n_barrio = n_barrio;
-    }
+    
     public Cliente() {
         this.k_cliente = 0;
         this.n_nombre = null;
         this.n_apellido = null;
-        this.n_calle = null;
-        this.n_numero = null;
-        this.n_barrio = null;
+        this.n_direccion = null;
     }
     
 }
