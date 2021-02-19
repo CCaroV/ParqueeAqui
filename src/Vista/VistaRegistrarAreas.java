@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.ControladorArea_VistaRegistrarAreas;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
@@ -149,7 +150,9 @@ public class VistaRegistrarAreas extends JFrame {
     public JButton getBtnRegistrar() {
         return btnRegistrar;
     }
-    
+    public void asignarOyente(ControladorArea_VistaRegistrarAreas c){
+        this.btnRegistrar.addActionListener(c);
+    }
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }

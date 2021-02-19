@@ -5,11 +5,12 @@
  */
 package proyectofinal;
 
+import Controlador.ControladorArea_VistaRegistrarAreas;
 import Controlador.ControladorParqueadero_VistaRegistroParqueadero;
 import Controlador.ControladorRegistroSalida;
 import Controlador.ControladorTarifa;
+import Modelo.Area;
 import Modelo.Parqueadero;
-import Modelo.RegistroSalida;
 import Modelo.Tarifa;
 import Vista.VistaHome;
 import Vista.VistaRegistroSalida;
@@ -40,14 +41,13 @@ public class ProyectoFinal {
         VistaRegistroParqueadero v = new VistaRegistroParqueadero();
         ControladorParqueadero_VistaRegistroParqueadero c = new ControladorParqueadero_VistaRegistroParqueadero(m, v);
         v.asignaOyentes(c);
-        //v.mostrar();
+        v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
         //vi.mostrar();
 
-        RegistroSalida mii = new RegistroSalida();
         VistaRegistroSalida vii = new VistaRegistroSalida();
-        ControladorRegistroSalida cii = new ControladorRegistroSalida(vii, mii);
+        ControladorRegistroSalida cii = new ControladorRegistroSalida();
         vii.asignaOyentes(cii);
         //vii.mostrar();
 
@@ -58,7 +58,10 @@ public class ProyectoFinal {
         //viv.mostrar();
         
         VistaRegistrarAreas vv = new VistaRegistrarAreas();
-        vv.mostrar();
+        Area a=new Area();
+        ControladorArea_VistaRegistrarAreas cavra=new ControladorArea_VistaRegistrarAreas(a,vv);
+        vv.asignarOyente(cavra);
+        //vv.mostrar();
         
     }
 

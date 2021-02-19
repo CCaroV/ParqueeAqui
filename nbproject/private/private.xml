@@ -3,23 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/proyectofinal/ProyectoFinal.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Vista/VistaRegistroParqueadero.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorRegistroSalida.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Servicio.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorParqueadero_VistaRegistroParqueadero.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Slot.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Vista/VistaRegistrarAreas.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Parqueadero.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Area.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Pago.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Cliente.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Vista/VistaHome.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Contrato.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Vehiculo.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorArea_VistaRegistrarAreas.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/Tarifa.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Modelo/RegistroSalida.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorParqueadero_VistaRegistroParqueadero.java</file>
         </group>
     </open-files>
 </project-private>

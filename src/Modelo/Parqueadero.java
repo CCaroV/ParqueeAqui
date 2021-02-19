@@ -16,6 +16,26 @@ public class Parqueadero {
     private int k_parqueadero;
     private String n_direccion;
 
+    public String getN_nivelServicio() {
+        return n_nivelServicio;
+    }
+
+    public String getN_localidad() {
+        return n_localidad;
+    }
+
+    public String getN_parqueadero() {
+        return n_parqueadero;
+    }
+
+    public int getK_parqueadero() {
+        return k_parqueadero;
+    }
+
+    public String getN_direccion() {
+        return n_direccion;
+    }
+    
     public void setN_nivelServicio(String n_nivelServicio) {
         this.n_nivelServicio = n_nivelServicio;
     }

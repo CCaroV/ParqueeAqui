@@ -15,9 +15,9 @@ import java.awt.event.ActionListener;
  * @author User
  */
 public class ControladorArea_VistaRegistrarAreas implements ActionListener {
-    private Area area;
+    private final Area area;
     
-    private VistaRegistrarAreas vista;
+    private final VistaRegistrarAreas vista;
     public ControladorArea_VistaRegistrarAreas(Area area, VistaRegistrarAreas vista){
         this.area=area;
         this.vista=vista;
@@ -26,7 +26,16 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(this.vista.getBtnRegistrar())){
-            this.area.setQ_cuposAutomovil(Integer.parseInt(vista.getAuto()));
+            this.area.setQ_cuposAutomovil(Integer.parseInt(this.vista.getAuto()));
+            this.area.setQ_cuposBicicleta(Integer.parseInt(this.vista.getBicicleta()));
+            this.area.setQ_cuposCamioneta(Integer.parseInt(this.vista.getCamioneta()));
+            this.area.setQ_cuposCampero(Integer.parseInt(this.vista.getCampero()));
+            this.area.setQ_cuposMotocicleta(Integer.parseInt(this.vista.getMotocicleta()));
+            this.area.setQ_cuposVehiculoPesado(Integer.parseInt(this.vista.getVehiculoPesado()));
+            this.area.setQ_cuposTotales(this.area.getQ_cuposAutomovil(), this.area.getQ_cuposBicicleta(),
+                                        this.area.getQ_cuposCamioneta(), this.area.getQ_cuposCampero(),
+                                        this.area.getQ_cuposMotocicleta(), this.area.getQ_cuposVehiculoPesado());
+            System.out.println(this.area.getQ_cuposTotales());
         }
     }
 }

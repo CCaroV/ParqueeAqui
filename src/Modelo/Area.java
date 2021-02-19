@@ -19,6 +19,43 @@ public class Area {
     private int q_cuposCampero;
     private int q_cuposMotocicleta;
     private int q_cuposVehiculoPesado;
+
+    public int getK_area() {
+        return k_area;
+    }
+
+    public int getQ_cuposDisponibles() {
+        return q_cuposDisponibles;
+    }
+
+    public int getQ_cuposTotales() {
+        return q_cuposTotales;
+    }
+
+    public int getQ_cuposAutomovil() {
+        return q_cuposAutomovil;
+    }
+
+    public int getQ_cuposBicicleta() {
+        return q_cuposBicicleta;
+    }
+
+    public int getQ_cuposCamioneta() {
+        return q_cuposCamioneta;
+    }
+
+    public int getQ_cuposCampero() {
+        return q_cuposCampero;
+    }
+
+    public int getQ_cuposMotocicleta() {
+        return q_cuposMotocicleta;
+    }
+
+    public int getQ_cuposVehiculoPesado() {
+        return q_cuposVehiculoPesado;
+    }
+    
     public void setK_area(int k_area) {
         this.k_area = k_area;
     }
@@ -27,8 +64,10 @@ public class Area {
         this.q_cuposDisponibles = q_cuposDisponibles;
     }
 
-    public void setQ_cuposTotales(int q_cuposTotales) {
-        this.q_cuposTotales = q_cuposTotales;
+    public void setQ_cuposTotales(int q_cuposAutomovil, int q_cuposBicicleta, int q_cuposCamioneta,
+                                  int q_cuposCampero, int q_cuposMotocicleta,int q_cuposVehiculoPesado ) {
+        this.q_cuposTotales = q_cuposAutomovil+q_cuposBicicleta+q_cuposCamioneta+q_cuposCampero+
+                              q_cuposMotocicleta+q_cuposVehiculoPesado;
     }
 
     public void setQ_cuposAutomovil(int q_cuposAutomovil) {
