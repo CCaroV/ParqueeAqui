@@ -6,7 +6,9 @@
 package Controlador;
 
 import Modelo.Area;
+import Modelo.Parqueadero;
 import Vista.VistaRegistrarAreas;
+import Vista.VistaRegistroParqueadero;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,6 +38,14 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
                                         this.area.getQ_cuposCamioneta(), this.area.getQ_cuposCampero(),
                                         this.area.getQ_cuposMotocicleta(), this.area.getQ_cuposVehiculoPesado());
             System.out.println(this.area.getQ_cuposTotales());
+        }
+        if(e.getSource().equals(this.vista.getBtnVolver())){
+            this.vista.dispose();
+            VistaRegistroParqueadero vistaParqueadero= new VistaRegistroParqueadero();
+            Parqueadero parqueadero=new Parqueadero();
+            ControladorParqueadero_VistaRegistroParqueadero back= new ControladorParqueadero_VistaRegistroParqueadero (parqueadero, vistaParqueadero);
+            vistaParqueadero.asignaOyentes(back);
+            vistaParqueadero.mostrar();
         }
     }
 }

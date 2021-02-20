@@ -5,8 +5,10 @@
  */
 package Controlador;
 
+import Modelo.Area;
 import Modelo.Parqueadero;
 import Vista.VistaHome;
+import Vista.VistaRegistrarAreas;
 import Vista.VistaRegistroParqueadero;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,10 +30,15 @@ public class ControladorParqueadero_VistaRegistroParqueadero implements ActionLi
             this.parqueadero.setN_localidad(this.vista.getLocalidad());
             this.parqueadero.setN_nivelServicio(this.vista.getNumNiveles());
             this.parqueadero.setN_parqueadero(this.vista.getNomParqueadero());
-            System.out.println((String)this.parqueadero.getN_nivelServicio());
+            vista.dispose();
+            VistaRegistrarAreas vv = new VistaRegistrarAreas();
+            Area a=new Area();
+            ControladorArea_VistaRegistrarAreas cavra=new ControladorArea_VistaRegistrarAreas(a,vv);
+            vv.asignarOyente(cavra);
+            vv.mostrar();
         }
         if(e.getSource().equals(vista.getBtnVolver())){
-            
+            System.exit(0);
         }
     }
     

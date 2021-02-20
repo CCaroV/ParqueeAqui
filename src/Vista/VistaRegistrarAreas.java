@@ -152,6 +152,7 @@ public class VistaRegistrarAreas extends JFrame {
     }
     public void asignarOyente(ControladorArea_VistaRegistrarAreas c){
         this.btnRegistrar.addActionListener(c);
+        this.btnVolver.addActionListener(c);
     }
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);

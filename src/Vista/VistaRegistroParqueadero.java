@@ -136,7 +136,7 @@ public class VistaRegistroParqueadero extends JFrame {
 
     public void asignaOyentes(ControladorParqueadero_VistaRegistroParqueadero c) {
         btnRegistrar.addActionListener(c);
-        //btnVolver.addActionListener(c);
+        btnVolver.addActionListener(c);
     }
 
     public void mensajeAlerta() {

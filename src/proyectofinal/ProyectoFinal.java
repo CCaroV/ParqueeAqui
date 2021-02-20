@@ -57,11 +57,11 @@ public class ProyectoFinal {
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
         //viv.mostrar();
         
-        VistaRegistrarAreas vv = new VistaRegistrarAreas();
+        /*VistaRegistrarAreas vv = new VistaRegistrarAreas();
         Area a=new Area();
         ControladorArea_VistaRegistrarAreas cavra=new ControladorArea_VistaRegistrarAreas(a,vv);
         vv.asignarOyente(cavra);
-        //vv.mostrar();
+        vv.mostrar();*/
         
     }
 
