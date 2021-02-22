@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.ControladorHome;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
@@ -63,6 +64,7 @@ public class VistaHome extends JFrame {
         btnConstVehiculo.setFont(new Font("Calibri", Font.PLAIN, 12));
         btnConstVehiculo.setBounds(50, 340, 170, 30);
         btnConstFlujo.setBounds(230, 340, 170, 30);
+        btnRegistrarParqueadero.setBounds(50, 380, 350, 30);
         
         
     }
@@ -73,5 +75,32 @@ public class VistaHome extends JFrame {
         setResizable(false);
         setVisible(true);
     }
+
+    public JButton getBtnReservar() {
+        return btnReservar;
+    }
+
+    public JButton getBtnConstVehiculo() {
+        return btnConstVehiculo;
+    }
+
+    public JButton getBtnConstRecaudo() {
+        return btnConstRecaudo;
+    }
+
+    public JButton getBtnConstFlujo() {
+        return btnConstFlujo;
+    }
+
+    public JButton getBtnRegistrarParqueadero() {
+        return btnRegistrarParqueadero;
+    }
     
+    public void asignaOyentes(ControladorHome c) {
+        btnReservar.addActionListener(c);
+        btnConstRecaudo.addActionListener(c);
+        btnConstVehiculo.addActionListener(c);
+        btnConstFlujo.addActionListener(c);
+        btnRegistrarParqueadero.addActionListener(c);
+    }
 }

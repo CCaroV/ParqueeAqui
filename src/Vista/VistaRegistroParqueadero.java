@@ -33,9 +33,9 @@ public class VistaRegistroParqueadero extends JFrame {
 
     private final JTextField fldNomParqueadero = new JTextField();
     private final JComboBox boxLocalidad;
+    private final JComboBox boxNumNiveles;
     private final JCheckBox checkSi = new JCheckBox("Sí");
     private final JCheckBox checkNo = new JCheckBox("No");
-    private final JTextField fldNumNiveles = new JTextField();
 
     private final String localidad[] = {"Usaquen, 1", "Chapinero, 2", "Santa Fe, 3",
         "San Cristobal, 4", "Usme, 5", "Tunjuelito, 6", "Bosa, 7", "Kennedy, 8",
@@ -44,9 +44,12 @@ public class VistaRegistroParqueadero extends JFrame {
         "La Candelaría, 17", "Rafael Uribe Uribe, 18", "Ciudad Bolivar, 19", "Sumapaz, 20"
     };
 
+    private final String[] numNiveles = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+
     public VistaRegistroParqueadero() throws HeadlessException {
         super("Parqueé Aquí");
         this.boxLocalidad = new JComboBox(localidad);
+        this.boxNumNiveles = new JComboBox(numNiveles);
 
         Container c = getContentPane();
         c.setLayout(null);
@@ -70,7 +73,7 @@ public class VistaRegistroParqueadero extends JFrame {
         c.add(boxLocalidad);
         c.add(checkSi);
         c.add(checkNo);
-        c.add(fldNumNiveles);
+        c.add(boxNumNiveles);
 
         //Posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
@@ -93,13 +96,13 @@ public class VistaRegistroParqueadero extends JFrame {
         boxLocalidad.setBounds(300, 200, 150, 30);
         checkSi.setBounds(300, 250, 40, 30);
         checkNo.setBounds(350, 250, 45, 30);
-        fldNumNiveles.setBounds(300, 300, 150, 30);
+        boxNumNiveles.setBounds(300, 300, 150, 30);
 
     }
 
     public void mostrar() {
         setSize(600, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
@@ -123,7 +126,7 @@ public class VistaRegistroParqueadero extends JFrame {
     }
 
     public String getNumNiveles() {
-        return this.fldNumNiveles.toString();
+        return this.boxNumNiveles.getSelectedItem().toString();
     }
 
     public JButton getBtnVolver() {

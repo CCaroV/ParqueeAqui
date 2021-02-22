@@ -74,13 +74,13 @@ public class VistaRegistrarAreas extends JFrame {
         
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
-        lblTitulo.setBounds(250, 50, 450, 30);
+        lblTitulo.setBounds(180, 50, 450, 40);
         lblNomParqueadero.setFont(fontTexto);
-        lblNomParqueadero.setBounds(60, 100, 300, 30);
+        lblNomParqueadero.setBounds(50, 100, 300, 30);
         lblParqueadero.setFont(fontTexto);
         lblParqueadero.setBounds(250, 100, 300, 30);
         lblCupos.setFont(fontSubTitulo);
-        lblCupos.setBounds(300, 150, 300, 30);
+        lblCupos.setBounds(230, 150, 300, 30);
         lblAutomovil.setFont(fontTexto);
         lblAutomovil.setBounds(50, 200, 300, 30);
         lblCampero.setFont(fontTexto);
@@ -88,11 +88,11 @@ public class VistaRegistrarAreas extends JFrame {
         lblCamioneta.setFont(fontTexto);
         lblCamioneta.setBounds(50, 300, 300, 30);
         lblVehiculosP.setFont(fontTexto);
-        lblVehiculosP.setBounds(380, 200, 300, 30);
+        lblVehiculosP.setBounds(370, 200, 300, 30);
         lblMotocicleta.setFont(fontTexto);
-        lblMotocicleta.setBounds(380, 250, 300, 30);
+        lblMotocicleta.setBounds(370, 250, 300, 30);
         lblBicicleta.setFont(fontTexto);
-        lblBicicleta.setBounds(380, 300, 300, 30);
+        lblBicicleta.setBounds(370, 300, 300, 30);
         
         
         
@@ -157,4 +157,9 @@ public class VistaRegistrarAreas extends JFrame {
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }
+    
+    /*public void asignaOyentes(Controlador c) {
+        btnVolver.addActionListener(c);
+        btnRegistrar.addActionListener(c);
+    }*/
 }
