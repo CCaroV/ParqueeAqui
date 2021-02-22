@@ -28,6 +28,7 @@ public class VistaConsultaVehiculo extends JFrame{
     private final JLabel lblTxtFechaEntrada = new JLabel("Fecha de entrada:");
     private final JLabel lblTxtHoraSalida = new JLabel("Hora de salida:");
     private final JLabel lblTxtFechaSalida = new JLabel("Fecha de salida:");
+    private final JLabel lblTxtTelefono = new JLabel("Telefono:");
     
     private  JLabel lblNomPropietario = new JLabel();
     private  JLabel lblTipoVehiculo = new JLabel();
@@ -40,6 +41,7 @@ public class VistaConsultaVehiculo extends JFrame{
     private  JLabel lblFechaEntrada = new JLabel();
     private  JLabel lblHoraSalida = new JLabel();
     private  JLabel lblFechaSalida = new JLabel();
+    private  JLabel lblTelefono = new JLabel();
     
     
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
@@ -72,6 +74,7 @@ public class VistaConsultaVehiculo extends JFrame{
         k.add(lblTxtFechaSalida);
         k.add(lblTxtFechaEntrada);
         k.add(lblTxtHoraEntrada);
+        k.add(lblTxtTelefono);
         
         //Agrega las respuestas a los textos
         k.add(lblNomPropietario);
@@ -85,6 +88,7 @@ public class VistaConsultaVehiculo extends JFrame{
         k.add(lblHoraEntrada);
         k.add(lblFechaSalida);
         k.add(lblHoraSalida);
+        k.add(lblTelefono);
         
         //Agrega los botones
         k.add(btnConsultar);
@@ -121,6 +125,8 @@ public class VistaConsultaVehiculo extends JFrame{
         lblTxtHoraSalida.setBounds(370, 370, 300, 30);
         lblTxtHoraEntrada.setFont(fontTexto);
         lblTxtHoraEntrada.setBounds(370, 120, 300, 30);
+        lblTxtTelefono.setFont(fontTexto);
+        lblTxtTelefono.setBounds(60, 420, 300, 30);
         
         
         //Posición de los botones
@@ -152,10 +158,12 @@ public class VistaConsultaVehiculo extends JFrame{
         lblHoraSalida.setBounds(480, 370, 300, 30);
         lblHoraEntrada.setFont(fontTexto);
         lblHoraEntrada.setBounds(480, 120, 300, 30);
+        lblTelefono.setFont(fontTexto);
+        lblTelefono.setBounds(200, 420, 300, 30);
     }
     
     public void mostrar(){
-        setSize(800, 600);
+        setSize(750, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);

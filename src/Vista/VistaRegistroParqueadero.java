@@ -77,7 +77,7 @@ public class VistaRegistroParqueadero extends JFrame {
 
         //Posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
-        lblTitulo.setBounds(65, 50, 450, 30);
+        lblTitulo.setBounds(130, 50, 450, 30);
         lblNomParqueadero.setFont(fontTexto);
         lblNomParqueadero.setBounds(80, 150, 300, 20);
         lblLocalidad.setFont(fontTexto);

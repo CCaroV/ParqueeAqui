@@ -52,7 +52,7 @@ public class VistaHome extends JFrame {
         
         
         lblTitulo.setFont(fontTitulo);
-        lblTitulo.setBounds(100, 50, 450, 30);
+        lblTitulo.setBounds(120, 50, 450, 30);
         lblNomParqueadero.setFont(fontTexto);
         lblNomParqueadero.setBounds(60, 150, 250, 25);
         

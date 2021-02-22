@@ -58,7 +58,7 @@ public class VistaVerificarCupo extends JFrame {
         
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
-        lblTitulo.setBounds(110, 50, 450, 30);
+        lblTitulo.setBounds(200, 50, 450, 30);
         lblTipoVehiculo.setFont(fontTexto);
         lblTipoVehiculo.setBounds(70, 150, 250, 20);
         lblTxtTarifa.setFont(fontTexto);

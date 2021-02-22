@@ -74,13 +74,13 @@ public class VistaRegistrarAreas extends JFrame {
         
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
-        lblTitulo.setBounds(180, 50, 450, 40);
+        lblTitulo.setBounds(240, 50, 450, 40);
         lblNomParqueadero.setFont(fontTexto);
-        lblNomParqueadero.setBounds(50, 100, 300, 30);
+        lblNomParqueadero.setBounds(200, 100, 300, 30);
         lblParqueadero.setFont(fontTexto);
-        lblParqueadero.setBounds(250, 100, 300, 30);
+        lblParqueadero.setBounds(400, 100, 300, 30);
         lblCupos.setFont(fontSubTitulo);
-        lblCupos.setBounds(230, 150, 300, 30);
+        lblCupos.setBounds(280, 150, 300, 30);
         lblAutomovil.setFont(fontTexto);
         lblAutomovil.setBounds(50, 200, 300, 30);
         lblCampero.setFont(fontTexto);

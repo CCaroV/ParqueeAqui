@@ -24,12 +24,13 @@ public class VistaRegistroSalida extends JFrame {
     private final JLabel lblModeloVehiculo = new JLabel("Modelo:");
     private final JLabel lblTipoContrato = new JLabel("Tipo de contrato:");
     private final JLabel lblTxtHoraSalida = new JLabel("Hora de salida:");
-    private JLabel lblHoraSalida = new JLabel();
     private final JLabel lblCedula = new JLabel("Cédula:");
     private final JLabel lblPlaca = new JLabel("Placa:");
     private final JLabel lblColor = new JLabel("Color:");
     private final JLabel lbltxtFechaSalida = new JLabel("Fecha de salida:");
+    private final JLabel lbltxtTelefono = new JLabel("Telefono:");
     private JLabel lblFechaSalida = new JLabel();
+    private JLabel lblHoraSalida = new JLabel();
 
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
@@ -47,6 +48,7 @@ public class VistaRegistroSalida extends JFrame {
     private final JTextField fldCedula = new JTextField();
     private final JTextField fldPlaca = new JTextField();
     private final JTextField fldColor = new JTextField();
+    private final JTextField fldTelefono = new JTextField();
 
     public VistaRegistroSalida() throws HeadlessException {
         super("Parqueé Aquí");
@@ -67,6 +69,7 @@ public class VistaRegistroSalida extends JFrame {
         c.add(lblColor);
         c.add(lbltxtFechaSalida);
         c.add(lblFechaSalida);
+        c.add(lbltxtTelefono);
 
         c.add(boxTipoContrato);
 
@@ -79,9 +82,10 @@ public class VistaRegistroSalida extends JFrame {
         c.add(fldCedula);
         c.add(fldPlaca);
         c.add(fldColor);
+        c.add(fldTelefono);
         
         lblTitulo.setFont(fontTitulo);
-        lblTitulo.setBounds(200, 50, 450, 30);
+        lblTitulo.setBounds(300, 50, 450, 30);
         lblNomCliente.setFont(fontTexto);
         lblNomCliente.setBounds(70, 150, 250, 25);
         lblMarcaVehiculo.setFont(fontTexto);
@@ -104,6 +108,8 @@ public class VistaRegistroSalida extends JFrame {
         lbltxtFechaSalida.setBounds(450, 350, 250, 25);
         lblFechaSalida.setFont(fontTexto);
         lblFechaSalida.setBounds(570, 350, 250, 25);
+        lbltxtTelefono.setFont(fontTexto);
+        lbltxtTelefono.setBounds(70, 400, 250, 25);
         
         fldNomCliente.setEditable(false);
         fldNomCliente.setBounds(230, 150, 150, 25);
@@ -116,6 +122,8 @@ public class VistaRegistroSalida extends JFrame {
         fldPlaca.setBounds(520, 200, 150, 25);
         fldColor.setEditable(false);
         fldColor.setBounds(520, 250, 150, 25);
+        fldTelefono.setEditable(false);
+        fldTelefono.setBounds(230, 400, 150, 25);
         
         boxTipoContrato.setBounds(230, 300, 150, 25);
         

@@ -68,7 +68,7 @@ public class ProyectoFinal {
         //viii.mostrar();
         
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
-        viv.mostrar();
+        //viv.mostrar();
         
 //<<<<<<< HEAD
         /*VistaRegistrarAreas vv = new VistaRegistrarAreas();
@@ -81,13 +81,13 @@ public class ProyectoFinal {
         //vv.mostrar();
         
         VistaConsultaVehiculo vvi = new VistaConsultaVehiculo();
-        vvi.mostrar();
+        //vvi.mostrar();
         
         VistaConsultaFlujo vvii = new VistaConsultaFlujo();
-        vvii.mostrar();
+        //vvii.mostrar();
         
         VistaConsultaRecaudo vviii = new VistaConsultaRecaudo();
-        vviii.mostrar();
+        //vviii.mostrar();
 //>>>>>>> main
         
     }

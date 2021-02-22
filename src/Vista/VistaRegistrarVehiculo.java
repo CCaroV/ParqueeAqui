@@ -20,6 +20,7 @@ public class VistaRegistrarVehiculo extends JFrame{
     private final JLabel lblPlaca = new JLabel("Placa:");
     private final JLabel lblHoraEntrada = new JLabel("Hora de entrada:");
     private final JLabel lblFechaEntrada = new JLabel("Fecha de Entrada:");
+    
     private JLabel lblHora = new JLabel();
     private JLabel lblFecha = new JLabel();
     
