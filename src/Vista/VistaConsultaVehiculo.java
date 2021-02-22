@@ -15,7 +15,7 @@ import javax.swing.*;
  */
 public class VistaConsultaVehiculo extends JFrame{
 
-    private final JLabel lblTitulo = new JLabel("Consulta de Flujo");
+    private final JLabel lblTitulo = new JLabel("Consulta de Vehiculo");
     private final JLabel lblPlaca = new JLabel("Placa:");
     private final JLabel lblTxtNomPropietario = new JLabel("Propietario:");
     private final JLabel lblTxtTipoVehiculo = new JLabel("Tipo de vehículo:");
@@ -161,11 +161,11 @@ public class VistaConsultaVehiculo extends JFrame{
         setVisible(true);
     }
     
-    public String getAuto(){
+    public String getPlaca(){
         return this.fldPlaca.getText();
     }
     
-    public String getCampero(){
+    public String getFecha(){
         return this.fldFecha.getText();
     }
     

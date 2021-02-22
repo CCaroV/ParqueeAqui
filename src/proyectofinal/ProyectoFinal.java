@@ -18,7 +18,8 @@ import Vista.VistaVerificarCupo;
 import Vista.VistaRegistrarVehiculo;
 import Vista.VistaRegistrarAreas;
 import Vista.VistaConsultaVehiculo;
-import Vista.EstaEstaMalPeroSirveComoInicioDeUnaNuevaYNoSupeComoBorrarla;
+import Vista.VistaConsultaFlujo;
+import Vista.VistaConsultaRecaudo;
 import javax.swing.UIManager;
 
 /**
@@ -51,16 +52,16 @@ public class ProyectoFinal {
         VistaRegistroSalida vii = new VistaRegistroSalida();
         ControladorRegistroSalida cii = new ControladorRegistroSalida(vii, mii);
         vii.asignaOyentes(cii);
-        vii.mostrar();
+        //vii.mostrar();
 
         Home miii = new Home();
         VistaHome viii = new VistaHome();
         ControladorHome ciii = new ControladorHome(viii, miii);
         viii.asignaOyentes(ciii);
-        viii.mostrar();
+        //viii.mostrar();
         
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
-        //viv.mostrar();
+        viv.mostrar();
         
         VistaRegistrarAreas vv = new VistaRegistrarAreas();
         //vv.mostrar();
@@ -68,8 +69,11 @@ public class ProyectoFinal {
         VistaConsultaVehiculo vvi = new VistaConsultaVehiculo();
         vvi.mostrar();
         
-        //EstaEstaMalPeroSirveComoInicioDeUnaNuevaYNoSupeComoBorrarla vvii = new EstaEstaMalPeroSirveComoInicioDeUnaNuevaYNoSupeComoBorrarla();
-        //vvii.mostrar();
+        VistaConsultaFlujo vvii = new VistaConsultaFlujo();
+        vvii.mostrar();
+        
+        VistaConsultaRecaudo vviii = new VistaConsultaRecaudo();
+        vviii.mostrar();
         
     }
 
