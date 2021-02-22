@@ -84,7 +84,7 @@ public class ProyectoFinal {
         //vvi.mostrar();
         
         VistaConsultaFlujo vvii = new VistaConsultaFlujo();
-        //vvii.mostrar();
+        vvii.mostrar();
         
         VistaConsultaRecaudo vviii = new VistaConsultaRecaudo();
         //vviii.mostrar();
