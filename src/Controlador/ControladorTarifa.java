@@ -35,7 +35,6 @@ public class ControladorTarifa implements ActionListener {
                 String dividido[] = vista.getLocalidad().split(", ");
                 modelo.setLocalidad(dividido[0]);
                 modelo.setNumLocalidad(dividido[1]);
-
                 modelo.setSubterraneo(vista.getCheck());
 
             }

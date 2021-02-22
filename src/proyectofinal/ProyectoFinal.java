@@ -5,11 +5,20 @@
  */
 package proyectofinal;
 
+<<<<<<< HEAD
+import Controlador.ControladorArea_VistaRegistrarAreas;
+import Controlador.ControladorParqueadero_VistaRegistroParqueadero;
+import Controlador.ControladorRegistroSalida;
+import Controlador.ControladorTarifa;
+import Modelo.Area;
+import Modelo.Parqueadero;
+=======
 import Controlador.ControladorHome;
 import Controlador.ControladorRegistroSalida;
 import Controlador.ControladorTarifa;
 import Modelo.Home;
 import Modelo.RegistroSalida;
+>>>>>>> main
 import Modelo.Tarifa;
 import Vista.VistaHome;
 import Vista.VistaRegistroSalida;
@@ -39,18 +48,17 @@ public class ProyectoFinal {
             System.out.println(e);
         }
 
-        Tarifa m = new Tarifa();
+        Parqueadero m = new Parqueadero();
         VistaRegistroParqueadero v = new VistaRegistroParqueadero();
-        ControladorTarifa c = new ControladorTarifa(v, m);
+        ControladorParqueadero_VistaRegistroParqueadero c = new ControladorParqueadero_VistaRegistroParqueadero(m, v);
         v.asignaOyentes(c);
-        //v.mostrar();
+        v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
         //vi.mostrar();
 
-        RegistroSalida mii = new RegistroSalida();
         VistaRegistroSalida vii = new VistaRegistroSalida();
-        ControladorRegistroSalida cii = new ControladorRegistroSalida(vii, mii);
+        ControladorRegistroSalida cii = new ControladorRegistroSalida();
         vii.asignaOyentes(cii);
         //vii.mostrar();
 
@@ -63,6 +71,13 @@ public class ProyectoFinal {
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
         viv.mostrar();
         
+<<<<<<< HEAD
+        /*VistaRegistrarAreas vv = new VistaRegistrarAreas();
+        Area a=new Area();
+        ControladorArea_VistaRegistrarAreas cavra=new ControladorArea_VistaRegistrarAreas(a,vv);
+        vv.asignarOyente(cavra);
+        vv.mostrar();*/
+=======
         VistaRegistrarAreas vv = new VistaRegistrarAreas();
         //vv.mostrar();
         
@@ -74,6 +89,7 @@ public class ProyectoFinal {
         
         VistaConsultaRecaudo vviii = new VistaConsultaRecaudo();
         vviii.mostrar();
+>>>>>>> main
         
     }
 

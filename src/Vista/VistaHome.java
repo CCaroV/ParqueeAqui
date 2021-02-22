@@ -49,7 +49,7 @@ public class VistaHome extends JFrame {
         c.add(btnConstVehiculo);
         c.add(btnConstRecaudo);
         c.add(btnConstFlujo);
-        c.add(btnRegistrarParqueadero);
+        
         
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(100, 50, 450, 30);
