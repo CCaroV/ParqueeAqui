@@ -10,7 +10,7 @@ package Modelo;
  * @author User
  */
 public class Parqueadero {
-    private String n_nivelServicio;
+    private int n_nivelServicio;
     private String n_localidad;
     private String n_parqueadero;
     private int k_parqueadero;
