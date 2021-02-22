@@ -54,21 +54,21 @@ public class ProyectoFinal {
         v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
-        //vi.mostrar();
+        vi.mostrar();
 
         VistaRegistroSalida vii = new VistaRegistroSalida();
         ControladorRegistroSalida cii = new ControladorRegistroSalida();
         vii.asignaOyentes(cii);
-        //vii.mostrar();
+        vii.mostrar();
 
         Home miii = new Home();
         VistaHome viii = new VistaHome();
         ControladorHome ciii = new ControladorHome(viii, miii);
         viii.asignaOyentes(ciii);
-        //viii.mostrar();
+        viii.mostrar();
         
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
-        //viv.mostrar();
+        viv.mostrar();
         
 //<<<<<<< HEAD
         /*VistaRegistrarAreas vv = new VistaRegistrarAreas();
@@ -78,16 +78,16 @@ public class ProyectoFinal {
         vv.mostrar();*/
 //=======
         VistaRegistrarAreas vv = new VistaRegistrarAreas();
-        //vv.mostrar();
+        vv.mostrar();
         
         VistaConsultaVehiculo vvi = new VistaConsultaVehiculo();
-        //vvi.mostrar();
+        vvi.mostrar();
         
         VistaConsultaFlujo vvii = new VistaConsultaFlujo();
         vvii.mostrar();
         
         VistaConsultaRecaudo vviii = new VistaConsultaRecaudo();
-        //vviii.mostrar();
+        vviii.mostrar();
 //>>>>>>> main
         
     }

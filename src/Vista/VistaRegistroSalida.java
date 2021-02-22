@@ -56,7 +56,7 @@ public class VistaRegistroSalida extends JFrame {
 
         Container c = getContentPane();
         c.setLayout(null);
-
+        //Agrega los textos
         c.add(lblTitulo);
         c.add(lblNomCliente);
         c.add(lblMarcaVehiculo);
@@ -70,12 +70,15 @@ public class VistaRegistroSalida extends JFrame {
         c.add(lbltxtFechaSalida);
         c.add(lblFechaSalida);
         c.add(lbltxtTelefono);
-
+        
+        //Agrega el combobox
         c.add(boxTipoContrato);
-
+        
+        //Agrega los botones
         c.add(btnVolver);
         c.add(btnFactura);
-
+        
+        //Agrega los campos de texto
         c.add(fldNomCliente);
         c.add(fldMarcaVehiculo);
         c.add(fldModeloVehiculo);
@@ -84,6 +87,7 @@ public class VistaRegistroSalida extends JFrame {
         c.add(fldColor);
         c.add(fldTelefono);
         
+        // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(300, 50, 450, 30);
         lblNomCliente.setFont(fontTexto);
@@ -111,6 +115,7 @@ public class VistaRegistroSalida extends JFrame {
         lbltxtTelefono.setFont(fontTexto);
         lbltxtTelefono.setBounds(70, 400, 250, 25);
         
+        // posición de campos de texto
         fldNomCliente.setEditable(false);
         fldNomCliente.setBounds(230, 150, 150, 25);
         fldMarcaVehiculo.setEditable(false);
@@ -125,8 +130,10 @@ public class VistaRegistroSalida extends JFrame {
         fldTelefono.setEditable(false);
         fldTelefono.setBounds(230, 400, 150, 25);
         
+        // posición del comobobox
         boxTipoContrato.setBounds(230, 300, 150, 25);
         
+        // posición de los botones
         btnVolver.setBounds(250, 450, 100, 30);
         btnFactura.setBounds(450, 450, 100, 30);
         

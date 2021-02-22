@@ -45,7 +45,8 @@ public class VistaFactura extends JFrame {
     public VistaFactura() throws HeadlessException {
         super("Parueé Aquí");
         Container c = getContentPane();
-
+        
+        // Se Agregan todos los textos
         c.add(lblTitulo);
         c.add(lblTxtPlaca);
         c.add(lblPlaca);

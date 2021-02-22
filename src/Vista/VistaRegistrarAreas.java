@@ -19,7 +19,7 @@ public class VistaRegistrarAreas extends JFrame {
     
     private final JLabel lblTitulo = new JLabel("Registro  de Áreas");
     private final JLabel lblNomParqueadero = new JLabel("Nombre del parqueadero:");
-    private final JLabel lblParqueadero = new JLabel("parqueadero");
+    private final JLabel lblParqueadero = new JLabel();
     private final JLabel lblCupos = new JLabel("Cupos por área:");
     private final JLabel lblAutomovil = new JLabel("Automovil:");
     private final JLabel lblCampero = new JLabel("Campero:");
@@ -109,7 +109,6 @@ public class VistaRegistrarAreas extends JFrame {
         fldMotocicleta.setBounds(500, 250, 150, 30);
         fldBicicleta.setBounds(500, 300, 150, 30);
         
-        
     }
     
     public void mostrar(){
@@ -157,7 +156,6 @@ public class VistaRegistrarAreas extends JFrame {
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }
-    
     /*public void asignaOyentes(Controlador c) {
         btnVolver.addActionListener(c);
         btnRegistrar.addActionListener(c);

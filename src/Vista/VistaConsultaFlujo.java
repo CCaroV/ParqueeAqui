@@ -124,8 +124,6 @@ public class VistaConsultaFlujo  extends JFrame{
         lblBicicleta.setFont(fontTexto);
         lblBicicleta.setBounds(420, 470, 300, 30);
         
-        
-        
     }
     
     public void mostrar(){

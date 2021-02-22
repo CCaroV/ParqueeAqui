@@ -102,4 +102,6 @@ public class VistaConsultaRecaudo extends JFrame {
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }
+    
+    
 }

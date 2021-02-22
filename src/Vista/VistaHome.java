@@ -40,17 +40,20 @@ public class VistaHome extends JFrame {
         Container c = getContentPane();
         c.setLayout(null);
         
+        //Agrega los textos
         c.add(lblTitulo);
         c.add(lblNomParqueadero);
         
+        //Agrega el combobox
         c.add(boxNomParqueadero);
         
+        //Agrega los botones
         c.add(btnReservar);
         c.add(btnConstVehiculo);
         c.add(btnConstRecaudo);
         c.add(btnConstFlujo);
         
-        
+        // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(120, 50, 450, 30);
         lblNomParqueadero.setFont(fontTexto);

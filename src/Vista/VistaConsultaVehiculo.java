@@ -191,6 +191,7 @@ public class VistaConsultaVehiculo extends JFrame{
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }
     
+    
     /*public void asignaOyentes(Controlador c) {
         btnVolver.addActionListener(c);
         btnRegistrar.addActionListener(c);

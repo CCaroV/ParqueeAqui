@@ -83,6 +83,7 @@ public class VistaRegistrarVehiculo extends JFrame{
         
     }
     
+    
     public void mostrar(){
         setSize(800, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

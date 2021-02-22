@@ -146,4 +146,5 @@ public class VistaRegistroParqueadero extends JFrame {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    
 }
