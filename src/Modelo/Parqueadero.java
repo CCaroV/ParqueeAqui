@@ -10,13 +10,14 @@ package Modelo;
  * @author User
  */
 public class Parqueadero {
-    private String n_nivelServicio;
+    private float n_nivelServicio;
     private String n_localidad;
     private String n_parqueadero;
     private int k_parqueadero;
     private String n_direccion;
-
-    public String getN_nivelServicio() {
+    private int v_pisos;
+    private boolean i_subterraneo;
+    public float getN_nivelServicio() {
         return n_nivelServicio;
     }
 
@@ -35,8 +36,16 @@ public class Parqueadero {
     public String getN_direccion() {
         return n_direccion;
     }
+
+    public int getV_pisos() {
+        return v_pisos;
+    }
+
+    public boolean isI_subterraneo() {
+        return i_subterraneo;
+    }
     
-    public void setN_nivelServicio(String n_nivelServicio) {
+    public void setN_nivelServicio(float n_nivelServicio) {
         this.n_nivelServicio = n_nivelServicio;
     }
 
@@ -54,11 +63,21 @@ public class Parqueadero {
     public void setN_direccion(String n_direccion) {
         this.n_direccion = n_direccion;
     }
+
+    public void setV_pisos(int v_pisos) {
+        this.v_pisos = v_pisos;
+    }
+
+    public void setI_subterraneo(boolean i_subterraneo) {
+        this.i_subterraneo = i_subterraneo;
+    }
     public Parqueadero(){
         this.k_parqueadero=0;
         this.n_localidad=null;
-        this.n_nivelServicio=null;
-        this.n_direccion=null;
+        this.n_nivelServicio= 0.8f;
+        this.n_direccion="";
         this.n_parqueadero=null;
+        this.v_pisos=0;
+        this.i_subterraneo=false;
     }
 }   

@@ -19,6 +19,11 @@ public class Area {
     private int q_cuposCampero;
     private int q_cuposMotocicleta;
     private int q_cuposVehiculoPesado;
+    private Parqueadero parqueadero;
+
+    public Parqueadero getParqueadero() {
+        return parqueadero;
+    }
 
     public int getK_area() {
         return k_area;
@@ -93,7 +98,11 @@ public class Area {
     public void setQ_cuposVehiculoPesado(int q_cuposVehiculoPesado) {
         this.q_cuposVehiculoPesado = q_cuposVehiculoPesado;
     }
-
+    
+    public void setParqueadero(Parqueadero parqueadero) {
+        this.parqueadero = parqueadero;
+    }
+    
     public Area() {
         this.k_area = 0;
         this.q_cuposDisponibles = 0;
@@ -104,5 +113,6 @@ public class Area {
         this.q_cuposCampero = 0;
         this.q_cuposMotocicleta = 0;
         this.q_cuposVehiculoPesado = 0;
+        this.parqueadero=null;
     }
 }

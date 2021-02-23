@@ -5,13 +5,18 @@
  */
 package Controlador;
 
+import DAOs.ParqueaderoDAO;
 import Modelo.Area;
+import Modelo.Home;
 import Modelo.Parqueadero;
 import Vista.VistaHome;
 import Vista.VistaRegistrarAreas;
 import Vista.VistaRegistroParqueadero;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import util.CaException;
 
 /**
  *
@@ -28,17 +33,25 @@ public class ControladorParqueadero_VistaRegistroParqueadero implements ActionLi
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(vista.getBtnRegistrar())){
             this.parqueadero.setN_localidad(this.vista.getLocalidad());
-            this.parqueadero.setN_nivelServicio(this.vista.getNumNiveles());
+            this.parqueadero.setN_nivelServicio(0.5f);
             this.parqueadero.setN_parqueadero(this.vista.getNomParqueadero());
+            this.parqueadero.setI_subterraneo(this.vista.getCheck());
+            this.parqueadero.setV_pisos(Integer.parseInt(this.vista.getNumNiveles()));
             vista.dispose();
             VistaRegistrarAreas vv = new VistaRegistrarAreas();
             Area a=new Area();
+            a.setParqueadero(parqueadero);
             ControladorArea_VistaRegistrarAreas cavra=new ControladorArea_VistaRegistrarAreas(a,vv);
             vv.asignarOyente(cavra);
             vv.mostrar();
         }
         if(e.getSource().equals(vista.getBtnVolver())){
-            System.exit(0);
+            this.vista.dispose();
+            Home h = new Home();
+            VistaHome vh = new VistaHome();
+            ControladorHome ch = new ControladorHome(vh, h);
+            vh.asignaOyentes(ch);
+            vh.mostrar();
         }
     }
     

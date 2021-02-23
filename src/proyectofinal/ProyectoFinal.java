@@ -6,10 +6,14 @@
 package proyectofinal;
 
 import Controlador.ControladorArea_VistaRegistrarAreas;
+import Controlador.ControladorHome;
 import Controlador.ControladorParqueadero_VistaRegistroParqueadero;
 import Controlador.ControladorRegistroSalida;
 import Controlador.ControladorTarifa;
+import DAOs.HomeDAO;
+import DAOs.ServiceLocator;
 import Modelo.Area;
+import Modelo.Home;
 import Modelo.Parqueadero;
 import Modelo.Tarifa;
 import Vista.VistaHome;
@@ -18,7 +22,13 @@ import Vista.VistaRegistroParqueadero;
 import Vista.VistaVerificarCupo;
 import Vista.VistaRegistrarVehiculo;
 import Vista.VistaRegistrarAreas;
+import Vista.VistaConsultaVehiculo;
+import Vista.EstaEstaMalPeroSirveComoInicioDeUnaNuevaYNoSupeComoBorrarla;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.UIManager;
+import util.CaException;
 
 /**
  *
@@ -36,32 +46,21 @@ public class ProyectoFinal {
         } catch (Exception e) {
             System.out.println(e);
         }
-
-        Parqueadero m = new Parqueadero();
-        VistaRegistroParqueadero v = new VistaRegistroParqueadero();
-        ControladorParqueadero_VistaRegistroParqueadero c = new ControladorParqueadero_VistaRegistroParqueadero(m, v);
-        v.asignaOyentes(c);
-        v.mostrar();
-
-        VistaVerificarCupo vi = new VistaVerificarCupo();
+        //VistaVerificarCupo vi = new VistaVerificarCupo();
         //vi.mostrar();
 
-        VistaRegistroSalida vii = new VistaRegistroSalida();
-        ControladorRegistroSalida cii = new ControladorRegistroSalida();
-        vii.asignaOyentes(cii);
+        //VistaRegistroSalida vii = new VistaRegistroSalida();
+        //ControladorRegistroSalida cii = new ControladorRegistroSalida();
+        //vii.asignaOyentes(cii);
         //vii.mostrar();
 
+        //VistaConsultaVehiculo vehiculo=new VistaConsultaVehiculo();
+        //vehiculo.mostrar();
+        Home miii = new Home();
         VistaHome viii = new VistaHome();
-        //viii.mostrar();
-        
-        VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
-        //viv.mostrar();
-        
-        /*VistaRegistrarAreas vv = new VistaRegistrarAreas();
-        Area a=new Area();
-        ControladorArea_VistaRegistrarAreas cavra=new ControladorArea_VistaRegistrarAreas(a,vv);
-        vv.asignarOyente(cavra);
-        vv.mostrar();*/
+        ControladorHome ciii = new ControladorHome(viii, miii);
+        viii.asignaOyentes(ciii);
+        viii.mostrar();
         
     }
 
