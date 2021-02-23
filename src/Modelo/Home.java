@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author fedc
  */
 public class Home {
+    
     private ArrayList<String> nomParqueaderos;
 
     public ArrayList<String> getNomParqueaderos() {

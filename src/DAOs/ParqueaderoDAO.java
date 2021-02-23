@@ -40,10 +40,9 @@ public class ParqueaderoDAO {
             prepStmt.close();
             ServiceLocator.getInstance().commit();            
         }catch (SQLException e) {
-           throw new CaException( "MunicipioDAO", "No pudo crear el municipio"+ e.getMessage());
+           throw new CaException( "ParqueaderoDAO", "No pudo crear el parqueadero"+ e.getMessage());
         }  finally {
          ServiceLocator.getInstance().liberarConexion();
         }
-      System.out.println("finDAO");
     }
 }

@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import DAOs.AreaDAO;
 import DAOs.ParqueaderoDAO;
 import Modelo.Area;
 import Modelo.Home;
@@ -43,13 +44,17 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
             this.area.setQ_cuposTotales(this.area.getQ_cuposAutomovil(), this.area.getQ_cuposBicicleta(),
                                         this.area.getQ_cuposCamioneta(), this.area.getQ_cuposCampero(),
                                         this.area.getQ_cuposMotocicleta(), this.area.getQ_cuposVehiculoPesado());
+            this.area.setQ_cuposDisponibles(this.area.getQ_cuposTotales());
             Home h = new Home();
             VistaHome vh = new VistaHome(); 
             ControladorHome ch = new ControladorHome(vh, h);
-            this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size());            
+            this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size()+1);     
+            this.area.setK_area(h.getNomParqueaderos().size()+1);
             ParqueaderoDAO parqueaderoBD=new ParqueaderoDAO(this.area.getParqueadero());
+            AreaDAO areaBD=new AreaDAO(this.area);
             try {
                 parqueaderoBD.registrarParquedero();
+                areaBD.registrarArea();
             } catch (CaException ex) {
                 Logger.getLogger(ControladorParqueadero_VistaRegistroParqueadero.class.getName()).log(Level.SEVERE, null, ex);
             }

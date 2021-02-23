@@ -33,7 +33,7 @@ public class ControladorParqueadero_VistaRegistroParqueadero implements ActionLi
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(vista.getBtnRegistrar())){
             this.parqueadero.setN_localidad(this.vista.getLocalidad());
-            this.parqueadero.setN_nivelServicio(0.5f);
+            this.parqueadero.setN_nivelServicio(this.parqueadero.getN_localidad());
             this.parqueadero.setN_parqueadero(this.vista.getNomParqueadero());
             this.parqueadero.setI_subterraneo(this.vista.getCheck());
             this.parqueadero.setV_pisos(Integer.parseInt(this.vista.getNumNiveles()));

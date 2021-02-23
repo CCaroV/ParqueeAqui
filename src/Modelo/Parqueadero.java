@@ -44,9 +44,16 @@ public class Parqueadero {
     public boolean isI_subterraneo() {
         return i_subterraneo;
     }
-    
-    public void setN_nivelServicio(float n_nivelServicio) {
-        this.n_nivelServicio = n_nivelServicio;
+    //Determinacion del factor nivel de servicio(FNS) dependiendo de la localidad
+    public void setN_nivelServicio(String n_localidad) {
+        if(n_localidad.equals("Usaquen, 1") || n_localidad.equals("Chapinero, 2") || n_localidad.equals("Santa Fe, 3")
+                || n_localidad.equals("Suba, 11") || n_localidad.equals("Barrios Unidos, 12") 
+                || n_localidad.equals("Teusaquillo, 13") || n_localidad.equals("Los Mártires, 14") 
+                || n_localidad.equals("Antonio Nariño, 15") || n_localidad.equals("La Candelaría, 17")){
+            this.n_nivelServicio=1.0f;
+        }else{
+            this.n_nivelServicio=0.8f;
+        }
     }
 
     public void setN_localidad(String n_localidad) {

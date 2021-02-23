@@ -75,7 +75,6 @@ public class ServiceLocator {
 
 		conexionLibre = false;
 		notify();
-                System.out.println("conectada");
 		return conexion;
 	}
 
