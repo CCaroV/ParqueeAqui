@@ -10,18 +10,28 @@ package Modelo;
  * @author Sebastian Wilches
  */
 public class Tarifa2 {
+
     //Atributos asociados a la clase Tarifa2
     private int k_tarifa;
     private String n_tipo;
     private double v_tarifa;
+    private Parqueadero parqueadero;
     //Referencia parqueadero en la que se asociara la tarifa
     //parqueadero p;
 
+    public Parqueadero getParqueadero() {
+        return parqueadero;
+    }
+
+    public void setParqueadero(Parqueadero parqueadero) {
+        this.parqueadero = parqueadero;
+    }
+
     //Metodo constructor
-    public Tarifa2(int k_tarifa, String n_tipo, double v_tarifa) {
-        this.k_tarifa = k_tarifa;
-        this.n_tipo = n_tipo;
-        this.v_tarifa = v_tarifa;
+    public Tarifa2() {
+        this.k_tarifa = 0;
+        this.n_tipo = null;
+        this.v_tarifa = 0;
         //this.p = p;
     }
 
@@ -41,6 +51,13 @@ public class Tarifa2 {
     public void setV_tarifa(double v_tarifa) {
         this.v_tarifa = v_tarifa;
     }
-    
-    
+
+    public void setK_tarifa(int k_tarifa) {
+        this.k_tarifa = k_tarifa;
+    }
+
+    public void setN_tipo(String n_tipo) {
+        this.n_tipo = n_tipo;
+    }
+
 }

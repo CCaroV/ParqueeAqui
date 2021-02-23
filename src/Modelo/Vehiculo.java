@@ -10,6 +10,7 @@ package Modelo;
  * @author User
  */
 public class Vehiculo {
+
     private String k_vehiculo;
     private String n_modelo;
     private String n_marca;
@@ -43,5 +44,25 @@ public class Vehiculo {
         this.n_tipo = null;
         this.n_color = null;
     }
-    
+
+    public String getK_vehiculo() {
+        return k_vehiculo;
+    }
+
+    public String getN_modelo() {
+        return n_modelo;
+    }
+
+    public String getN_marca() {
+        return n_marca;
+    }
+
+    public String getN_tipo() {
+        return n_tipo;
+    }
+
+    public String getN_color() {
+        return n_color;
+    }
+
 }

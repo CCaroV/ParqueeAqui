@@ -10,8 +10,27 @@ package Modelo;
  * @author User
  */
 public class Slot {
+
     private int k_slot;
     private boolean i_estado;
+    private Parqueadero parqueadero;
+    private Area area;
+
+    public void setParqueadero(Parqueadero parqueadero) {
+        this.parqueadero = parqueadero;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
+
+    public Parqueadero getParqueadero() {
+        return parqueadero;
+    }
+
+    public Area getArea() {
+        return area;
+    }
 
     public void setK_slot(int k_slot) {
         this.k_slot = k_slot;
@@ -25,5 +44,13 @@ public class Slot {
         this.k_slot = 0;
         this.i_estado = false;
     }
-    
+
+    public int getK_slot() {
+        return k_slot;
+    }
+
+    public boolean isI_estado() {
+        return i_estado;
+    }
+
 }
