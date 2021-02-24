@@ -19,39 +19,40 @@ import vista.VistaHome;
  *
  * @author Sebastian Wilches
  */
-public class ControladorConsultaRecaudo implements ActionListener{
-    
+public class ControladorConsultaRecaudo implements ActionListener {
+
     private final VistaConsultaRecaudo vista;
 
     public ControladorConsultaRecaudo(VistaConsultaRecaudo vista) {
         this.vista = vista;
     }
 
-   @Override
-   public void actionPerformed(ActionEvent e) {
-       if (e.getSource().equals(vista.getBtnRegistrar())) {
-           ConsultaRecaudoDAO consultaRecaudoDAO = new ConsultaRecaudoDAO();
-           try {
-               
-               vista.setCantidad(consultaRecaudoDAO.consultarRecaudoBD(vista.getFechaInicial(), vista.getFechaFinal()));
-               
-           } catch (CaException ex) {
-               Logger.getLogger(ControladorConsultaRecaudo.class.getName()).log(Level.SEVERE, null, ex);
-           }
-           
-       }
-       
-       if (e.getSource().equals(vista.getBtnVolver())) {
-            this.vista.dispose();
-            
-            Home h = new Home();
-            VistaHome vh = new VistaHome();
-            ControladorHome ch = new ControladorHome(vh, h);
-            vh.asignaOyentes(ch);
-            vh.mostrar();
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(vista.getBtnRegistrar())) {
+            ConsultaRecaudoDAO consultaRecaudoDAO = new ConsultaRecaudoDAO();
+            try {
+
+                vista.setCantidad(consultaRecaudoDAO.consultarRecaudoBD(vista.getFechaInicial(), vista.getFechaFinal()));
+
+            } catch (CaException ex) {
+                Logger.getLogger(ControladorConsultaRecaudo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
-   }
-    
-    
-    
+
+        if (e.getSource().equals(vista.getBtnVolver())) {
+            this.vista.dispose();
+            mostrarHome();
+        }
+    }
+
+    private void mostrarHome() {
+        Home home = new Home();
+        VistaHome vistaHome = new VistaHome();
+        ControladorHome ch = new ControladorHome(vistaHome, home);
+        vistaHome.asignaOyentes(ch);
+        vistaHome.mostrar();
+    }
+
 }

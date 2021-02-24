@@ -78,8 +78,7 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
             }
         }
 
-        if (e.getSource()
-                .equals(this.vista.getBtnVolver())) {
+        if (e.getSource().equals(this.vista.getBtnVolver())) {
             mostrarVistaParqueadero();
             this.vista.dispose();
         }

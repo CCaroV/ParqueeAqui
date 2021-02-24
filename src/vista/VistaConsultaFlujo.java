@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorConsultaFlujo;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
@@ -141,6 +142,11 @@ public class VistaConsultaFlujo extends JFrame {
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta",
                 JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void asignaOyentes(ControladorConsultaFlujo c) {
+        this.btnVolver.addActionListener(c);
+        this.btnConsultar.addActionListener(c);
     }
 
 }

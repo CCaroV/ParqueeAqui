@@ -5,35 +5,32 @@
  */
 package controlador;
 
-import modelo.Vehiculo;
-import vista.VistaRegistrarVehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.Contrato;
 import modelo.Home;
+import vista.VistaConsultaFlujo;
 import vista.VistaHome;
 
 /**
  *
- * @author User
+ * @author chris
  */
-public class ControladorVehiculo_VistaRegistrarVehiculo implements ActionListener {
+public class ControladorConsultaFlujo implements ActionListener {
 
-    private final Vehiculo vehiculo;
-    private final VistaRegistrarVehiculo vista;
+    VistaConsultaFlujo vista;
+    Contrato modelo;
 
-    public ControladorVehiculo_VistaRegistrarVehiculo(Vehiculo vehiculo, VistaRegistrarVehiculo vista) {
-        this.vehiculo = vehiculo;
+    public ControladorConsultaFlujo(VistaConsultaFlujo vista, Contrato modelo) {
         this.vista = vista;
+        this.modelo = modelo;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(this.vista.getBtnRegistrar())) {
-            this.vehiculo.setN_tipo(this.vista.getTipoVehiculo());
-            this.vehiculo.setK_vehiculo(this.vista.getPlaca());
-            
-        }
-        if (e.getSource().equals(this.vista.getBtnVolver())) {
+        if (e.getSource().equals(this.vista.getBtnConsultar())) {
+
+        } else if (e.getSource().equals(this.vista.getBtnVolver())) {
             this.vista.dispose();
             mostrarHome();
         }

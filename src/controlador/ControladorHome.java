@@ -17,8 +17,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import dao.HomeDAO;
+import modelo.Contrato;
 import proyectofinal.ProyectoFinal;
 import util.CaException;
+import vista.VistaConsultaFlujo;
 import vista.VistaConsultaRecaudo;
 
 /**
@@ -70,7 +72,13 @@ public class ControladorHome implements ActionListener {
             
             
         } else if (ae.getSource().equals(vista.getBtnConstFlujo())) {
-
+            this.vista.dispose();
+            
+            Contrato contrato = new Contrato();
+            VistaConsultaFlujo vistaFlujo = new VistaConsultaFlujo();
+            ControladorConsultaFlujo controlFlujo = new ControladorConsultaFlujo(vistaFlujo, contrato);
+            
+            vistaFlujo.mostrar();
         } else if (ae.getSource().equals(vista.getBtnRegistrarParqueadero())) {
             this.vista.dispose();
             
