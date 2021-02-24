@@ -5,10 +5,30 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author fedc
  */
 public class Home {
     
+    private ArrayList<String> nomParqueaderos;
+
+    public ArrayList<String> getNomParqueaderos() {
+        return nomParqueaderos;
+    }
+
+    public void setNomParqueaderos(ArrayList<String> nomParqueaderos) {
+        this.nomParqueaderos = nomParqueaderos;
+    }
+
+    public Home() {
+        this.nomParqueaderos=new ArrayList<String>();
+    }
+    
+    public void agregarParqueadero(String nomParqueadero){
+        this.nomParqueaderos.add(nomParqueadero);
+    }
+   
 }

@@ -5,12 +5,19 @@
  */
 package Controlador;
 
+import DAO.AreaDAO;
+import DAO.ParqueaderoDAO;
 import Modelo.Area;
+import Modelo.Home;
 import Modelo.Parqueadero;
+import Vista.VistaHome;
 import Vista.VistaRegistrarAreas;
 import Vista.VistaRegistroParqueadero;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import util.CaException;
 
 /**
  *
@@ -37,7 +44,24 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
             this.area.setQ_cuposTotales(this.area.getQ_cuposAutomovil(), this.area.getQ_cuposBicicleta(),
                                         this.area.getQ_cuposCamioneta(), this.area.getQ_cuposCampero(),
                                         this.area.getQ_cuposMotocicleta(), this.area.getQ_cuposVehiculoPesado());
-            System.out.println(this.area.getQ_cuposTotales());
+            this.area.setQ_cuposDisponibles(this.area.getQ_cuposTotales());
+            Home h = new Home();
+            VistaHome vh = new VistaHome(); 
+            ControladorHome ch = new ControladorHome(vh, h);
+            this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size()+1);     
+            this.area.setK_area(h.getNomParqueaderos().size()+1);
+            ParqueaderoDAO parqueaderoBD=new ParqueaderoDAO(this.area.getParqueadero());
+            AreaDAO areaBD=new AreaDAO(this.area);
+            try {
+                parqueaderoBD.registrarParquedero();
+                areaBD.registrarArea();
+            } catch (CaException ex) {
+                Logger.getLogger(ControladorParqueadero_VistaRegistroParqueadero.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.vista.dispose();
+            
+            vh.asignaOyentes(ch);           
+            vh.mostrar();
         }
         if(e.getSource().equals(this.vista.getBtnVolver())){
             this.vista.dispose();
@@ -49,3 +73,4 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
         }
     }
 }
+

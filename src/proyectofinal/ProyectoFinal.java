@@ -51,25 +51,25 @@ public class ProyectoFinal {
         VistaRegistroParqueadero v = new VistaRegistroParqueadero();
         ControladorParqueadero_VistaRegistroParqueadero c = new ControladorParqueadero_VistaRegistroParqueadero(m, v);
         v.asignaOyentes(c);
-        v.mostrar();
+        //v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
-        vi.mostrar();
+        //vi.mostrar();
 
         VistaRegistroSalida vii = new VistaRegistroSalida();
         ControladorRegistroSalida cii = new ControladorRegistroSalida();
         vii.asignaOyentes(cii);
-        vii.mostrar();
+        //vii.mostrar();
 
         Home miii = new Home();
         VistaHome viii = new VistaHome();
         ControladorHome ciii = new ControladorHome(viii, miii);
         viii.asignaOyentes(ciii);
         viii.mostrar();
-        
+
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
         viv.mostrar();
-        
+
 //<<<<<<< HEAD
         /*VistaRegistrarAreas vv = new VistaRegistrarAreas();
         Area a=new Area();
@@ -78,18 +78,18 @@ public class ProyectoFinal {
         vv.mostrar();*/
 //=======
         VistaRegistrarAreas vv = new VistaRegistrarAreas();
-        vv.mostrar();
-        
+        //vv.mostrar();
+
         VistaConsultaVehiculo vvi = new VistaConsultaVehiculo();
-        vvi.mostrar();
-        
+        //vvi.mostrar();
+
         VistaConsultaFlujo vvii = new VistaConsultaFlujo();
-        vvii.mostrar();
-        
+        //vvii.mostrar();
+
         VistaConsultaRecaudo vviii = new VistaConsultaRecaudo();
-        vviii.mostrar();
+        //vviii.mostrar();
 //>>>>>>> main
-        
+
     }
 
 }
