@@ -41,7 +41,7 @@ public class VistaRegistroSalida extends JFrame {
     private final JButton btnVolver = new JButton("Volver");
     private final JButton btnFactura = new JButton("Factura");
 
-    private final String tipoConrato[] = { "Minutos", "Días" };
+    private final String tipoConrato[] = {"Minutos", "Día", "Semana", "Mes", "Año"};
 
     private final JTextField fldNomCliente = new JTextField();
     private final JTextField fldMarcaVehiculo = new JTextField();
@@ -167,6 +167,10 @@ public class VistaRegistroSalida extends JFrame {
         return fldColor;
     }
 
+    public JTextField getFldTelefono() {
+        return fldTelefono;
+    }
+
     public JComboBox getBoxTipoContrato() {
         return this.boxTipoContrato;
     }
@@ -177,6 +181,34 @@ public class VistaRegistroSalida extends JFrame {
 
     public JButton getBtnFactura() {
         return btnFactura;
+    }
+
+    public String getNomCliente() {
+        return fldNomCliente.getText();
+    }
+
+    public String getMarcaVehiculo() {
+        return fldMarcaVehiculo.getText();
+    }
+
+    public String getModeloVehiculo() {
+        return fldModeloVehiculo.getText().trim();
+    }
+
+    public String getCedula() {
+        return fldCedula.getText().trim();
+    }
+
+    public String getColor() {
+        return fldColor.getText();
+    }
+
+    public String getTelefono() {
+        return fldTelefono.getText();
+    }
+
+    public String getPlaca() {
+        return fldPlaca.getText();
     }
 
     public void asignaOyentes(ControladorRegistroSalida c) {

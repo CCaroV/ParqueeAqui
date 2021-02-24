@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import dao.HomeDAO;
+import modelo.Cliente;
 import modelo.Contrato;
 import modelo.Servicio;
 import proyectofinal.ProyectoFinal;
@@ -50,8 +51,15 @@ public class ControladorHome implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource().equals(vista.getBtnSalida())) {
+            this.vista.dispose();
             
             VistaRegistroSalida vistaSalida = new VistaRegistroSalida();
+            Vehiculo vehiculo = new Vehiculo();
+            Cliente cliente = new Cliente();
+            Contrato contrato = new Contrato();
+            ControladorRegistroSalida controlSalida = new ControladorRegistroSalida(vistaSalida, vehiculo, cliente, contrato);
+            
+            vistaSalida.asignaOyentes(controlSalida);
             vistaSalida.mostrar();
             
         } else if (ae.getSource().equals(vista.getBtnReservar())) {
