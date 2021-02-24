@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import Modelo.Slot;
+import modelo.Slot;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

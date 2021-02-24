@@ -3,10 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Home/Documents/NetBeansProjects/ParqueeAqui/src/Vista/VistaConsultaFlujo.java</file>
-            <file>file:/C:/Users/Home/Documents/NetBeansProjects/ParqueeAqui/src/proyectofinal/ProyectoFinal.java</file>
-            <file>file:/C:/Users/Home/Documents/NetBeansProjects/ParqueeAqui/src/Vista/VistaConsultaRecaudo.java</file>
-            <file>file:/C:/Users/Home/Documents/NetBeansProjects/ParqueeAqui/src/Vista/VistaConsultaVehiculo.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/ClienteDAO.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/CaException.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Vista/VistaHome.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorVehiculo_VistaRegistrarVehiculo.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/ParqueaderoDAO.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/ServiceLocator.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Modelo/Parqueadero.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Modelo/Home.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorRegistroArea.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorParqueadero_VistaRegistroParqueadero.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorTarifa.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorRegistroSalida.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/proyectofinal/ProyectoFinal.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Modelo/Area.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/TarifaDAO.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorArea_VistaRegistrarAreas.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/SlotDAO.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/ServicioDAO.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Modelo/Slot.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/AreaDAO.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/Controlador/ControladorHome.java</file>
+            <file>file:/home/fedc/NetBeansProjects/ParqueeAqui/src/DAO/HomeDAO.java</file>
         </group>
     </open-files>
 </project-private>

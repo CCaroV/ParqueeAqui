@@ -6,28 +6,27 @@
 package proyectofinal;
 
 //<<<<<<< HEAD
-import Controlador.ControladorArea_VistaRegistrarAreas;
-import Controlador.ControladorParqueadero_VistaRegistroParqueadero;
-import Controlador.ControladorRegistroSalida;
-import Controlador.ControladorTarifa;
-import Modelo.Area;
-import Modelo.Parqueadero;
+import controlador.ControladorArea_VistaRegistrarAreas;
+import controlador.ControladorParqueadero_VistaRegistroParqueadero;
+import controlador.ControladorRegistroSalida;
+import controlador.ControladorTarifa;
+import modelo.Area;
+import modelo.Parqueadero;
 //=======
-import Controlador.ControladorHome;
-import Controlador.ControladorRegistroSalida;
-import Controlador.ControladorTarifa;
-import Modelo.Home;
-//>>>>>>> main
-import Modelo.Tarifa;
-import Vista.VistaHome;
-import Vista.VistaRegistroSalida;
-import Vista.VistaRegistroParqueadero;
-import Vista.VistaVerificarCupo;
-import Vista.VistaRegistrarVehiculo;
-import Vista.VistaRegistrarAreas;
-import Vista.VistaConsultaVehiculo;
-import Vista.VistaConsultaFlujo;
-import Vista.VistaConsultaRecaudo;
+import controlador.ControladorHome;
+import controlador.ControladorRegistroSalida;
+import controlador.ControladorTarifa;
+import modelo.Home;
+import modelo.Tarifa;
+import vista.VistaHome;
+import vista.VistaRegistroSalida;
+import vista.VistaRegistroParqueadero;
+import vista.VistaVerificarCupo;
+import vista.VistaRegistrarVehiculo;
+import vista.VistaRegistrarAreas;
+import vista.VistaConsultaVehiculo;
+import vista.VistaConsultaFlujo;
+import vista.VistaConsultaRecaudo;
 import javax.swing.UIManager;
 
 /**
@@ -51,7 +50,7 @@ public class ProyectoFinal {
         VistaRegistroParqueadero v = new VistaRegistroParqueadero();
         ControladorParqueadero_VistaRegistroParqueadero c = new ControladorParqueadero_VistaRegistroParqueadero(m, v);
         v.asignaOyentes(c);
-        //v.mostrar();
+        v.mostrar();
 
         VistaVerificarCupo vi = new VistaVerificarCupo();
         //vi.mostrar();
@@ -65,18 +64,17 @@ public class ProyectoFinal {
         VistaHome viii = new VistaHome();
         ControladorHome ciii = new ControladorHome(viii, miii);
         viii.asignaOyentes(ciii);
-        viii.mostrar();
+        //viii.mostrar();
 
         VistaRegistrarVehiculo viv = new VistaRegistrarVehiculo();
-        viv.mostrar();
+        //viv.mostrar();
 
-//<<<<<<< HEAD
         /*VistaRegistrarAreas vv = new VistaRegistrarAreas();
         Area a=new Area();
         ControladorArea_VistaRegistrarAreas cavra=new ControladorArea_VistaRegistrarAreas(a,vv);
         vv.asignarOyente(cavra);
         vv.mostrar();*/
-//=======
+
         VistaRegistrarAreas vv = new VistaRegistrarAreas();
         //vv.mostrar();
 
@@ -88,7 +86,6 @@ public class ProyectoFinal {
 
         VistaConsultaRecaudo vviii = new VistaConsultaRecaudo();
         //vviii.mostrar();
-//>>>>>>> main
 
     }
 
