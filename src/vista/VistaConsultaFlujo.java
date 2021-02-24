@@ -14,8 +14,12 @@ import javax.swing.*;
  *
  * @author Home
  */
-public class VistaConsultaFlujo  extends JFrame{
-    
+public class VistaConsultaFlujo extends JFrame {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6105088706074440330L;
     private final JLabel lblTitulo = new JLabel("Consulta de Flujo");
     private final JLabel lblCantidad = new JLabel("Cantidad de vehiculos:");
     private final JLabel lblTxtAuto = new JLabel("Automovil:");
@@ -28,31 +32,29 @@ public class VistaConsultaFlujo  extends JFrame{
 
     private final JComboBox boxFecha;
     private final String Fecha[] = new String[10];
-    
-    private  JLabel lblAuto = new JLabel();
-    private  JLabel lblCamioneta = new JLabel();
-    private  JLabel lblCampero = new JLabel();
-    private  JLabel lblVehiculoPesado = new JLabel();
-    private  JLabel lblMatricula = new JLabel();
-    private  JLabel lblMotocicleta = new JLabel();
-    private  JLabel lblBicicleta = new JLabel();
-   
-    
+
+    private JLabel lblAuto = new JLabel();
+    private JLabel lblCamioneta = new JLabel();
+    private JLabel lblCampero = new JLabel();
+    private JLabel lblVehiculoPesado = new JLabel();
+    private JLabel lblMatricula = new JLabel();
+    private JLabel lblMotocicleta = new JLabel();
+    private JLabel lblBicicleta = new JLabel();
+
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
     private final Font fontSubTitulo = new Font("Calibri", Font.BOLD, 20);
-    
+
     private final JButton btnVolver = new JButton("Volver");
     private final JButton btnConsultar = new JButton("Consultar");
-    
-    
+
     public VistaConsultaFlujo() throws HeadlessException {
         super("Parqueé Aquí");
         this.boxFecha = new JComboBox(Fecha);
-        Container k =getContentPane();
+        Container k = getContentPane();
         k.setLayout(null);
-        
-        //Agrega los textos
+
+        // Agrega los textos
         k.add(lblTitulo);
         k.add(lblTxtFechaConsulta);
         k.add(lblCantidad);
@@ -62,23 +64,22 @@ public class VistaConsultaFlujo  extends JFrame{
         k.add(lblTxtVehiculoPesado);
         k.add(lblTxtMoto);
         k.add(lblTxtBicicleta);
-      
-        
-        //Agrega las respuestas a los textos
+
+        // Agrega las respuestas a los textos
         k.add(lblAuto);
         k.add(lblCamioneta);
         k.add(lblCampero);
         k.add(lblVehiculoPesado);
         k.add(lblMotocicleta);
         k.add(lblBicicleta);
-        
-        //Agrega los botones
+
+        // Agrega los botones
         k.add(btnConsultar);
         k.add(btnVolver);
-        
-        //Agrega el combobox
+
+        // Agrega el combobox
         k.add(boxFecha);
-        
+
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(250, 50, 450, 40);
@@ -98,19 +99,15 @@ public class VistaConsultaFlujo  extends JFrame{
         lblTxtMoto.setBounds(220, 420, 300, 30);
         lblTxtBicicleta.setFont(fontTexto);
         lblTxtBicicleta.setBounds(220, 470, 300, 30);
-        
-        
-        
-        //Posición de los botones
+
+        // Posición de los botones
         btnVolver.setBounds(200, 520, 85, 25);
         btnConsultar.setBounds(320, 520, 170, 25);
 
-        //Posición de el combobox
+        // Posición de el combobox
         boxFecha.setBounds(330, 120, 150, 30);
-        
-        
-        
-        //Posición de los pedidos a la base de datos
+
+        // Posición de los pedidos a la base de datos
         lblAuto.setFont(fontTexto);
         lblAuto.setBounds(420, 220, 300, 30);
         lblCamioneta.setFont(fontTexto);
@@ -123,27 +120,27 @@ public class VistaConsultaFlujo  extends JFrame{
         lblMotocicleta.setBounds(420, 420, 300, 30);
         lblBicicleta.setFont(fontTexto);
         lblBicicleta.setBounds(420, 470, 300, 30);
-        
+
     }
-    
-    public void mostrar(){
+
+    public void mostrar() {
         setSize(700, 650);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
-    
+
     public JButton getBtnVolver() {
         return btnVolver;
     }
-    
+
     public JButton getBtnConsultar() {
         return btnConsultar;
     }
-    
+
     public void mensajeAlerta() {
-        JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta",
+                JOptionPane.INFORMATION_MESSAGE);
     }
-    
- 
+
 }

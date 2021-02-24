@@ -16,6 +16,10 @@ import javax.swing.*;
  */
 public class VistaFactura extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -7068651809914544753L;
     private final JLabel lblTitulo = new JLabel("Factura");
     private final JLabel lblTxtPlaca = new JLabel("Placa:");
     private final JLabel lblPlaca = new JLabel();

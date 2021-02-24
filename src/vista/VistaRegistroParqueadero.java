@@ -6,8 +6,6 @@
 package vista;
 
 import controlador.ControladorParqueadero_VistaRegistroParqueadero;
-import controlador.ControladorTarifa;
-import modelo.Tarifa;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
@@ -19,6 +17,10 @@ import javax.swing.*;
  */
 public class VistaRegistroParqueadero extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1711192311848917263L;
     private final JLabel lblTitulo = new JLabel("Registro de parqueadero:");
     private final JLabel lblNomParqueadero = new JLabel("Nombre del parqueadero:");
     private final JLabel lblLocalidad = new JLabel("Localidad:");

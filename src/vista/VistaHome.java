@@ -17,6 +17,10 @@ import javax.swing.*;
  */
 public class VistaHome extends JFrame {
     
+    /**
+     *
+     */
+    private static final long serialVersionUID = 3794412439709274079L;
     private final JLabel lblTitulo = new JLabel("Parqueé aquí");
     private final JLabel lblNomParqueadero = new JLabel("Parqueadero:");
     

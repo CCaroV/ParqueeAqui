@@ -14,6 +14,11 @@ import javax.swing.*;
  * @author Home
  */
 public class VistaConsultaRecaudo extends JFrame {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 2703364924382148763L;
     private final JLabel lblTitulo = new JLabel("Consulta de Recaudo");
     private final JLabel lblFormato = new JLabel("dd/mm/yyyy");
     private final JLabel lblTxtFechaInicial = new JLabel("Fecha Inicial:");

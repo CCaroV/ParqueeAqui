@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import DAO.HomeDAO;
 import modelo.Home;
 import modelo.Parqueadero;
 import modelo.Vehiculo;
@@ -16,6 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import dao.HomeDAO;
 import proyectofinal.ProyectoFinal;
 import util.CaException;
 

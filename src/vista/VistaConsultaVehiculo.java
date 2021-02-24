@@ -15,6 +15,10 @@ import javax.swing.*;
  */
 public class VistaConsultaVehiculo extends JFrame{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -8883550510427440495L;
     private final JLabel lblTitulo = new JLabel("Consulta de Vehiculo");
     private final JLabel lblPlaca = new JLabel("Placa:");
     private final JLabel lblTxtNomPropietario = new JLabel("Propietario:");

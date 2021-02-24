@@ -6,10 +6,7 @@
 package vista;
 
 import controlador.ControladorRegistroSalida;
-import java.awt.Container;
-import java.awt.Font;
-import java.awt.HeadlessException;
-import java.awt.event.ItemListener;
+import java.awt.*;
 import javax.swing.*;
 
 /**
@@ -18,6 +15,10 @@ import javax.swing.*;
  */
 public class VistaRegistroSalida extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -4666754331843931892L;
     private final JLabel lblTitulo = new JLabel("Registro  de salida");
     private final JLabel lblNomCliente = new JLabel("Nombre del cliente:");
     private final JLabel lblMarcaVehiculo = new JLabel("Marca del vehículo:");
@@ -40,7 +41,7 @@ public class VistaRegistroSalida extends JFrame {
     private final JButton btnVolver = new JButton("Volver");
     private final JButton btnFactura = new JButton("Factura");
 
-    private final String tipoConrato[] = {"Minutos", "Días"};
+    private final String tipoConrato[] = { "Minutos", "Días" };
 
     private final JTextField fldNomCliente = new JTextField();
     private final JTextField fldMarcaVehiculo = new JTextField();
@@ -56,7 +57,7 @@ public class VistaRegistroSalida extends JFrame {
 
         Container c = getContentPane();
         c.setLayout(null);
-        //Agrega los textos
+        // Agrega los textos
         c.add(lblTitulo);
         c.add(lblNomCliente);
         c.add(lblMarcaVehiculo);
@@ -70,15 +71,15 @@ public class VistaRegistroSalida extends JFrame {
         c.add(lbltxtFechaSalida);
         c.add(lblFechaSalida);
         c.add(lbltxtTelefono);
-        
-        //Agrega el combobox
+
+        // Agrega el combobox
         c.add(boxTipoContrato);
-        
-        //Agrega los botones
+
+        // Agrega los botones
         c.add(btnVolver);
         c.add(btnFactura);
-        
-        //Agrega los campos de texto
+
+        // Agrega los campos de texto
         c.add(fldNomCliente);
         c.add(fldMarcaVehiculo);
         c.add(fldModeloVehiculo);
@@ -86,7 +87,7 @@ public class VistaRegistroSalida extends JFrame {
         c.add(fldPlaca);
         c.add(fldColor);
         c.add(fldTelefono);
-        
+
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(300, 50, 450, 30);
@@ -114,7 +115,7 @@ public class VistaRegistroSalida extends JFrame {
         lblFechaSalida.setBounds(570, 350, 250, 25);
         lbltxtTelefono.setFont(fontTexto);
         lbltxtTelefono.setBounds(70, 400, 250, 25);
-        
+
         // posición de campos de texto
         fldNomCliente.setEditable(false);
         fldNomCliente.setBounds(230, 150, 150, 25);
@@ -129,15 +130,14 @@ public class VistaRegistroSalida extends JFrame {
         fldColor.setBounds(520, 250, 150, 25);
         fldTelefono.setEditable(false);
         fldTelefono.setBounds(230, 400, 150, 25);
-        
+
         // posición del comobobox
         boxTipoContrato.setBounds(230, 300, 150, 25);
-        
+
         // posición de los botones
         btnVolver.setBounds(250, 450, 100, 30);
         btnFactura.setBounds(450, 450, 100, 30);
-        
-        
+
     }
 
     public void mostrar() {
@@ -146,7 +146,7 @@ public class VistaRegistroSalida extends JFrame {
         setResizable(false);
         setVisible(true);
     }
-    
+
     public JTextField getFldNomCliente() {
         return fldNomCliente;
     }
@@ -166,8 +166,8 @@ public class VistaRegistroSalida extends JFrame {
     public JTextField getFldColor() {
         return fldColor;
     }
-    
-    public JComboBox getBoxTipoContrato () {
+
+    public JComboBox getBoxTipoContrato() {
         return this.boxTipoContrato;
     }
 
@@ -178,8 +178,8 @@ public class VistaRegistroSalida extends JFrame {
     public JButton getBtnFactura() {
         return btnFactura;
     }
-    
-    public void asignaOyentes (ControladorRegistroSalida c) {
+
+    public void asignaOyentes(ControladorRegistroSalida c) {
         btnFactura.addActionListener(c);
         btnVolver.addActionListener(c);
         boxTipoContrato.addItemListener(c);

@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import DAO.ParqueaderoDAO;
 import modelo.Area;
 import modelo.Home;
 import modelo.Parqueadero;
@@ -16,6 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import dao.ParqueaderoDAO;
 import util.CaException;
 
 /**

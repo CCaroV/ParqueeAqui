@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 import java.sql.Connection;
 import java.sql.*;
 import java.sql.SQLException;
@@ -51,7 +51,7 @@ public class ServiceLocator {
                     //String url = "jdbc:oracle:thin:@localhost:1521:xe";
                     String url = "jdbc:postgresql://localhost:5432/ParqueeAqui";
                     String usuario = "postgres";
-                    String password = "dfmg69"; //Debe reemplazarse por el password en su propia instalación
+                    String password = "FDB20181020027"; //Debe reemplazarse por el password en su propia instalación
                     Class.forName("org.postgresql.Driver").newInstance();
                     conexion = DriverManager.getConnection(url, usuario, password);
                     conexion.setAutoCommit(false);

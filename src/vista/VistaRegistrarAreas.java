@@ -17,6 +17,10 @@ import javax.swing.*;
  */
 public class VistaRegistrarAreas extends JFrame {
     
+    /**
+     *
+     */
+    private static final long serialVersionUID = 4803224744635049517L;
     private final JLabel lblTitulo = new JLabel("Registro  de Áreas");
     private final JLabel lblNomParqueadero = new JLabel("Nombre del parqueadero:");
     private final JLabel lblParqueadero = new JLabel();
