@@ -19,20 +19,20 @@ public class Tarifa {
     //Referencia parqueadero en la que se asociara la tarifa
     //parqueadero p;
 
-    public Parqueadero getParqueadero() {
-        return parqueadero;
-    }
-
-    public void setParqueadero(Parqueadero parqueadero) {
-        this.parqueadero = parqueadero;
-    }
-
     //Metodo constructor
     public Tarifa() {
         this.k_tarifa = 0;
         this.n_tipo = null;
         this.v_tarifa = 0;
         //this.p = p;
+    }
+
+    public Parqueadero getParqueadero() {
+        return parqueadero;
+    }
+
+    public void setParqueadero(Parqueadero parqueadero) {
+        this.parqueadero = parqueadero;
     }
 
     //Metodos get y set

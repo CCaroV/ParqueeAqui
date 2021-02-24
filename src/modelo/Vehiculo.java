@@ -17,6 +17,14 @@ public class Vehiculo {
     private String n_tipo;
     private String n_color;
 
+    public Vehiculo() {
+        this.k_vehiculo = "000xxx";
+        this.n_modelo = null;
+        this.n_marca = null;
+        this.n_tipo = null;
+        this.n_color = null;
+    }
+
     public void setK_vehiculo(String k_vehiculo) {
         this.k_vehiculo = k_vehiculo;
     }
@@ -35,14 +43,6 @@ public class Vehiculo {
 
     public void setN_color(String n_color) {
         this.n_color = n_color;
-    }
-
-    public Vehiculo() {
-        this.k_vehiculo = "000xxx";
-        this.n_modelo = null;
-        this.n_marca = null;
-        this.n_tipo = null;
-        this.n_color = null;
     }
 
     public String getK_vehiculo() {

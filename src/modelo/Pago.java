@@ -15,6 +15,12 @@ public class Pago {
     private String n_formaPago;
     private float v_valorPagado;
 
+    public Pago() {
+        this.k_pago = 0;
+        this.n_formaPago = null;
+        this.v_valorPagado = 0;
+    }
+
     public void setK_pago(int k_pago) {
         this.k_pago = k_pago;
     }
@@ -25,12 +31,6 @@ public class Pago {
 
     public void setV_valorPagado(float v_valorPagado) {
         this.v_valorPagado = v_valorPagado;
-    }
-
-    public Pago() {
-        this.k_pago = 0;
-        this.n_formaPago = null;
-        this.v_valorPagado = 0;
     }
 
     public int getK_pago() {

@@ -19,6 +19,13 @@ public class Cliente {
     private ArrayList<String> v_telefono = new ArrayList<String>();
     private String n_direccion;
 
+    public Cliente() {
+        this.k_cliente = 0;
+        this.n_nombre = null;
+        this.n_apellido = null;
+        this.n_direccion = null;
+    }
+
     public void setK_cliente(int k_cliente) {
         this.k_cliente = k_cliente;
     }
@@ -33,13 +40,6 @@ public class Cliente {
 
     public void setV_telefono(ArrayList<String> v_telefono) {
         this.v_telefono = v_telefono;
-    }
-
-    public Cliente() {
-        this.k_cliente = 0;
-        this.n_nombre = null;
-        this.n_apellido = null;
-        this.n_direccion = null;
     }
 
     public int getK_cliente() {

@@ -17,6 +17,14 @@ public class Contrato {
     private String f_fechaFinal;
     private float v_valorContrato;
 
+    public Contrato() {
+        this.i_estadoContrato = false;
+        this.k_contrato = 0;
+        this.f_fechaInicio = null;
+        this.f_fechaFinal = null;
+        this.v_valorContrato = 0;
+    }
+
     public void setI_estadoContrato(boolean i_estadoContrato) {
         this.i_estadoContrato = i_estadoContrato;
     }
@@ -55,14 +63,6 @@ public class Contrato {
 
     public void setV_valorContrato(float v_valorContrato) {
         this.v_valorContrato = v_valorContrato;
-    }
-
-    public Contrato() {
-        this.i_estadoContrato = false;
-        this.k_contrato = 0;
-        this.f_fechaInicio = null;
-        this.f_fechaFinal = null;
-        this.v_valorContrato = 0;
     }
 
 }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author fedc
  */
 public class Home {
-    
+
     private ArrayList<String> nomParqueaderos;
 
     public ArrayList<String> getNomParqueaderos() {
@@ -24,11 +24,11 @@ public class Home {
     }
 
     public Home() {
-        this.nomParqueaderos=new ArrayList<String>();
+        this.nomParqueaderos = new ArrayList<String>();
     }
-    
-    public void agregarParqueadero(String nomParqueadero){
+
+    public void agregarParqueadero(String nomParqueadero) {
         this.nomParqueaderos.add(nomParqueadero);
     }
-   
+
 }

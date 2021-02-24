@@ -19,6 +19,16 @@ public class Parqueadero {
     private int v_pisos;
     private boolean i_subterraneo;
 
+    public Parqueadero() {
+        this.k_parqueadero = 0;
+        this.n_localidad = null;
+        this.n_nivelServicio = 0.8f;
+        this.n_direccion = "";
+        this.n_parqueadero = null;
+        this.v_pisos = 0;
+        this.i_subterraneo = false;
+    }
+
     public float getN_nivelServicio() {
         return n_nivelServicio;
     }
@@ -81,15 +91,5 @@ public class Parqueadero {
 
     public void setI_subterraneo(boolean i_subterraneo) {
         this.i_subterraneo = i_subterraneo;
-    }
-
-    public Parqueadero() {
-        this.k_parqueadero = 0;
-        this.n_localidad = null;
-        this.n_nivelServicio = 0.8f;
-        this.n_direccion = "";
-        this.n_parqueadero = null;
-        this.v_pisos = 0;
-        this.i_subterraneo = false;
     }
 }

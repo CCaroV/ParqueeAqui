@@ -16,6 +16,11 @@ public class Slot {
     private Parqueadero parqueadero;
     private Area area;
 
+    public Slot() {
+        this.k_slot = 0;
+        this.i_estado = false;
+    }
+
     public void setParqueadero(Parqueadero parqueadero) {
         this.parqueadero = parqueadero;
     }
@@ -38,11 +43,6 @@ public class Slot {
 
     public void setI_estado(boolean i_estado) {
         this.i_estado = i_estado;
-    }
-
-    public Slot() {
-        this.k_slot = 0;
-        this.i_estado = false;
     }
 
     public int getK_slot() {
