@@ -7,6 +7,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import modelo.Contrato;
 import modelo.Home;
 import vista.VistaConsultaFlujo;
@@ -16,7 +18,7 @@ import vista.VistaHome;
  *
  * @author chris
  */
-public class ControladorConsultaFlujo implements ActionListener {
+public class ControladorConsultaFlujo implements ActionListener, MouseListener {
 
     VistaConsultaFlujo vista;
     Contrato modelo;
@@ -28,10 +30,9 @@ public class ControladorConsultaFlujo implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Entró");
-        if (e.getSource().equals(this.vista.getBtnConsultar())) {
-
-        } else if (e.getSource().equals(this.vista.getBtnVolver())) {
+        if (e.getSource().equals(vista.getBtnConsultar())) {
+            
+        } else if (e.getSource().equals(vista.getBtnVolver())) {
             this.vista.dispose();
             mostrarHome();
         }
@@ -43,5 +44,32 @@ public class ControladorConsultaFlujo implements ActionListener {
         ControladorHome ch = new ControladorHome(vistaHome, home);
         vistaHome.asignaOyentes(ch);
         vistaHome.mostrar();
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if (e.getSource().equals(vista.getFldFecha()) && vista.getFldFecha().getText().equals("DD/MM/AAAA")) {
+            vista.setFldFecha("");
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
     }
 }

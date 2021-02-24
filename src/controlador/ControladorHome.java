@@ -83,6 +83,8 @@ public class ControladorHome implements ActionListener {
             Contrato contrato = new Contrato();
             VistaConsultaFlujo vistaFlujo = new VistaConsultaFlujo();
             ControladorConsultaFlujo controlFlujo = new ControladorConsultaFlujo(vistaFlujo, contrato);
+            
+            vistaFlujo.asignaOyentes(controlFlujo);
 
             vistaFlujo.mostrar();
         } else if (ae.getSource().equals(vista.getBtnRegistrarParqueadero())) {

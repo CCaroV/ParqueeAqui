@@ -31,8 +31,7 @@ public class VistaConsultaFlujo extends JFrame {
     private final JLabel lblTxtBicicleta = new JLabel("Bicicleta:");
     private final JLabel lblTxtFechaConsulta = new JLabel("Fecha de consulta:");
 
-    private final JComboBox boxFecha;
-    private final String Fecha[] = new String[10];
+    private final JTextField fldFecha = new JTextField("DD/MM/AAAA");
 
     private JLabel lblAuto = new JLabel();
     private JLabel lblCamioneta = new JLabel();
@@ -51,7 +50,6 @@ public class VistaConsultaFlujo extends JFrame {
 
     public VistaConsultaFlujo() throws HeadlessException {
         super("Parqueé Aquí");
-        this.boxFecha = new JComboBox(Fecha);
         Container k = getContentPane();
         k.setLayout(null);
 
@@ -79,7 +77,7 @@ public class VistaConsultaFlujo extends JFrame {
         k.add(btnVolver);
 
         // Agrega el combobox
-        k.add(boxFecha);
+        k.add(fldFecha);
 
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
@@ -106,7 +104,7 @@ public class VistaConsultaFlujo extends JFrame {
         btnConsultar.setBounds(320, 520, 170, 25);
 
         // Posición de el combobox
-        boxFecha.setBounds(330, 120, 150, 30);
+        fldFecha.setBounds(330, 120, 150, 30);
 
         // Posición de los pedidos a la base de datos
         lblAuto.setFont(fontTexto);
@@ -138,6 +136,14 @@ public class VistaConsultaFlujo extends JFrame {
     public JButton getBtnConsultar() {
         return btnConsultar;
     }
+    
+    public JTextField getFldFecha() {
+        return fldFecha;
+    }
+    
+    public void setFldFecha(String fecha) {
+        fldFecha.setText(fecha);
+    }
 
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta",
@@ -145,6 +151,7 @@ public class VistaConsultaFlujo extends JFrame {
     }
     
     public void asignaOyentes(ControladorConsultaFlujo c) {
+        this.fldFecha.addMouseListener(c);
         this.btnVolver.addActionListener(c);
         this.btnConsultar.addActionListener(c);
     }
