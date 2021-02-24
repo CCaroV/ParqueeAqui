@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import dao.HomeDAO;
 import proyectofinal.ProyectoFinal;
 import util.CaException;
+import vista.VistaConsultaRecaudo;
 
 /**
  *
@@ -59,7 +60,15 @@ public class ControladorHome implements ActionListener {
         } else if (ae.getSource().equals(vista.getBtnConstVehiculo())) {
 
         } else if (ae.getSource().equals(vista.getBtnConstRecaudo())) {
-
+            this.vista.dispose();
+            
+            VistaConsultaRecaudo vistaRecaudo = new VistaConsultaRecaudo();
+            ControladorConsultaRecaudo controladorRecaudo = new ControladorConsultaRecaudo(vistaRecaudo);
+            
+            vistaRecaudo.asignaOyentes(controladorRecaudo);
+            vistaRecaudo.mostrar();
+            
+            
         } else if (ae.getSource().equals(vista.getBtnConstFlujo())) {
 
         } else if (ae.getSource().equals(vista.getBtnRegistrarParqueadero())) {

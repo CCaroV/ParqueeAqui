@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import modelo.Pago;
+import modelo.Servicio;
 import util.CaException;
 
 /**
@@ -19,9 +20,11 @@ import util.CaException;
 public class PagoDAO {
 
     Pago pago;
+    Servicio servicio;
 
-    public PagoDAO(Pago pago) {
+    public PagoDAO(Pago pago, Servicio servicio) {
         this.pago = pago;
+        this.servicio = servicio;
     }
 
     public void insertarPago() throws CaException {
@@ -33,6 +36,7 @@ public class PagoDAO {
             prepStmt.setInt(1, pago.getK_pago());
             prepStmt.setString(2, pago.getN_formaPago());
             prepStmt.setFloat(3, pago.getV_valorPagado());
+            prepStmt.setInt(4, servicio.getK_servicio());
         } catch (SQLException e) {
             throw new CaException("Pago", "No se pudo generar el pago" + e.getMessage());
         } finally {

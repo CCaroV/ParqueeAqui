@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorConsultaRecaudo;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
@@ -108,5 +109,12 @@ public class VistaConsultaRecaudo extends JFrame {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }
     
+    public void asignaOyentes(ControladorConsultaRecaudo c) {
+        btnInicio.addActionListener(c);
+        btnConsultar.addActionListener(c);
+    }
     
+    public void setCantidad(Double cantidad){
+        lblCantidad.setText(String.valueOf(cantidad));
+    }
 }

@@ -56,7 +56,7 @@ public class SlotDAO {
             //Conexion a la BD
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-            prepStmt.setBoolean(1, slot.isI_estado);
+            prepStmt.setBoolean(1, slot.isI_estado());
             prepStmt.setInt(2, slot.getK_slot());
             //Se ejecuta la sentencia
             prepStmt.executeUpdate();
