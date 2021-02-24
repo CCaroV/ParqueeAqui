@@ -24,7 +24,7 @@ public class ProyectoFinal {
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("No fue posible establecer un diesño diferente: " + e);
         }
 
         Home home = new Home();

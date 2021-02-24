@@ -17,6 +17,7 @@ public class Parqueadero {
     private int k_parqueadero;
     private String n_direccion;
     private int v_pisos;
+    private int v_area;
     private boolean i_subterraneo;
 
     public Parqueadero() {
@@ -26,6 +27,7 @@ public class Parqueadero {
         this.n_direccion = "";
         this.n_parqueadero = null;
         this.v_pisos = 0;
+        this.v_area = 0;
         this.i_subterraneo = false;
     }
 
@@ -51,6 +53,10 @@ public class Parqueadero {
 
     public int getV_pisos() {
         return v_pisos;
+    }
+
+    public int getV_areas() {
+        return v_area;
     }
 
     public boolean isI_subterraneo() {
@@ -87,6 +93,10 @@ public class Parqueadero {
 
     public void setV_pisos(int v_pisos) {
         this.v_pisos = v_pisos;
+    }
+
+    public void setV_areas(int v_areas) {
+        this.v_area = v_areas;
     }
 
     public void setI_subterraneo(boolean i_subterraneo) {

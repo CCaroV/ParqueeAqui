@@ -41,23 +41,30 @@ public class ControladorParqueadero_VistaRegistroParqueadero implements ActionLi
             this.parqueadero.setN_parqueadero(this.vista.getNomParqueadero());
             this.parqueadero.setI_subterraneo(this.vista.getCheck());
             this.parqueadero.setV_pisos(Integer.parseInt(this.vista.getNumNiveles()));
+            this.parqueadero.setV_areas(Integer.parseInt(this.vista.getNumAreas()));
+
             vista.dispose();
-            VistaRegistrarAreas vv = new VistaRegistrarAreas();
-            Area a = new Area();
-            a.setParqueadero(parqueadero);
-            ControladorArea_VistaRegistrarAreas cavra = new ControladorArea_VistaRegistrarAreas(a, vv);
-            vv.asignarOyente(cavra);
-            vv.mostrar();
-        }
-        if (e.getSource().equals(vista.getBtnVolver())) {
-            this.vista.dispose();
+
+            VistaRegistrarAreas vistaArea = new VistaRegistrarAreas();
+            Area area = new Area();
+            area.setParqueadero(parqueadero);
+            ControladorArea_VistaRegistrarAreas controlArea = new ControladorArea_VistaRegistrarAreas(area, vistaArea, this.parqueadero.getV_areas());
+            vistaArea.asignarOyente(controlArea);
+            vistaArea.mostrar();
             
-            Home h = new Home();
-            VistaHome vh = new VistaHome();
-            ControladorHome ch = new ControladorHome(vh, h);
-            vh.asignaOyentes(ch);
-            vh.mostrar();
+        } else if (e.getSource().equals(vista.getBtnVolver())) {
+            this.vista.dispose();
+
+            mostrarHome();
         }
+    }
+
+    private void mostrarHome() {
+        Home home = new Home();
+        VistaHome vistaHome = new VistaHome();
+        ControladorHome ch = new ControladorHome(vistaHome, home);
+        vistaHome.asignaOyentes(ch);
+        vistaHome.mostrar();
     }
 
 }

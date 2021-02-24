@@ -26,6 +26,7 @@ public class VistaRegistroParqueadero extends JFrame {
     private final JLabel lblLocalidad = new JLabel("Localidad:");
     private final JLabel lblSubterraneo = new JLabel("Subterráneo:");
     private final JLabel lblNumNiveles = new JLabel("Número de niveles:");
+    private final JLabel lblNumAreas = new JLabel("Número de áreas:");
 
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
@@ -36,6 +37,7 @@ public class VistaRegistroParqueadero extends JFrame {
     private final JTextField fldNomParqueadero = new JTextField();
     private final JComboBox boxLocalidad;
     private final JComboBox boxNumNiveles;
+    private final JComboBox boxNumAreas;
     private final JCheckBox checkSi = new JCheckBox("Sí");
     private final JCheckBox checkNo = new JCheckBox("No");
 
@@ -46,12 +48,14 @@ public class VistaRegistroParqueadero extends JFrame {
         "La Candelaría, 17", "Rafael Uribe Uribe, 18", "Ciudad Bolivar, 19", "Sumapaz, 20"
     };
 
-    private final String[] numNiveles = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    private final String[] numNiveles = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+    private final String[] numAreas = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
 
     public VistaRegistroParqueadero() throws HeadlessException {
         super("Parqueé Aquí");
         this.boxLocalidad = new JComboBox(localidad);
         this.boxNumNiveles = new JComboBox(numNiveles);
+        this.boxNumAreas = new JComboBox(numAreas);
 
         Container c = getContentPane();
         c.setLayout(null);
@@ -62,6 +66,7 @@ public class VistaRegistroParqueadero extends JFrame {
         c.add(lblLocalidad);
         c.add(lblSubterraneo);
         c.add(lblNumNiveles);
+        c.add(lblNumAreas);
         c.add(btnVolver);
         c.add(btnRegistrar);
         c.add(fldNomParqueadero);
@@ -76,6 +81,7 @@ public class VistaRegistroParqueadero extends JFrame {
         c.add(checkSi);
         c.add(checkNo);
         c.add(boxNumNiveles);
+        c.add(boxNumAreas);
 
         //Posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
@@ -88,10 +94,11 @@ public class VistaRegistroParqueadero extends JFrame {
         lblSubterraneo.setBounds(80, 260, 300, 20);
         lblNumNiveles.setFont(fontTexto);
         lblNumNiveles.setBounds(80, 310, 300, 20);
+        lblNumAreas.setBounds(80, 360, 300, 20);
 
         //Posición de los botones
-        btnVolver.setBounds(150, 370, 85, 25);
-        btnRegistrar.setBounds(250, 370, 170, 25);
+        btnVolver.setBounds(150, 420, 85, 25);
+        btnRegistrar.setBounds(250, 420, 170, 25);
 
         //Posición de las cajas de texto
         fldNomParqueadero.setBounds(300, 150, 150, 30);
@@ -99,11 +106,12 @@ public class VistaRegistroParqueadero extends JFrame {
         checkSi.setBounds(300, 250, 40, 30);
         checkNo.setBounds(350, 250, 45, 30);
         boxNumNiveles.setBounds(300, 300, 150, 30);
+        boxNumAreas.setBounds(300, 350, 150, 30);
 
     }
 
     public void mostrar() {
-        setSize(600, 500);
+        setSize(580, 570);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -129,6 +137,10 @@ public class VistaRegistroParqueadero extends JFrame {
 
     public String getNumNiveles() {
         return this.boxNumNiveles.getSelectedItem().toString();
+    }
+
+    public String getNumAreas() {
+        return this.boxNumAreas.getSelectedItem().toString();
     }
 
     public JButton getBtnVolver() {

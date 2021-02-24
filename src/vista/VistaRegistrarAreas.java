@@ -16,7 +16,7 @@ import javax.swing.*;
  * @author fedc
  */
 public class VistaRegistrarAreas extends JFrame {
-    
+
     /**
      *
      */
@@ -31,27 +31,27 @@ public class VistaRegistrarAreas extends JFrame {
     private final JLabel lblVehiculosP = new JLabel("Vehículo pesado:");
     private final JLabel lblMotocicleta = new JLabel("Motocicleta:");
     private final JLabel lblBicicleta = new JLabel("Bicicleta:");
-    
+
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
     private final Font fontSubTitulo = new Font("Calibri", Font.BOLD, 20);
-    
+
     private final JButton btnVolver = new JButton("Volver");
     private final JButton btnRegistrar = new JButton("Registrar");
-    
+
     private final JTextField fldAuto = new JTextField();
     private final JTextField fldCampero = new JTextField();
     private final JTextField fldVehiculoPesado = new JTextField();
     private final JTextField fldCamioneta = new JTextField();
     private final JTextField fldMotocicleta = new JTextField();
     private final JTextField fldBicicleta = new JTextField();
-    
+
     public VistaRegistrarAreas() throws HeadlessException {
         super("Parqueé Aquí");
-        
-        Container k =getContentPane();
+
+        Container k = getContentPane();
         k.setLayout(null);
-        
+
         //Agrega los textos
         k.add(lblTitulo);
         k.add(lblNomParqueadero);
@@ -63,11 +63,11 @@ public class VistaRegistrarAreas extends JFrame {
         k.add(lblMotocicleta);
         k.add(lblBicicleta);
         k.add(lblParqueadero);
-        
+
         //Agrega los botones
         k.add(btnRegistrar);
         k.add(btnVolver);
-        
+
         //Agrega las cajas de texto
         k.add(fldAuto);
         k.add(fldCampero);
@@ -75,7 +75,7 @@ public class VistaRegistrarAreas extends JFrame {
         k.add(fldVehiculoPesado);
         k.add(fldMotocicleta);
         k.add(fldBicicleta);
-        
+
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(240, 50, 450, 40);
@@ -97,10 +97,7 @@ public class VistaRegistrarAreas extends JFrame {
         lblMotocicleta.setBounds(370, 250, 300, 30);
         lblBicicleta.setFont(fontTexto);
         lblBicicleta.setBounds(370, 300, 300, 30);
-        
-        
-        
-        
+
         //Posición de los botones
         btnVolver.setBounds(200, 380, 85, 25);
         btnRegistrar.setBounds(320, 380, 170, 25);
@@ -112,40 +109,73 @@ public class VistaRegistrarAreas extends JFrame {
         fldVehiculoPesado.setBounds(500, 200, 150, 30);
         fldMotocicleta.setBounds(500, 250, 150, 30);
         fldBicicleta.setBounds(500, 300, 150, 30);
-        
+
     }
-    
-    public void mostrar(){
+
+    public void mostrar() {
         setSize(700, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
-    
-    public String getAuto(){
-        return this.fldAuto.getText();
+
+    public void limpiarFields() {
+        this.fldAuto.setText("");
+        this.fldCampero.setText("");
+        this.fldCamioneta.setText("");
+        this.fldVehiculoPesado.setText("");
+        this.fldMotocicleta.setText("");
+        this.fldBicicleta.setText("");
     }
-    
-    public String getCampero(){
-        return this.fldCampero.getText();
+
+    public String getAuto() {
+        if (this.fldAuto.getText().trim().equals("")) {
+            return "0";
+        } else {
+            return this.fldAuto.getText().trim();
+        }
     }
-    
-    public String getCamioneta(){
-        return this.fldCamioneta.getText();
+
+    public String getCampero() {
+        if (this.fldCampero.getText().trim().equals("")) {
+            return "0";
+        } else {
+            return this.fldCampero.getText().trim();
+        }
     }
-    
-    public String getVehiculoPesado(){
-        return this.fldVehiculoPesado.getText();
+
+    public String getCamioneta() {
+        if (this.fldCamioneta.getText().trim().equals("")) {
+            return "0";
+        } else {
+            return this.fldCamioneta.getText().trim();
+        }
     }
-    
-    public String getMotocicleta(){
-        return this.fldMotocicleta.getText();
+
+    public String getVehiculoPesado() {
+        if (this.fldVehiculoPesado.getText().trim().equals("")) {
+            return "0";
+        } else {
+            return this.fldVehiculoPesado.getText().trim();
+        }
     }
-    
-    public String getBicicleta(){
-        return this.fldBicicleta.getText();
+
+    public String getMotocicleta() {
+        if (this.fldMotocicleta.getText().trim().equals("")) {
+            return "0";
+        } else {
+            return this.fldMotocicleta.getText().trim();
+        }
     }
-    
+
+    public String getBicicleta() {
+        if (this.fldBicicleta.getText().trim().equals("")) {
+            return "0";
+        } else {
+            return this.fldBicicleta.getText().trim();
+        }
+    }
+
     public JButton getBtnVolver() {
         return btnVolver;
     }
@@ -153,10 +183,12 @@ public class VistaRegistrarAreas extends JFrame {
     public JButton getBtnRegistrar() {
         return btnRegistrar;
     }
-    public void asignarOyente(ControladorArea_VistaRegistrarAreas c){
+
+    public void asignarOyente(ControladorArea_VistaRegistrarAreas c) {
         this.btnRegistrar.addActionListener(c);
         this.btnVolver.addActionListener(c);
     }
+
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
     }
