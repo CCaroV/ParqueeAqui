@@ -9,8 +9,8 @@ import modelo.Vehiculo;
 import vista.VistaRegistrarVehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import modelo.Parqueadero;
-import vista.VistaRegistroParqueadero;
+import modelo.Home;
+import vista.VistaHome;
 
 /**
  *
@@ -19,7 +19,6 @@ import vista.VistaRegistroParqueadero;
 public class ControladorVehiculo_VistaRegistrarVehiculo implements ActionListener {
 
     private final Vehiculo vehiculo;
-
     private final VistaRegistrarVehiculo vista;
 
     public ControladorVehiculo_VistaRegistrarVehiculo(Vehiculo vehiculo, VistaRegistrarVehiculo vista) {
@@ -36,12 +35,12 @@ public class ControladorVehiculo_VistaRegistrarVehiculo implements ActionListene
         }
         if (e.getSource().equals(this.vista.getBtnVolver())) {
             this.vista.dispose();
-            VistaRegistroParqueadero vistaParqueadero = new VistaRegistroParqueadero();
-            Parqueadero parqueadero = new Parqueadero();
-            ControladorParqueadero_VistaRegistroParqueadero back = new ControladorParqueadero_VistaRegistroParqueadero(parqueadero, vistaParqueadero);
-            vistaParqueadero.asignaOyentes(back);
-            vistaParqueadero.mostrar();
 
+            Home h = new Home();
+            VistaHome vh = new VistaHome();
+            ControladorHome ch = new ControladorHome(vh, h);
+            vh.asignaOyentes(ch);
+            vh.mostrar();
         }
     }
 }

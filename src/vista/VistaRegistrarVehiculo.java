@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorVehiculo_VistaRegistrarVehiculo;
 import java.awt.*;
 import javax.swing.*;
 
@@ -111,6 +112,11 @@ public class VistaRegistrarVehiculo extends JFrame {
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta",
                 JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void asignaOyentes (ControladorVehiculo_VistaRegistrarVehiculo c) {
+        btnVolver.addActionListener(c);
+        btnRegistrar.addActionListener(c);
     }
 
 }

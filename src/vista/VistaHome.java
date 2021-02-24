@@ -57,6 +57,7 @@ public class VistaHome extends JFrame {
         c.add(btnConstVehiculo);
         c.add(btnConstRecaudo);
         c.add(btnConstFlujo);
+        c.add(btnRegistrarParqueadero);
 
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
@@ -77,10 +78,10 @@ public class VistaHome extends JFrame {
     }
 
     public void mostrar() {
-        setSize(450, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
+        this.setSize(450, 500);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setVisible(true);
     }
 
     public JButton getBtnReservar() {

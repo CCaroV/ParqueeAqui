@@ -51,6 +51,7 @@ public class ControladorParqueadero_VistaRegistroParqueadero implements ActionLi
         }
         if (e.getSource().equals(vista.getBtnVolver())) {
             this.vista.dispose();
+            
             Home h = new Home();
             VistaHome vh = new VistaHome();
             ControladorHome ch = new ControladorHome(vh, h);
