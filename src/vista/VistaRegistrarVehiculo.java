@@ -68,9 +68,9 @@ public class VistaRegistrarVehiculo extends JFrame {
         lblPlaca.setFont(fontTexto);
         lblPlaca.setBounds(400, 150, 300, 30);
         lblHora.setFont(fontTexto);
-        lblHora.setBounds(280, 200, 300, 30);
+        lblHora.setBounds(240, 200, 300, 30);
         lblFecha.setFont(fontTexto);
-        lblFecha.setBounds(530, 200, 300, 30);
+        lblFecha.setBounds(520, 200, 300, 30);
         lblHoraEntrada.setFont(fontTexto);
         lblHoraEntrada.setBounds(120, 200, 300, 30);
         lblFechaEntrada.setFont(fontTexto);
@@ -108,6 +108,22 @@ public class VistaRegistrarVehiculo extends JFrame {
     public JButton getBtnRegistrar() {
         return btnRegistrar;
     }
+    
+    public JLabel getLblHora() {
+        return lblHora;
+    }
+
+    public void setLblHora(String lblHora) {
+        this.lblHora.setText(lblHora);
+    }
+
+    public JLabel getLblFecha() {
+        return lblFecha;
+    }
+
+    public void setLblFecha(String lblFecha) {
+        this.lblFecha.setText(lblFecha);
+    }
 
     public void mensajeAlerta() {
         JOptionPane.showMessageDialog(this, "Llene todos los espacios con valores validos.", "Alerta",
@@ -118,5 +134,7 @@ public class VistaRegistrarVehiculo extends JFrame {
         btnVolver.addActionListener(c);
         btnRegistrar.addActionListener(c);
     }
+
+    
 
 }
