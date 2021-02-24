@@ -45,7 +45,10 @@ public class ControladorRegistroSalida implements ActionListener, ItemListener {
                 vehiculo.setN_color(vista.getColor());
                 vehiculo.setN_marca(vista.getMarcaVehiculo());
                 vehiculo.setN_modelo(vista.getModeloVehiculo());
-                
+                cliente.setN_nombre(vista.getNomCliente());
+                cliente.setN_apellido(vista.getApeCliente());
+                cliente.setK_cliente(Integer.parseInt(vista.getCedula()));
+                cliente.setN_direccion(vista.getDireccion());
             }
         } else if (e.getSource().equals(vista.getBtnVolver())) {
             this.vista.dispose();
@@ -62,6 +65,7 @@ public class ControladorRegistroSalida implements ActionListener, ItemListener {
             vista.getFldCedula().setEditable(false);
             vista.getFldColor().setEditable(false);
             vista.getFldTelefono().setEditable(false);
+            vista.getFldDireccion().setEditable(false);
         } else {
             vista.getFldNomCliente().setEditable(true);
             vista.getFldMarcaVehiculo().setEditable(true);
@@ -69,10 +73,11 @@ public class ControladorRegistroSalida implements ActionListener, ItemListener {
             vista.getFldCedula().setEditable(true);
             vista.getFldColor().setEditable(true);
             vista.getFldTelefono().setEditable(true);
+            vista.getFldDireccion().setEditable(true);
         }
     }
-    
-        private String getHora() {
+
+    private String getHora() {
         String minuto;
         String hora;
         if (LocalDateTime.now().getMinute() < 10) {

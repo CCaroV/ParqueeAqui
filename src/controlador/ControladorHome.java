@@ -24,6 +24,7 @@ import proyectofinal.ProyectoFinal;
 import util.CaException;
 import vista.VistaConsultaFlujo;
 import vista.VistaConsultaRecaudo;
+import vista.VistaConsultaVehiculo;
 import vista.VistaRegistroSalida;
 
 /**
@@ -75,7 +76,17 @@ public class ControladorHome implements ActionListener {
             vistaReservar.mostrar();
 
         } else if (ae.getSource().equals(vista.getBtnConstVehiculo())) {
-
+            this.vista.dispose();
+            
+            Vehiculo vehiculo = new Vehiculo();
+            Cliente cliente = new Cliente();
+            VistaConsultaVehiculo vistaConstVehiculo = new VistaConsultaVehiculo();
+            ControladorConsultaVehiculo controlVehiculo = new ControladorConsultaVehiculo(vehiculo, cliente, vistaConstVehiculo);
+            
+            vistaConstVehiculo.asignaOyentes(controlVehiculo);
+            vistaConstVehiculo.mostrar();
+            
+                
         } else if (ae.getSource().equals(vista.getBtnConstRecaudo())) {
             this.vista.dispose();
 

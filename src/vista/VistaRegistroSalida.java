@@ -20,7 +20,8 @@ public class VistaRegistroSalida extends JFrame {
      */
     private static final long serialVersionUID = -4666754331843931892L;
     private final JLabel lblTitulo = new JLabel("Registro  de salida");
-    private final JLabel lblNomCliente = new JLabel("Nombre del cliente:");
+    private final JLabel lblNomCliente = new JLabel("Nombres:");
+    private final JLabel lblApeCliente = new JLabel("Apellidos:");
     private final JLabel lblMarcaVehiculo = new JLabel("Marca del vehículo:");
     private final JLabel lblModeloVehiculo = new JLabel("Modelo:");
     private final JLabel lblTipoContrato = new JLabel("Tipo de contrato:");
@@ -30,6 +31,7 @@ public class VistaRegistroSalida extends JFrame {
     private final JLabel lblColor = new JLabel("Color:");
     private final JLabel lbltxtFechaSalida = new JLabel("Fecha de salida:");
     private final JLabel lbltxtTelefono = new JLabel("Telefono:");
+    private final JLabel lbltxtDireccion = new JLabel("Dirección:");
     private JLabel lblFechaSalida = new JLabel();
     private JLabel lblHoraSalida = new JLabel();
 
@@ -41,15 +43,18 @@ public class VistaRegistroSalida extends JFrame {
     private final JButton btnVolver = new JButton("Volver");
     private final JButton btnFactura = new JButton("Factura");
 
-    private final String tipoConrato[] = {"Minutos", "Día", "Semana", "Mes", "Año"};
+    private final String tipoConrato[] = { "Minutos", "Días" };
 
     private final JTextField fldNomCliente = new JTextField();
+    private final JTextField fldApeCliente = new JTextField();
     private final JTextField fldMarcaVehiculo = new JTextField();
     private final JTextField fldModeloVehiculo = new JTextField();
     private final JTextField fldCedula = new JTextField();
     private final JTextField fldPlaca = new JTextField();
     private final JTextField fldColor = new JTextField();
     private final JTextField fldTelefono = new JTextField();
+    private final JTextField fldDireccion = new JTextField();
+    
 
     public VistaRegistroSalida() throws HeadlessException {
         super("Parqueé Aquí");
@@ -60,6 +65,7 @@ public class VistaRegistroSalida extends JFrame {
         // Agrega los textos
         c.add(lblTitulo);
         c.add(lblNomCliente);
+        c.add(lblApeCliente);
         c.add(lblMarcaVehiculo);
         c.add(lblModeloVehiculo);
         c.add(lblTipoContrato);
@@ -71,6 +77,8 @@ public class VistaRegistroSalida extends JFrame {
         c.add(lbltxtFechaSalida);
         c.add(lblFechaSalida);
         c.add(lbltxtTelefono);
+        c.add(lbltxtDireccion);
+        
 
         // Agrega el combobox
         c.add(boxTipoContrato);
@@ -81,18 +89,22 @@ public class VistaRegistroSalida extends JFrame {
 
         // Agrega los campos de texto
         c.add(fldNomCliente);
+        c.add(fldApeCliente);
         c.add(fldMarcaVehiculo);
         c.add(fldModeloVehiculo);
         c.add(fldCedula);
         c.add(fldPlaca);
         c.add(fldColor);
         c.add(fldTelefono);
+        c.add(fldDireccion);
 
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(300, 50, 450, 30);
         lblNomCliente.setFont(fontTexto);
         lblNomCliente.setBounds(70, 150, 250, 25);
+        lblApeCliente.setFont(fontTexto);
+        lblApeCliente.setBounds(450, 150, 250, 25);
         lblMarcaVehiculo.setFont(fontTexto);
         lblMarcaVehiculo.setBounds(70, 200, 250, 25);
         lblModeloVehiculo.setFont(fontTexto);
@@ -104,32 +116,37 @@ public class VistaRegistroSalida extends JFrame {
         lblHoraSalida.setFont(fontTexto);
         lblHoraSalida.setBounds(230, 350, 250, 25);
         lblCedula.setFont(fontTexto);
-        lblCedula.setBounds(450, 150, 250, 25);
+        lblCedula.setBounds(450, 200, 250, 25);
         lblPlaca.setFont(fontTexto);
-        lblPlaca.setBounds(450, 200, 250, 25);
+        lblPlaca.setBounds(450, 250, 250, 25);
         lblColor.setFont(fontTexto);
-        lblColor.setBounds(450, 250, 250, 25);
+        lblColor.setBounds(450, 300, 250, 25);
         lbltxtFechaSalida.setFont(fontTexto);
         lbltxtFechaSalida.setBounds(450, 350, 250, 25);
         lblFechaSalida.setFont(fontTexto);
         lblFechaSalida.setBounds(570, 350, 250, 25);
         lbltxtTelefono.setFont(fontTexto);
         lbltxtTelefono.setBounds(70, 400, 250, 25);
+        lbltxtDireccion.setFont(fontTexto);
+        lbltxtDireccion.setBounds(450, 400, 250, 25);
 
         // posición de campos de texto
         fldNomCliente.setEditable(false);
         fldNomCliente.setBounds(230, 150, 150, 25);
+        fldApeCliente.setBounds(520, 150, 150, 25);
         fldMarcaVehiculo.setEditable(false);
         fldMarcaVehiculo.setBounds(230, 200, 150, 25);
         fldModeloVehiculo.setEditable(false);
         fldModeloVehiculo.setBounds(230, 250, 150, 25);
         fldCedula.setEditable(false);
-        fldCedula.setBounds(520, 150, 150, 25);
-        fldPlaca.setBounds(520, 200, 150, 25);
+        fldCedula.setBounds(520, 200, 150, 25);
+        fldPlaca.setBounds(520, 250, 150, 25);
         fldColor.setEditable(false);
-        fldColor.setBounds(520, 250, 150, 25);
+        fldColor.setBounds(520, 300, 150, 25);
         fldTelefono.setEditable(false);
         fldTelefono.setBounds(230, 400, 150, 25);
+        fldDireccion.setEditable(false);
+        fldDireccion.setBounds(520, 400, 150, 25);
 
         // posición del comobobox
         boxTipoContrato.setBounds(230, 300, 150, 25);
@@ -150,7 +167,11 @@ public class VistaRegistroSalida extends JFrame {
     public JTextField getFldNomCliente() {
         return fldNomCliente;
     }
-
+    
+    public JTextField getFldApeCliente() {
+        return fldApeCliente;
+    }
+    
     public JTextField getFldMarcaVehiculo() {
         return fldMarcaVehiculo;
     }
@@ -170,6 +191,10 @@ public class VistaRegistroSalida extends JFrame {
     public JTextField getFldTelefono() {
         return fldTelefono;
     }
+    
+    public JTextField getFldDireccion() {
+        return fldDireccion;
+    }
 
     public JComboBox getBoxTipoContrato() {
         return this.boxTipoContrato;
@@ -185,6 +210,10 @@ public class VistaRegistroSalida extends JFrame {
 
     public String getNomCliente() {
         return fldNomCliente.getText();
+    }
+    
+    public String getApeCliente() {
+        return fldApeCliente.getText();
     }
 
     public String getMarcaVehiculo() {
@@ -209,6 +238,10 @@ public class VistaRegistroSalida extends JFrame {
 
     public String getPlaca() {
         return fldPlaca.getText();
+    }
+    
+    public String getDireccion() {
+        return fldDireccion.getText();
     }
 
     public void asignaOyentes(ControladorRegistroSalida c) {

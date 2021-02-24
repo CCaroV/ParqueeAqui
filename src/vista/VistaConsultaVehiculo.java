@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorConsultaVehiculo;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
@@ -104,7 +105,7 @@ public class VistaConsultaVehiculo extends JFrame{
         
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
-        lblTitulo.setBounds(270, 50, 450, 40);
+        lblTitulo.setBounds(250, 50, 450, 40);
         lblPlaca.setFont(fontTexto);
         lblPlaca.setBounds(60, 120, 300, 30);
         lblTxtFechaEntrada.setFont(fontTexto);
@@ -167,7 +168,7 @@ public class VistaConsultaVehiculo extends JFrame{
     }
     
     public void mostrar(){
-        setSize(750, 600);
+        setSize(700, 600);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -181,13 +182,11 @@ public class VistaConsultaVehiculo extends JFrame{
         return this.fldFecha.getText();
     }
     
-    
-    
     public JButton getBtnVolver() {
         return btnVolver;
     }
 
-    public JButton getBtnRegistrar() {
+    public JButton getBtnConsultar() {
         return btnConsultar;
     }
     
@@ -196,8 +195,9 @@ public class VistaConsultaVehiculo extends JFrame{
     }
     
     
-    /*public void asignaOyentes(Controlador c) {
+    public void asignaOyentes(ControladorConsultaVehiculo c) {
+        btnConsultar.addActionListener(c);
         btnVolver.addActionListener(c);
-        btnRegistrar.addActionListener(c);
-    }*/
+        
+    }
 }
