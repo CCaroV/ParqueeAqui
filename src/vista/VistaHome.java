@@ -30,6 +30,7 @@ public class VistaHome extends JFrame {
 
     private final JComboBox<String> boxNomParqueadero = new JComboBox<>();
 
+    private final JButton btnSalida = new JButton("Salida de vehículo");
     private final JButton btnReservar = new JButton("Reservar");
     private final JButton btnConstVehiculo = new JButton("Consulta de vehículo");
     private final JButton btnConstRecaudo = new JButton("Consulta de recaudo");
@@ -53,6 +54,7 @@ public class VistaHome extends JFrame {
         c.add(boxNomParqueadero);
 
         //Agrega los botones
+        c.add(btnSalida);
         c.add(btnReservar);
         c.add(btnConstVehiculo);
         c.add(btnConstRecaudo);
@@ -67,6 +69,7 @@ public class VistaHome extends JFrame {
 
         boxNomParqueadero.setBounds(170, 150, 200, 25);
 
+        btnSalida.setBounds(50, 260, 350, 30);
         btnReservar.setBounds(50, 300, 170, 30);
         btnConstRecaudo.setFont(new Font("Calibri", Font.PLAIN, 12));
         btnConstRecaudo.setBounds(230, 300, 170, 30);
@@ -84,6 +87,10 @@ public class VistaHome extends JFrame {
         this.setVisible(true);
     }
 
+    public JButton getBtnSalida() {
+        return btnSalida;
+    }
+    
     public JButton getBtnReservar() {
         return btnReservar;
     }
@@ -109,6 +116,7 @@ public class VistaHome extends JFrame {
     }
 
     public void asignaOyentes(ControladorHome c) {
+        btnSalida.addActionListener(c);
         btnReservar.addActionListener(c);
         btnConstRecaudo.addActionListener(c);
         btnConstVehiculo.addActionListener(c);

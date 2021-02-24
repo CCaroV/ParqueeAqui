@@ -28,6 +28,7 @@ public class ControladorConsultaFlujo implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("Entró");
         if (e.getSource().equals(this.vista.getBtnConsultar())) {
 
         } else if (e.getSource().equals(this.vista.getBtnVolver())) {

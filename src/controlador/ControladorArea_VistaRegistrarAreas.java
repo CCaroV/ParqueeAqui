@@ -60,14 +60,13 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
                 this.vista.limpiarFields();
             } else {
 
-                //this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size() + 1);
-                //this.area.setK_area(h.getNomParqueaderos().size() + 1);
                 //ParqueaderoDAO parqueaderoBD = new ParqueaderoDAO(this.area.getParqueadero());
                 //AreaDAO areaBD = new AreaDAO(this.area);
                 try {
                     //parqueaderoBD.registrarParquedero();
                     //areaBD.registrarArea();
                     JOptionPane.showMessageDialog(this.vista, "Áreas registradas con éxito", "Áreas registradas", JOptionPane.INFORMATION_MESSAGE);
+                    asignarIdParqueadero();
                 } catch (Exception ex) {
                     Logger.getLogger(ControladorParqueadero_VistaRegistroParqueadero.class.getName()).log(Level.SEVERE, null, ex);
                     JOptionPane.showMessageDialog(vista, "Error al registrar las áreas", "Error", JOptionPane.ERROR_MESSAGE);
@@ -90,6 +89,12 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
         ControladorParqueadero_VistaRegistroParqueadero controlParqueadero = new ControladorParqueadero_VistaRegistroParqueadero(parqueadero, vistaParqueadero);
         vistaParqueadero.asignaOyentes(controlParqueadero);
         vistaParqueadero.mostrar();
+    }
+
+    private void asignarIdParqueadero() {
+        Home h = new Home();
+        this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size() + 1);
+        this.area.setK_area(h.getNomParqueaderos().size() + 1);
     }
 
     private void mostrarHome() {

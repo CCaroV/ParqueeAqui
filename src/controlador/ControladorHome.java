@@ -18,10 +18,12 @@ import java.util.logging.Logger;
 
 import dao.HomeDAO;
 import modelo.Contrato;
+import modelo.Servicio;
 import proyectofinal.ProyectoFinal;
 import util.CaException;
 import vista.VistaConsultaFlujo;
 import vista.VistaConsultaRecaudo;
+import vista.VistaRegistroSalida;
 
 /**
  *
@@ -47,45 +49,49 @@ public class ControladorHome implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource().equals(vista.getBtnReservar())) {
+        if (ae.getSource().equals(vista.getBtnSalida())) {
+            
+            VistaRegistroSalida vistaSalida = new VistaRegistroSalida();
+            vistaSalida.mostrar();
+            
+        } else if (ae.getSource().equals(vista.getBtnReservar())) {
             this.vista.dispose();
 
             //Aplicando MVC al registro del vehículo
             Vehiculo vehiculo = new Vehiculo();
+            Servicio servicio = new Servicio();
             VistaRegistrarVehiculo vistaReservar = new VistaRegistrarVehiculo();
-            ControladorVehiculo_VistaRegistrarVehiculo controlVehiculo = new ControladorVehiculo_VistaRegistrarVehiculo(vehiculo, vistaReservar);
+            ControladorVehiculo_VistaRegistrarVehiculo controlVehiculo = new ControladorVehiculo_VistaRegistrarVehiculo(vehiculo, servicio, vistaReservar);
 
             vistaReservar.asignaOyentes(controlVehiculo);
             vistaReservar.mostrar();
-            
 
         } else if (ae.getSource().equals(vista.getBtnConstVehiculo())) {
 
         } else if (ae.getSource().equals(vista.getBtnConstRecaudo())) {
             this.vista.dispose();
-            
+
             VistaConsultaRecaudo vistaRecaudo = new VistaConsultaRecaudo();
             ControladorConsultaRecaudo controladorRecaudo = new ControladorConsultaRecaudo(vistaRecaudo);
-            
+
             vistaRecaudo.asignaOyentes(controladorRecaudo);
             vistaRecaudo.mostrar();
-            
-            
+
         } else if (ae.getSource().equals(vista.getBtnConstFlujo())) {
             this.vista.dispose();
-            
+
             Contrato contrato = new Contrato();
             VistaConsultaFlujo vistaFlujo = new VistaConsultaFlujo();
             ControladorConsultaFlujo controlFlujo = new ControladorConsultaFlujo(vistaFlujo, contrato);
-            
+
             vistaFlujo.mostrar();
         } else if (ae.getSource().equals(vista.getBtnRegistrarParqueadero())) {
             this.vista.dispose();
-            
+
             VistaRegistroParqueadero vistaParqueadero = new VistaRegistroParqueadero();
             Parqueadero parqueadero = new Parqueadero();
             ControladorParqueadero_VistaRegistroParqueadero controlParqueadero = new ControladorParqueadero_VistaRegistroParqueadero(parqueadero, vistaParqueadero);
-            
+
             vistaParqueadero.asignaOyentes(controlParqueadero);
             vistaParqueadero.mostrar();
         }

@@ -36,8 +36,8 @@ public class VistaRegistroParqueadero extends JFrame {
 
     private final JTextField fldNomParqueadero = new JTextField();
     private final JComboBox boxLocalidad;
-    private final JComboBox boxNumNiveles;
-    private final JComboBox boxNumAreas;
+    private final JTextField fldNumNiveles = new JTextField();
+    private final JTextField fldNumAreas = new JTextField();
     private final JCheckBox checkSi = new JCheckBox("Sí");
     private final JCheckBox checkNo = new JCheckBox("No");
 
@@ -48,14 +48,9 @@ public class VistaRegistroParqueadero extends JFrame {
         "La Candelaría, 17", "Rafael Uribe Uribe, 18", "Ciudad Bolivar, 19", "Sumapaz, 20"
     };
 
-    private final String[] numNiveles = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
-    private final String[] numAreas = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
-
     public VistaRegistroParqueadero() throws HeadlessException {
         super("Parqueé Aquí");
         this.boxLocalidad = new JComboBox(localidad);
-        this.boxNumNiveles = new JComboBox(numNiveles);
-        this.boxNumAreas = new JComboBox(numAreas);
 
         Container c = getContentPane();
         c.setLayout(null);
@@ -80,8 +75,8 @@ public class VistaRegistroParqueadero extends JFrame {
         c.add(boxLocalidad);
         c.add(checkSi);
         c.add(checkNo);
-        c.add(boxNumNiveles);
-        c.add(boxNumAreas);
+        c.add(fldNumNiveles);
+        c.add(fldNumAreas);
 
         //Posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
@@ -105,8 +100,8 @@ public class VistaRegistroParqueadero extends JFrame {
         boxLocalidad.setBounds(300, 200, 150, 30);
         checkSi.setBounds(300, 250, 40, 30);
         checkNo.setBounds(350, 250, 45, 30);
-        boxNumNiveles.setBounds(300, 300, 150, 30);
-        boxNumAreas.setBounds(300, 350, 150, 30);
+        fldNumNiveles.setBounds(300, 300, 150, 30);
+        fldNumAreas.setBounds(300, 350, 150, 30);
 
     }
 
@@ -136,11 +131,19 @@ public class VistaRegistroParqueadero extends JFrame {
     }
 
     public String getNumNiveles() {
-        return this.boxNumNiveles.getSelectedItem().toString();
+        if (this.fldNumNiveles.getText().trim().equals("")) {
+            return "1";
+        } else {
+            return this.fldNumNiveles.getText().trim();
+        }
     }
 
     public String getNumAreas() {
-        return this.boxNumAreas.getSelectedItem().toString();
+        if (this.fldNumAreas.getText().trim().equals("")) {
+            return "1";
+        } else {
+            return this.fldNumAreas.getText().trim();
+        }
     }
 
     public JButton getBtnVolver() {
