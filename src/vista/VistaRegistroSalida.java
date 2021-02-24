@@ -142,7 +142,7 @@ public class VistaRegistroSalida extends JFrame {
 
     public void mostrar() {
         setSize(800, 550);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }

@@ -168,7 +168,7 @@ public class VistaConsultaVehiculo extends JFrame{
     
     public void mostrar(){
         setSize(750, 600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }

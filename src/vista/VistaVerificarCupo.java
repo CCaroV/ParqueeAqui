@@ -84,7 +84,7 @@ public class VistaVerificarCupo extends JFrame {
 
     public void mostrar() {
         setSize(570, 400);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }

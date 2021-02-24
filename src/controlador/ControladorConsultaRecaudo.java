@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vista.VistaConsultaRecaudo;
 import DAO.ConsultaRecaudoDAO;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Home;
@@ -19,7 +21,7 @@ import vista.VistaHome;
  *
  * @author Sebastian Wilches
  */
-public class ControladorConsultaRecaudo implements ActionListener {
+public class ControladorConsultaRecaudo implements ActionListener, MouseListener {
 
     private final VistaConsultaRecaudo vista;
 
@@ -45,6 +47,31 @@ public class ControladorConsultaRecaudo implements ActionListener {
             this.vista.dispose();
             mostrarHome();
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if (e.getSource().equals(vista.getFldFechaInicio()) && vista.getFechaInicial().equals("DD/MM/AAAA")) {
+            vista.setFechaInicial("");
+        } else if (e.getSource().equals(vista.getFldFechaFinal()) && vista.getFechaFinal().equals("DD/MM/AAAA")) {
+            vista.setFechaFinal("");
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
     }
 
     private void mostrarHome() {

@@ -114,7 +114,7 @@ public class VistaRegistrarAreas extends JFrame {
 
     public void mostrar() {
         setSize(700, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
