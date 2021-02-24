@@ -16,9 +16,11 @@ import util.CaException;
  * @author User
  */
 public class AreaDAO {
+
     Area area;
-    public AreaDAO(Area area){
-        this.area=area;
+
+    public AreaDAO(Area area) {
+        this.area = area;
     }
 
     public Area getArea() {
@@ -28,16 +30,17 @@ public class AreaDAO {
     public void setArea(Area area) {
         this.area = area;
     }
+
     //Metodo que registra el area de un parqueadero
-    public void registrarArea()throws CaException {
-      try {
+    public void registrarArea() throws CaException {
+        try {
             //QUERY a ejecutar para registrar el area
             String strSQL = "INSERT INTO area (k_area, q_cuposdisponibles, q_cupostotales, k_parqueadero,"
                     + "q_cupoautomovil, q_cupocampero, q_cupocamioneta, q_cupopesado,"
                     + "q_cupomotocicleta, q_cupobicicleta) VALUES(?,?,?,?,?,?,?,?,?,?)";
             //Conexion a la BD
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
-            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);    
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             //Asignacion de valores a las columnas de la tabla
             prepStmt.setInt(1, this.area.getK_area());
             prepStmt.setInt(2, this.area.getQ_cuposDisponibles());
@@ -48,16 +51,16 @@ public class AreaDAO {
             prepStmt.setInt(7, this.area.getQ_cuposCamioneta());
             prepStmt.setInt(8, this.area.getQ_cuposVehiculoPesado());
             prepStmt.setInt(9, this.area.getQ_cuposMotocicleta());
-            prepStmt.setInt(10, this.area.getQ_cuposBicicleta());   
+            prepStmt.setInt(10, this.area.getQ_cuposBicicleta());
             //Ejecucion del QUERY
             prepStmt.executeUpdate();
             prepStmt.close();
-            ServiceLocator.getInstance().commit();            
-        }catch (SQLException e) {
-           throw new CaException( "AreaDAO", "No pudo crear el area"+ e.getMessage());
-        }  finally {
-          //Liberacion conexion BD
-         ServiceLocator.getInstance().liberarConexion();
+            ServiceLocator.getInstance().commit();
+        } catch (SQLException e) {
+            throw new CaException("AreaDAO", "No pudo crear el area" + e.getMessage());
+        } finally {
+            //Liberacion conexion BD
+            ServiceLocator.getInstance().liberarConexion();
         }
     }
 }

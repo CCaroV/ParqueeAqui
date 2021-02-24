@@ -10,6 +10,7 @@ package modelo;
  * @author User
  */
 public class Area {
+
     private int k_area;
     private int q_cuposDisponibles;
     private int q_cuposTotales;
@@ -60,7 +61,7 @@ public class Area {
     public int getQ_cuposVehiculoPesado() {
         return q_cuposVehiculoPesado;
     }
-    
+
     public void setK_area(int k_area) {
         this.k_area = k_area;
     }
@@ -70,9 +71,9 @@ public class Area {
     }
 
     public void setQ_cuposTotales(int q_cuposAutomovil, int q_cuposBicicleta, int q_cuposCamioneta,
-                                  int q_cuposCampero, int q_cuposMotocicleta,int q_cuposVehiculoPesado ) {
-        this.q_cuposTotales = q_cuposAutomovil+q_cuposBicicleta+q_cuposCamioneta+q_cuposCampero+
-                              q_cuposMotocicleta+q_cuposVehiculoPesado;
+            int q_cuposCampero, int q_cuposMotocicleta, int q_cuposVehiculoPesado) {
+        this.q_cuposTotales = q_cuposAutomovil + q_cuposBicicleta + q_cuposCamioneta + q_cuposCampero
+                + q_cuposMotocicleta + q_cuposVehiculoPesado;
     }
 
     public void setQ_cuposAutomovil(int q_cuposAutomovil) {
@@ -98,11 +99,11 @@ public class Area {
     public void setQ_cuposVehiculoPesado(int q_cuposVehiculoPesado) {
         this.q_cuposVehiculoPesado = q_cuposVehiculoPesado;
     }
-    
+
     public void setParqueadero(Parqueadero parqueadero) {
         this.parqueadero = parqueadero;
     }
-    
+
     public Area() {
         this.k_area = 0;
         this.q_cuposDisponibles = 0;
@@ -113,6 +114,6 @@ public class Area {
         this.q_cuposCampero = 0;
         this.q_cuposMotocicleta = 0;
         this.q_cuposVehiculoPesado = 0;
-        this.parqueadero=null;
+        this.parqueadero = null;
     }
 }

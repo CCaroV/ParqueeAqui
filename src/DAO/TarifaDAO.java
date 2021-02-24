@@ -5,7 +5,7 @@
  */
 package dao;
 
-import modelo.Tarifa2;
+import modelo.Tarifa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,10 +18,10 @@ import util.CaException;
  */
 public class TarifaDAO {
 
-    private Tarifa2 tarifa;
+    private Tarifa tarifa;
 
     public TarifaDAO() {
-        tarifa = new Tarifa2();
+        tarifa = new Tarifa();
     }
 
     public void incluirTarifa() throws CaException {

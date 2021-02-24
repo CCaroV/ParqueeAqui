@@ -7,56 +7,57 @@ package modelo;
 
 /**
  *
- * @author fedc
+ * @author Sebastian Wilches
  */
 public class Tarifa {
 
-    private String localidad;
-    private String numLocalidad;
-    private int factorZona;
-    private int numNiveles;
-    private int tarifa;
-    private boolean subterraneo;
-    private String tipoVehiculo;
+    //Atributos asociados a la clase Tarifa
+    private int k_tarifa;
+    private String n_tipo;
+    private double v_tarifa;
+    private Parqueadero parqueadero;
+    //Referencia parqueadero en la que se asociara la tarifa
+    //parqueadero p;
 
+    public Parqueadero getParqueadero() {
+        return parqueadero;
+    }
+
+    public void setParqueadero(Parqueadero parqueadero) {
+        this.parqueadero = parqueadero;
+    }
+
+    //Metodo constructor
     public Tarifa() {
-        localidad = null;
-        numLocalidad = null;
-        factorZona = 0;
-        numNiveles = 0;
-        subterraneo = false;
+        this.k_tarifa = 0;
+        this.n_tipo = null;
+        this.v_tarifa = 0;
+        //this.p = p;
     }
 
-    public Tarifa(String Localidad, String num) {
-        this.localidad = Localidad;
-        this.numLocalidad = num;
+    //Metodos get y set
+    public int getK_tarifa() {
+        return k_tarifa;
     }
 
-    public void setSubterraneo(boolean iSubterraneo) {
-        this.subterraneo = iSubterraneo;
+    public String getN_tipo() {
+        return n_tipo;
     }
 
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-        System.out.println(this.localidad);
+    public double getV_tarifa() {
+        return v_tarifa;
     }
 
-    public void setNumLocalidad(String numLocalidad) {
-        this.numLocalidad = numLocalidad;
-        System.out.println(this.numLocalidad);
+    public void setV_tarifa(double v_tarifa) {
+        this.v_tarifa = v_tarifa;
     }
 
-    public void setFactorZona(int factorZona) {
-        this.factorZona = factorZona;
+    public void setK_tarifa(int k_tarifa) {
+        this.k_tarifa = k_tarifa;
     }
 
-    public void setNumNiveles(int numNiveles) {
-        this.numNiveles = numNiveles;
-        System.out.println(this.numNiveles);
-    }
-
-    public int calcularTarifa() {
-        return this.tarifa;
+    public void setN_tipo(String n_tipo) {
+        this.n_tipo = n_tipo;
     }
 
 }

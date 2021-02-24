@@ -10,6 +10,7 @@ package modelo;
  * @author User
  */
 public class Contrato {
+
     private boolean i_estadoContrato;
     private int k_contrato;
     private String f_fechaInicio;
@@ -18,6 +19,26 @@ public class Contrato {
 
     public void setI_estadoContrato(boolean i_estadoContrato) {
         this.i_estadoContrato = i_estadoContrato;
+    }
+
+    public boolean isI_estadoContrato() {
+        return i_estadoContrato;
+    }
+
+    public int getK_contrato() {
+        return k_contrato;
+    }
+
+    public String getF_fechaInicio() {
+        return f_fechaInicio;
+    }
+
+    public String getF_fechaFinal() {
+        return f_fechaFinal;
+    }
+
+    public float getV_valorContrato() {
+        return v_valorContrato;
     }
 
     public void setK_contrato(int k_contrato) {
@@ -43,5 +64,5 @@ public class Contrato {
         this.f_fechaFinal = null;
         this.v_valorContrato = 0;
     }
-    
+
 }

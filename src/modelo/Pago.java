@@ -10,6 +10,7 @@ package modelo;
  * @author User
  */
 public class Pago {
+
     private int k_pago;
     private String n_formaPago;
     private float v_valorPagado;
@@ -31,5 +32,17 @@ public class Pago {
         this.n_formaPago = null;
         this.v_valorPagado = 0;
     }
-    
+
+    public int getK_pago() {
+        return k_pago;
+    }
+
+    public String getN_formaPago() {
+        return n_formaPago;
+    }
+
+    public float getV_valorPagado() {
+        return v_valorPagado;
+    }
+
 }

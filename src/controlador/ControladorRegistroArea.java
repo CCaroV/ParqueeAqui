@@ -18,16 +18,14 @@ public class ControladorRegistroArea implements ActionListener {
     // modelo;
     VistaRegistrarAreas vista;
 
-    public ControladorRegistroArea(/*RegistroParqueadero modelo,*/ VistaRegistrarAreas vista) {
+    public ControladorRegistroArea(/*RegistroParqueadero modelo,*/VistaRegistrarAreas vista) {
         //this.modelo = modelo;
         this.vista = vista;
     }
-    
-    
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
+
     }
-    
+
 }

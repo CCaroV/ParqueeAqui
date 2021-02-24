@@ -17,6 +17,7 @@ import util.CaException;
  * @author User
  */
 public class HomeDAO {
+
     private Home home;
 
     public HomeDAO() {
@@ -30,26 +31,27 @@ public class HomeDAO {
     public void setHome(Home home) {
         this.home = home;
     }
+
     //Metodo que consulta los nombres de los parqueaderos
-    public void buscarNombresParqueaderos() throws CaException{
-      try{
-          //QUERY de la consulta
-         String strSQL = "SELECT n_parqueadero FROM parqueadero";
-         //Conexion BD
-         Connection conexion = ServiceLocator.getInstance().tomarConexion();
-          PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-          //Ejecucion del QUERY
-          ResultSet rs = prepStmt.executeQuery();
-          //Asignacion de valores al objeto mientras halla una columna siguiente
-          while (rs.next()){
-            
-            this.home.agregarParqueadero(rs.getString(1));
-            
-          }
-      }
-      catch(SQLException e){
-        throw new CaException("HomeDAO", "No pudo recuperar el n_parqueadero "+ e.getMessage());
-      }
-      ServiceLocator.getInstance().liberarConexion();
+    public void buscarNombresParqueaderos() throws CaException {
+        try {
+            //QUERY de la consulta
+            String strSQL = "SELECT n_parqueadero FROM parqueadero";
+            //Conexion BD
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            //Ejecucion del QUERY
+            ResultSet rs = prepStmt.executeQuery();
+            //Asignacion de valores al objeto mientras halla una columna siguiente
+            while (rs.next()) {
+
+                this.home.agregarParqueadero(rs.getString(1));
+
+            }
+        } catch (SQLException e) {
+            throw new CaException("HomeDAO", "No pudo recuperar el n_parqueadero " + e.getMessage());
+        } finally {
+            ServiceLocator.getInstance().liberarConexion();
+        }
     }
 }

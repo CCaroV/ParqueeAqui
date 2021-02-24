@@ -24,8 +24,8 @@ import util.CaException;
  *
  * @author fedc
  */
-public class ControladorHome implements ActionListener{
-    
+public class ControladorHome implements ActionListener {
+
     VistaHome vista;
     Home modelo;
 
@@ -39,29 +39,29 @@ public class ControladorHome implements ActionListener{
         modelo.setNomParqueaderos(homeBD.getHome().getNomParqueaderos());
         vista.setNomParqueaderos(modelo.getNomParqueaderos());
         this.vista = vista;
-        this.modelo = modelo;       
+        this.modelo = modelo;
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {
         System.out.println("escuchó el evento");
-        if(ae.getSource().equals(vista.getBtnReservar())) {
+        if (ae.getSource().equals(vista.getBtnReservar())) {
             this.vista.dispose();
-            Vehiculo vehiculo=new Vehiculo();
-            VistaRegistrarVehiculo vistaReservar=new VistaRegistrarVehiculo();
-            ControladorVehiculo_VistaRegistrarVehiculo c=new ControladorVehiculo_VistaRegistrarVehiculo(vehiculo,vistaReservar);
+            Vehiculo vehiculo = new Vehiculo();
+            VistaRegistrarVehiculo vistaReservar = new VistaRegistrarVehiculo();
+            ControladorVehiculo_VistaRegistrarVehiculo c = new ControladorVehiculo_VistaRegistrarVehiculo(vehiculo, vistaReservar);
             vistaReservar.mostrar();
         } else if (ae.getSource().equals(vista.getBtnConstVehiculo())) {
-            
+
         } else if (ae.getSource().equals(vista.getBtnConstRecaudo())) {
-            
+
         } else if (ae.getSource().equals(vista.getBtnConstFlujo())) {
-            
+
         } else if (ae.getSource().equals(vista.getBtnRegistrarParqueadero())) {
             this.vista.dispose();
-            VistaRegistroParqueadero vistaParqueadero= new VistaRegistroParqueadero();
-            Parqueadero parqueadero=new Parqueadero();
-            ControladorParqueadero_VistaRegistroParqueadero back= new ControladorParqueadero_VistaRegistroParqueadero (parqueadero, vistaParqueadero);
+            VistaRegistroParqueadero vistaParqueadero = new VistaRegistroParqueadero();
+            Parqueadero parqueadero = new Parqueadero();
+            ControladorParqueadero_VistaRegistroParqueadero back = new ControladorParqueadero_VistaRegistroParqueadero(parqueadero, vistaParqueadero);
             vistaParqueadero.asignaOyentes(back);
             vistaParqueadero.mostrar();
         }

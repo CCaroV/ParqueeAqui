@@ -25,17 +25,19 @@ import util.CaException;
  * @author User
  */
 public class ControladorArea_VistaRegistrarAreas implements ActionListener {
+
     private final Area area;
-    
+
     private final VistaRegistrarAreas vista;
-    public ControladorArea_VistaRegistrarAreas(Area area, VistaRegistrarAreas vista){
-        this.area=area;
-        this.vista=vista;
+
+    public ControladorArea_VistaRegistrarAreas(Area area, VistaRegistrarAreas vista) {
+        this.area = area;
+        this.vista = vista;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource().equals(this.vista.getBtnRegistrar())){
+        if (e.getSource().equals(this.vista.getBtnRegistrar())) {
             this.area.setQ_cuposAutomovil(Integer.parseInt(this.vista.getAuto()));
             this.area.setQ_cuposBicicleta(Integer.parseInt(this.vista.getBicicleta()));
             this.area.setQ_cuposCamioneta(Integer.parseInt(this.vista.getCamioneta()));
@@ -43,16 +45,16 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
             this.area.setQ_cuposMotocicleta(Integer.parseInt(this.vista.getMotocicleta()));
             this.area.setQ_cuposVehiculoPesado(Integer.parseInt(this.vista.getVehiculoPesado()));
             this.area.setQ_cuposTotales(this.area.getQ_cuposAutomovil(), this.area.getQ_cuposBicicleta(),
-                                        this.area.getQ_cuposCamioneta(), this.area.getQ_cuposCampero(),
-                                        this.area.getQ_cuposMotocicleta(), this.area.getQ_cuposVehiculoPesado());
+                    this.area.getQ_cuposCamioneta(), this.area.getQ_cuposCampero(),
+                    this.area.getQ_cuposMotocicleta(), this.area.getQ_cuposVehiculoPesado());
             this.area.setQ_cuposDisponibles(this.area.getQ_cuposTotales());
             Home h = new Home();
-            VistaHome vh = new VistaHome(); 
+            VistaHome vh = new VistaHome();
             ControladorHome ch = new ControladorHome(vh, h);
-            this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size()+1);     
-            this.area.setK_area(h.getNomParqueaderos().size()+1);
-            ParqueaderoDAO parqueaderoBD=new ParqueaderoDAO(this.area.getParqueadero());
-            AreaDAO areaBD=new AreaDAO(this.area);
+            this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size() + 1);
+            this.area.setK_area(h.getNomParqueaderos().size() + 1);
+            ParqueaderoDAO parqueaderoBD = new ParqueaderoDAO(this.area.getParqueadero());
+            AreaDAO areaBD = new AreaDAO(this.area);
             try {
                 parqueaderoBD.registrarParquedero();
                 areaBD.registrarArea();
@@ -60,18 +62,17 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
                 Logger.getLogger(ControladorParqueadero_VistaRegistroParqueadero.class.getName()).log(Level.SEVERE, null, ex);
             }
             this.vista.dispose();
-            
-            vh.asignaOyentes(ch);           
+
+            vh.asignaOyentes(ch);
             vh.mostrar();
         }
-        if(e.getSource().equals(this.vista.getBtnVolver())){
+        if (e.getSource().equals(this.vista.getBtnVolver())) {
             this.vista.dispose();
-            VistaRegistroParqueadero vistaParqueadero= new VistaRegistroParqueadero();
-            Parqueadero parqueadero=new Parqueadero();
-            ControladorParqueadero_VistaRegistroParqueadero back= new ControladorParqueadero_VistaRegistroParqueadero (parqueadero, vistaParqueadero);
+            VistaRegistroParqueadero vistaParqueadero = new VistaRegistroParqueadero();
+            Parqueadero parqueadero = new Parqueadero();
+            ControladorParqueadero_VistaRegistroParqueadero back = new ControladorParqueadero_VistaRegistroParqueadero(parqueadero, vistaParqueadero);
             vistaParqueadero.asignaOyentes(back);
             vistaParqueadero.mostrar();
         }
     }
 }
-

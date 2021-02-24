@@ -16,15 +16,16 @@ import util.CaException;
  * @author User
  */
 public class ParqueaderoDAO {
-    Parqueadero parqueadero = new Parqueadero();
+
+    Parqueadero parqueadero;
 
     public ParqueaderoDAO(Parqueadero parqueadero) {
-        this.parqueadero=parqueadero;
+        this.parqueadero = parqueadero;
     }
-    
-    public void registrarParquedero()throws CaException {
-      try {
-          
+
+    public void registrarParquedero() throws CaException {
+        try {
+
             String strSQL = "INSERT INTO parqueadero (k_parqueadero, n_parqueadero, n_localidad, n_nivelservicio,"
                     + "n_direccion, v_pisos, i_subterraneo) VALUES(?,?,?,?,?,?,?)";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
@@ -38,11 +39,11 @@ public class ParqueaderoDAO {
             prepStmt.setBoolean(7, this.parqueadero.isI_subterraneo());
             prepStmt.executeUpdate();
             prepStmt.close();
-            ServiceLocator.getInstance().commit();            
-        }catch (SQLException e) {
-           throw new CaException( "ParqueaderoDAO", "No pudo crear el parqueadero"+ e.getMessage());
-        }  finally {
-         ServiceLocator.getInstance().liberarConexion();
+            ServiceLocator.getInstance().commit();
+        } catch (SQLException e) {
+            throw new CaException("ParqueaderoDAO", "No pudo crear el parqueadero" + e.getMessage());
+        } finally {
+            ServiceLocator.getInstance().liberarConexion();
         }
     }
 }
