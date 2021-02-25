@@ -22,7 +22,7 @@ public class ConsultaRecaudoDAO {
     public double consultarRecaudoBD(String FechaInicial, String FechaFinal) throws CaException{
         double valor= 0;
         try {
-            String strSQL = "SELECT SUM(v_valorpagado) FROM pago p, servicio s WHERE p.k_servicio=s.k_servicio AND s.fechaHoraSalida> TO_DATE(?, 'DD/MM/YYYY') AND s.fechaHoraSalida< TO_DATE(?, 'DD/MM/YYYY')";
+            String strSQL = "SELECT SUM(v_valorpagado) FROM pago p, servicio s WHERE p.k_servicio=s.k_servicio AND s.f_fechaHoraSalida> TO_DATE(?, 'DD/MM/YYYY') AND s.f_fechaHoraSalida< TO_DATE(?, 'DD/MM/YYYY')";
             Connection conexion = dao.ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setString(1, FechaInicial);
@@ -31,7 +31,7 @@ public class ConsultaRecaudoDAO {
             ResultSet rs = prepStmt.executeQuery();
             //Se recuperan los valores
             while (rs.next()) {
-                valor=rs.getDouble("v_valorpagado");
+                valor=rs.getDouble("sum");
             }
         } catch (SQLException e) {
             throw new CaException("ConsultaRecaudoDAO", "No se pudo hacer la consultaRecaudo " + e.getMessage());

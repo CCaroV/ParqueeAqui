@@ -131,7 +131,7 @@ public class VistaRegistroSalida extends JFrame {
         lbltxtDireccion.setBounds(450, 400, 250, 25);
 
         // posición de campos de texto
-        fldNomCliente.setEditable(false);
+        fldNomCliente.setEditable(true);
         fldNomCliente.setBounds(230, 150, 150, 25);
         fldApeCliente.setBounds(520, 150, 150, 25);
         fldMarcaVehiculo.setEditable(false);
