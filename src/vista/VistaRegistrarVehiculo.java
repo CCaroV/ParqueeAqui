@@ -44,6 +44,7 @@ public class VistaRegistrarVehiculo extends JFrame {
 
     public VistaRegistrarVehiculo() throws HeadlessException {
         super("Parqueé Aquí");
+        this.boxTipoVehiculo = new JComboBox(tipoVehiculo);
 
         Container k = getContentPane();
         k.setLayout(null);
@@ -63,7 +64,7 @@ public class VistaRegistrarVehiculo extends JFrame {
 
         // Agrega las cajas de texto
         k.add(fldPlaca);
-
+        k.add(boxTipoVehiculo);
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
         lblTitulo.setBounds(250, 50, 450, 30);
@@ -86,6 +87,7 @@ public class VistaRegistrarVehiculo extends JFrame {
 
         // Posición de las cajas de texto
         fldPlaca.setBounds(450, 150, 150, 30);
+        boxTipoVehiculo.setBounds(180, 150, 150, 30);
         
     }
 
