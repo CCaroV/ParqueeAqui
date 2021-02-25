@@ -100,15 +100,6 @@ public class VistaRegistrarVehiculo extends JFrame {
         return this.fldPlaca.getText();
     }
 
-     public void setTipoVehiculo(ArrayList<String> tipoVehiculo) {
-        this.tipoVehiculo = new String[tipoVehiculo.size()];
-        this.tipoVehiculo =  tipoVehiculo.toArray(this.tipoVehiculo);
-        this.boxTipoVehiculo = new JComboBox(this.tipoVehiculo);
-        
-        Container k = getContentPane();
-        k.add(boxTipoVehiculo);
-        boxTipoVehiculo.setBounds(180, 150, 150, 30);
-    }
     
     public String getTipoVehiculo(){
          return this.boxTipoVehiculo.getSelectedItem().toString();
