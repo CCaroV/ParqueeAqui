@@ -35,8 +35,7 @@ public class VistaRegistrarAreas extends JFrame {
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
     private final Font fontSubTitulo = new Font("Calibri", Font.BOLD, 20);
-
-    private final JButton btnVolver = new JButton("Volver");
+    
     private final JButton btnRegistrar = new JButton("Registrar");
 
     private final JTextField fldAuto = new JTextField();
@@ -66,7 +65,6 @@ public class VistaRegistrarAreas extends JFrame {
 
         //Agrega los botones
         k.add(btnRegistrar);
-        k.add(btnVolver);
 
         //Agrega las cajas de texto
         k.add(fldAuto);
@@ -99,8 +97,7 @@ public class VistaRegistrarAreas extends JFrame {
         lblBicicleta.setBounds(370, 300, 300, 30);
 
         //Posición de los botones
-        btnVolver.setBounds(200, 380, 85, 25);
-        btnRegistrar.setBounds(320, 380, 170, 25);
+        btnRegistrar.setBounds(250, 380, 170, 25);
 
         //Posición de las cajas de texto
         fldAuto.setBounds(140, 200, 150, 30);
@@ -176,17 +173,12 @@ public class VistaRegistrarAreas extends JFrame {
         }
     }
 
-    public JButton getBtnVolver() {
-        return btnVolver;
-    }
-
     public JButton getBtnRegistrar() {
         return btnRegistrar;
     }
 
     public void asignarOyente(ControladorArea_VistaRegistrarAreas c) {
         this.btnRegistrar.addActionListener(c);
-        this.btnVolver.addActionListener(c);
     }
 
     public void mensajeAlerta() {

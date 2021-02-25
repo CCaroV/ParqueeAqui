@@ -22,8 +22,8 @@ public class SlotDAO {
 
     private Slot slot;
 
-    public SlotDAO() {
-        slot = new Slot();
+    public SlotDAO(Slot slot) {
+        this.slot = slot;
     }
 
     public void incluirSlot() throws CaException {
@@ -34,8 +34,10 @@ public class SlotDAO {
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setInt(1, slot.getK_slot());
+            //System.out.println(slot.getK_slot());
             prepStmt.setBoolean(2, slot.isI_estado());
             prepStmt.setInt(3, slot.getArea().getK_area());
+            //System.out.println(slot.getArea().getK_area());
             prepStmt.setInt(4, slot.getParqueadero().getK_parqueadero());
             //Se ejecuta la sentencia
             prepStmt.executeUpdate();

@@ -9,10 +9,12 @@ import modelo.Vehiculo;
 import vista.VistaRegistrarVehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.Month;
 import modelo.Home;
 import modelo.Servicio;
+import modelo.Slot;
 import vista.VistaHome;
 
 /**
@@ -23,11 +25,13 @@ public class ControladorVehiculo_VistaRegistrarVehiculo implements ActionListene
 
     private final Vehiculo vehiculo;
     private final Servicio servicio;
+    private final Slot slot;
     private final VistaRegistrarVehiculo vista;
 
-    public ControladorVehiculo_VistaRegistrarVehiculo(Vehiculo vehiculo, Servicio servicio, VistaRegistrarVehiculo vista) {
+    public ControladorVehiculo_VistaRegistrarVehiculo(Vehiculo vehiculo, Servicio servicio, Slot slot, VistaRegistrarVehiculo vista) {
         this.vehiculo = vehiculo;
         this.servicio = servicio;
+        this.slot = slot;
         this.vista = vista;
     }
 
@@ -38,9 +42,12 @@ public class ControladorVehiculo_VistaRegistrarVehiculo implements ActionListene
             this.vehiculo.setK_vehiculo(this.vista.getPlaca());
             this.vista.setLblHora(getHora());
             this.vista.setLblFecha(getFecha());
+            this.servicio.setF_fechaHoraInicio(Date.valueOf(getFecha()));
+            
+            
             
             this.servicio.setK_servicio(0);
-            
+
         }
         if (e.getSource().equals(this.vista.getBtnVolver())) {
             this.vista.dispose();

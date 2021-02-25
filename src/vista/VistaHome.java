@@ -10,6 +10,7 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.*;
 
 /**
@@ -28,7 +29,7 @@ public class VistaHome extends JFrame {
     private final Font fontTitulo = new Font("Calibri", Font.BOLD, 30);
     private final Font fontTexto = new Font("Calibri", Font.PLAIN, 15);
 
-    private final JComboBox<String> boxNomParqueadero = new JComboBox<>();
+    private JComboBox boxNomParqueadero;
 
     private final JButton btnSalida = new JButton("Salida de vehículo");
     private final JButton btnReservar = new JButton("Reservar");
@@ -36,12 +37,12 @@ public class VistaHome extends JFrame {
     private final JButton btnConstRecaudo = new JButton("Consulta de recaudo");
     private final JButton btnConstFlujo = new JButton("Consulta de Flujo");
     private final JButton btnRegistrarParqueadero = new JButton("Registrar un nuevo parqueadero");
-
-    private ArrayList<String> nomParqueaderos = new ArrayList<>();
+    
+    private String[] nomParqueaderos;
 
     public VistaHome() throws HeadlessException {
         super("Bienvenido");
-        boxNomParqueadero.setModel(new DefaultComboBoxModel<String>(nomParqueaderos.toArray(new String[0])));
+        
 
         Container c = getContentPane();
         c.setLayout(null);
@@ -49,9 +50,6 @@ public class VistaHome extends JFrame {
         //Agrega los textos
         c.add(lblTitulo);
         c.add(lblNomParqueadero);
-
-        //Agrega el combobox
-        c.add(boxNomParqueadero);
 
         //Agrega los botones
         c.add(btnSalida);
@@ -66,8 +64,6 @@ public class VistaHome extends JFrame {
         lblTitulo.setBounds(120, 50, 450, 30);
         lblNomParqueadero.setFont(fontTexto);
         lblNomParqueadero.setBounds(60, 150, 250, 25);
-
-        boxNomParqueadero.setBounds(170, 150, 200, 25);
 
         btnSalida.setBounds(50, 260, 350, 30);
         btnReservar.setBounds(50, 300, 170, 30);
@@ -112,7 +108,17 @@ public class VistaHome extends JFrame {
     }
 
     public void setNomParqueaderos(ArrayList<String> nomParqueaderos) {
-        this.nomParqueaderos = nomParqueaderos;
+        this.nomParqueaderos = new String[nomParqueaderos.size()];
+        this.nomParqueaderos =  nomParqueaderos.toArray(this.nomParqueaderos);
+        this.boxNomParqueadero = new JComboBox(this.nomParqueaderos);
+        
+        Container c = getContentPane();
+        c.add(boxNomParqueadero);
+        boxNomParqueadero.setBounds(170, 150, 200, 25);
+    }
+    
+    public int getTotalParqueadero() {
+        return this.nomParqueaderos.length;
     }
 
     public void asignaOyentes(ControladorHome c) {

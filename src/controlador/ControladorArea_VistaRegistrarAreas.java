@@ -18,7 +18,10 @@ import java.util.logging.Logger;
 
 import dao.AreaDAO;
 import dao.ParqueaderoDAO;
+import dao.SlotDAO;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
+import modelo.Slot;
 import util.CaException;
 
 /**
@@ -28,19 +31,27 @@ import util.CaException;
 public class ControladorArea_VistaRegistrarAreas implements ActionListener {
 
     private final Area area;
+    private final Parqueadero parqueadero;
+    private final Slot slot = new Slot();
     private final VistaRegistrarAreas vista;
     private int q_area;
 
-    public ControladorArea_VistaRegistrarAreas(Area area, VistaRegistrarAreas vista, int q_area) {
+    private final Home home = new Home();
+    private final VistaHome vistaHome = new VistaHome();
+    private final ControladorHome ch = new ControladorHome(vistaHome, home);
+
+    public ControladorArea_VistaRegistrarAreas(Area area, VistaRegistrarAreas vista, int q_area, Parqueadero parqueadero) {
         this.area = area;
         this.vista = vista;
         this.q_area = q_area;
+        this.vistaHome.asignaOyentes(ch);
+        this.parqueadero = parqueadero;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(this.vista.getBtnRegistrar())) {
-
+            this.area.setK_area(parqueadero.getK_parqueadero() * 100 + q_area);
             this.area.setQ_cuposAutomovil(Integer.parseInt(this.vista.getAuto()));
             this.area.setQ_cuposBicicleta(Integer.parseInt(this.vista.getBicicleta()));
             this.area.setQ_cuposCamioneta(Integer.parseInt(this.vista.getCamioneta()));
@@ -50,36 +61,36 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
             this.area.setQ_cuposTotales(this.area.getQ_cuposAutomovil(), this.area.getQ_cuposBicicleta(),
                     this.area.getQ_cuposCamioneta(), this.area.getQ_cuposCampero(),
                     this.area.getQ_cuposMotocicleta(), this.area.getQ_cuposVehiculoPesado());
+            System.out.println(area.getQ_cuposTotales());
             this.area.setQ_cuposDisponibles(this.area.getQ_cuposTotales());
             this.q_area--;
 
-            //JOptionPane.showMessageDialog(this.vista, "Ingrese solo valores numéricos", "Error", JOptionPane.ERROR_MESSAGE);
             this.vista.limpiarFields();
             if (this.q_area != 0) {
                 JOptionPane.showMessageDialog(this.vista, "Área número " + String.valueOf(this.q_area) + " registrada", "Registro de áreas", JOptionPane.INFORMATION_MESSAGE);
                 this.vista.limpiarFields();
-            } else {
+            }
+            AreaDAO areaBD = new AreaDAO(this.area);
+            SlotDAO slotBD = new SlotDAO(this.slot);
+            try {
+                areaBD.registrarArea();
+                for (int i = area.getQ_cuposTotales(); i > 0; i--) {
+                    slot.setK_slot(i + q_area *1000);
+                    slot.setArea(this.area);
+                    slot.setParqueadero(this.parqueadero);
+                    slot.setI_estado(false);
+                    slotBD.incluirSlot();
+                }
 
-                ParqueaderoDAO parqueaderoBD = new ParqueaderoDAO(this.area.getParqueadero());
-                AreaDAO areaBD = new AreaDAO(this.area);
-                try {
-                    parqueaderoBD.registrarParquedero();
-                    areaBD.registrarArea();
-                    JOptionPane.showMessageDialog(this.vista, "Áreas registradas con éxito", "Áreas registradas", JOptionPane.INFORMATION_MESSAGE);
-                    asignarIdParqueadero();
-                } catch (Exception ex) {
-                    Logger.getLogger(ControladorParqueadero_VistaRegistroParqueadero.class.getName()).log(Level.SEVERE, null, ex);
-                    JOptionPane.showMessageDialog(vista, "Error al registrar las áreas", "Error", JOptionPane.ERROR_MESSAGE);
-                } finally {
+            } catch (HeadlessException | CaException ex) {
+                Logger.getLogger(ControladorParqueadero_VistaRegistroParqueadero.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(vista, "Error al registrar las áreas", "Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                if (this.q_area == 0) {
                     this.vista.dispose();
                     mostrarHome();
                 }
             }
-        }
-
-        if (e.getSource().equals(this.vista.getBtnVolver())) {
-            mostrarVistaParqueadero();
-            this.vista.dispose();
         }
     }
 
@@ -91,16 +102,7 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
         vistaParqueadero.mostrar();
     }
 
-    private void asignarIdParqueadero() {
-        Home h = new Home();
-        this.area.getParqueadero().setK_parqueadero(h.getNomParqueaderos().size() + 1);
-        this.area.setK_area(h.getNomParqueaderos().size() + 1);
-    }
-
     private void mostrarHome() {
-        Home home = new Home();
-        VistaHome vistaHome = new VistaHome();
-        ControladorHome ch = new ControladorHome(vistaHome, home);
         vistaHome.asignaOyentes(ch);
         vistaHome.mostrar();
     }

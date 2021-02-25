@@ -44,9 +44,7 @@ public class HomeDAO {
             ResultSet rs = prepStmt.executeQuery();
             //Asignacion de valores al objeto mientras halla una columna siguiente
             while (rs.next()) {
-
                 this.home.agregarParqueadero(rs.getString(1));
-
             }
         } catch (SQLException e) {
             throw new CaException("HomeDAO", "No pudo recuperar el n_parqueadero " + e.getMessage());

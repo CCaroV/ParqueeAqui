@@ -20,6 +20,7 @@ import dao.HomeDAO;
 import modelo.Cliente;
 import modelo.Contrato;
 import modelo.Servicio;
+import modelo.Slot;
 import proyectofinal.ProyectoFinal;
 import util.CaException;
 import vista.VistaConsultaFlujo;
@@ -37,14 +38,14 @@ public class ControladorHome implements ActionListener {
     Home modelo;
 
     public ControladorHome(VistaHome vista, Home modelo) {
-        /*HomeDAO homeBD = new HomeDAO();
+        HomeDAO homeBD = new HomeDAO();
         try {
             homeBD.buscarNombresParqueaderos();
         } catch (CaException ex) {
             Logger.getLogger(ProyectoFinal.class.getName()).log(Level.SEVERE, null, ex);
         }
         modelo.setNomParqueaderos(homeBD.getHome().getNomParqueaderos());
-        vista.setNomParqueaderos(modelo.getNomParqueaderos());*/
+        vista.setNomParqueaderos(modelo.getNomParqueaderos());
         this.vista = vista;
         this.modelo = modelo;
     }
@@ -53,40 +54,40 @@ public class ControladorHome implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource().equals(vista.getBtnSalida())) {
             this.vista.dispose();
-            
+
             VistaRegistroSalida vistaSalida = new VistaRegistroSalida();
             Vehiculo vehiculo = new Vehiculo();
             Cliente cliente = new Cliente();
             Contrato contrato = new Contrato();
             ControladorRegistroSalida controlSalida = new ControladorRegistroSalida(vistaSalida, vehiculo, cliente, contrato);
-            
+
             vistaSalida.asignaOyentes(controlSalida);
             vistaSalida.mostrar();
-            
+
         } else if (ae.getSource().equals(vista.getBtnReservar())) {
             this.vista.dispose();
 
             //Aplicando MVC al registro del vehículo
             Vehiculo vehiculo = new Vehiculo();
             Servicio servicio = new Servicio();
+            Slot slot = new Slot();
             VistaRegistrarVehiculo vistaReservar = new VistaRegistrarVehiculo();
-            ControladorVehiculo_VistaRegistrarVehiculo controlVehiculo = new ControladorVehiculo_VistaRegistrarVehiculo(vehiculo, servicio, vistaReservar);
+            ControladorVehiculo_VistaRegistrarVehiculo controlVehiculo = new ControladorVehiculo_VistaRegistrarVehiculo(vehiculo, servicio, slot, vistaReservar);
 
             vistaReservar.asignaOyentes(controlVehiculo);
             vistaReservar.mostrar();
 
         } else if (ae.getSource().equals(vista.getBtnConstVehiculo())) {
             this.vista.dispose();
-            
+
             Vehiculo vehiculo = new Vehiculo();
             Cliente cliente = new Cliente();
             VistaConsultaVehiculo vistaConstVehiculo = new VistaConsultaVehiculo();
             ControladorConsultaVehiculo controlVehiculo = new ControladorConsultaVehiculo(vehiculo, cliente, vistaConstVehiculo);
-            
+
             vistaConstVehiculo.asignaOyentes(controlVehiculo);
             vistaConstVehiculo.mostrar();
-            
-                
+
         } else if (ae.getSource().equals(vista.getBtnConstRecaudo())) {
             this.vista.dispose();
 
@@ -102,7 +103,7 @@ public class ControladorHome implements ActionListener {
             Contrato contrato = new Contrato();
             VistaConsultaFlujo vistaFlujo = new VistaConsultaFlujo();
             ControladorConsultaFlujo controlFlujo = new ControladorConsultaFlujo(vistaFlujo, contrato);
-            
+
             vistaFlujo.asignaOyentes(controlFlujo);
 
             vistaFlujo.mostrar();

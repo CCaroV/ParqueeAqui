@@ -13,7 +13,11 @@ import java.util.ArrayList;
  */
 public class Home {
 
-    private ArrayList<String> nomParqueaderos;
+    private ArrayList<String> nomParqueaderos = new ArrayList<>();
+
+    public Home() {
+        
+    }
 
     public ArrayList<String> getNomParqueaderos() {
         return nomParqueaderos;
@@ -21,10 +25,6 @@ public class Home {
 
     public void setNomParqueaderos(ArrayList<String> nomParqueaderos) {
         this.nomParqueaderos = nomParqueaderos;
-    }
-
-    public Home() {
-        this.nomParqueaderos = new ArrayList<String>();
     }
 
     public void agregarParqueadero(String nomParqueadero) {
