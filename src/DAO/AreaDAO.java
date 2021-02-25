@@ -8,6 +8,7 @@ package dao;
 import modelo.Area;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import modelo.Parqueadero;
 import util.CaException;
@@ -83,6 +84,23 @@ public class AreaDAO {
             prepStmt.setInt(9, this.area.getK_area());
         } catch (SQLException e) {
             throw new CaException("AreaDAO", "No pudo actualizar los datos" + e.getMessage());
+        } finally {
+            ServiceLocator.getInstance().liberarConexion();
+        }
+    }
+
+    public void proyectaCupos() throws CaException {
+        try {
+            String strSQL = "SELECT q_cuposdisponibles, q_cupoautomovil, q_cupocampero, q_cupocamioneta,"
+                    + "q_cupopesado, q_cupomotocicleta, q_cupobicicleta FROM area WHERE k_area = ?;";
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            ResultSet rs = prepStmt.executeQuery();
+            while(rs.next()) {
+                
+            }
+        } catch (SQLException e) {
+            throw new CaException("AreaDAO", "No pudo proyectar los datos" + e.getMessage());
         } finally {
             ServiceLocator.getInstance().liberarConexion();
         }
