@@ -7,6 +7,7 @@ package vista;
 
 import controlador.ControladorVehiculo_VistaRegistrarVehiculo;
 import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.*;
 
 /**
@@ -33,8 +34,12 @@ public class VistaRegistrarVehiculo extends JFrame {
 
     private final JButton btnVolver = new JButton("Volver");
     private final JButton btnRegistrar = new JButton("Registrar");
-
-    private final JTextField fldTipoVehiculo = new JTextField();
+    
+    private JComboBox boxTipoVehiculo;
+    private final String tipoVehiculo[]= {"Automovil","Camioneta","Campero","Vehiculo Pesado","Motocicleta","Bicicleta"};
+    
+    
+    
     private final JTextField fldPlaca = new JTextField();
 
     public VistaRegistrarVehiculo() throws HeadlessException {
@@ -58,7 +63,6 @@ public class VistaRegistrarVehiculo extends JFrame {
 
         // Agrega las cajas de texto
         k.add(fldPlaca);
-        k.add(fldTipoVehiculo);
 
         // posición y fuente de los textos
         lblTitulo.setFont(fontTitulo);
@@ -82,8 +86,7 @@ public class VistaRegistrarVehiculo extends JFrame {
 
         // Posición de las cajas de texto
         fldPlaca.setBounds(450, 150, 150, 30);
-        fldTipoVehiculo.setBounds(180, 150, 150, 30);
-
+        
     }
 
     public void mostrar() {
@@ -97,10 +100,21 @@ public class VistaRegistrarVehiculo extends JFrame {
         return this.fldPlaca.getText();
     }
 
-    public String getTipoVehiculo() {
-        return this.fldTipoVehiculo.getText();
+     public void setTipoVehiculo(ArrayList<String> tipoVehiculo) {
+        this.tipoVehiculo = new String[tipoVehiculo.size()];
+        this.tipoVehiculo =  tipoVehiculo.toArray(this.tipoVehiculo);
+        this.boxTipoVehiculo = new JComboBox(this.tipoVehiculo);
+        
+        Container k = getContentPane();
+        k.add(boxTipoVehiculo);
+        boxTipoVehiculo.setBounds(180, 150, 150, 30);
     }
-
+    
+    public String getTipoVehiculo(){
+         return this.boxTipoVehiculo.getSelectedItem().toString();
+    }
+     
+     
     public JButton getBtnVolver() {
         return btnVolver;
     }
