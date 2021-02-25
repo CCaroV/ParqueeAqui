@@ -54,16 +54,18 @@ public class SlotDAO {
     public void modificarSlot() throws CaException {
         try {
             //QUERY a ejecutar para registrar el area
-            String strSQL = "UPDATE Slot SET(i_estado=?) WHERE k_slot=?";
+            String strSQL = "UPDATE Slot SET i_estado=? WHERE k_slot=?";
             //Conexion a la BD
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setBoolean(1, slot.isI_estado());
+            System.out.println(slot.isI_estado());
             prepStmt.setInt(2, slot.getK_slot());
+            System.out.println(slot.getK_slot());
             //Se ejecuta la sentencia
             prepStmt.executeUpdate();
             prepStmt.close();
-
+            ServiceLocator.getInstance().commit();
         } catch (SQLException e) {
             throw new CaException("SlotDAO", "No pudo actualizar el slot, " + e.getMessage());
         } finally {
@@ -74,22 +76,22 @@ public class SlotDAO {
     public void buscarSlot() throws CaException {
         try {
             //QUERY a ejecutar para buscar el slot
-            String strSQL = "SELECT k_slot, i_estado, k_area, k_parqueadero FROM Slot WHERE k_slot = ?";
+            String strSQL = "SELECT k_slot, k_area, k_parqueadero FROM Slot WHERE i_estado IS false LIMIT 1;";
             //Conexion a la BD
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-            prepStmt.setInt(1, slot.getK_slot());
             //Se ejecuta la sentencia
             ResultSet rs = prepStmt.executeQuery();
             //Se recuperan los valores
             while (rs.next()) {
                 slot.setK_slot(rs.getInt(1));
-                slot.setI_estado(rs.getBoolean(2));
-                slot.getArea().setK_area(rs.getInt(3));
-                slot.getParqueadero().setK_parqueadero(rs.getInt(4));
+                slot.getArea().setK_area(rs.getInt(2));
+                slot.getParqueadero().setK_parqueadero(rs.getInt(3));
             }
         } catch (SQLException e) {
             throw new CaException("SlotDAO", "No pudo recuperar el slot " + e.getMessage());
+        } finally {
+            ServiceLocator.getInstance().liberarConexion();
         }
     }
 }

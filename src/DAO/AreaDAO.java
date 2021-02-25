@@ -9,6 +9,7 @@ import modelo.Area;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import modelo.Parqueadero;
 import util.CaException;
 
 /**
@@ -60,6 +61,29 @@ public class AreaDAO {
             throw new CaException("AreaDAO", "No pudo crear el area" + e.getMessage());
         } finally {
             //Liberacion conexion BD
+            ServiceLocator.getInstance().liberarConexion();
+        }
+    }
+
+    public void cambioCupos() throws CaException {
+        try {
+            String strSQL = "UPDATE area SET q_cuposdisponibles = ?, q_cupoautomovil = ?, "
+                    + "q_cupocampero = ?, q_cupocamioneta = ?, q_cupopesado = ?, "
+                    + "q_cupomotocicleta = ?, q_cupobicicleta = ? WHERE k_parqueadero = ? AND k_area = ?;";
+            Connection conexion = ServiceLocator.getInstance().tomarConexion();
+            PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
+            prepStmt.setInt(1, this.area.getQ_cuposDisponibles());
+            prepStmt.setInt(2, this.area.getQ_cuposAutomovil());
+            prepStmt.setInt(3, this.area.getQ_cuposCampero());
+            prepStmt.setInt(4, this.area.getQ_cuposCamioneta());
+            prepStmt.setInt(5, this.area.getQ_cuposVehiculoPesado());
+            prepStmt.setInt(6, this.area.getQ_cuposMotocicleta());
+            prepStmt.setInt(7, this.area.getParqueadero().getK_parqueadero());
+            prepStmt.setInt(8, this.area.getQ_cuposDisponibles());
+            prepStmt.setInt(9, this.area.getK_area());
+        } catch (SQLException e) {
+            throw new CaException("AreaDAO", "No pudo actualizar los datos" + e.getMessage());
+        } finally {
             ServiceLocator.getInstance().liberarConexion();
         }
     }

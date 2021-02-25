@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import dao.SlotDAO;
 import modelo.Vehiculo;
 import vista.VistaRegistrarVehiculo;
 import java.awt.event.ActionEvent;
@@ -12,9 +13,12 @@ import java.awt.event.ActionListener;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.Month;
+import modelo.Area;
 import modelo.Home;
+import modelo.Parqueadero;
 import modelo.Servicio;
 import modelo.Slot;
+import util.CaException;
 import vista.VistaHome;
 
 /**
@@ -42,12 +46,22 @@ public class ControladorVehiculo_VistaRegistrarVehiculo implements ActionListene
             this.vehiculo.setK_vehiculo(this.vista.getPlaca());
             this.vista.setLblHora(getHora());
             this.vista.setLblFecha(getFecha());
-            this.servicio.setF_fechaHoraInicio(Date.valueOf(getFecha()));
-            
-            
-            
-            this.servicio.setK_servicio(0);
+            //this.servicio.setF_fechaHoraInicio(Date.valueOf(getFecha()));
 
+            SlotDAO slotBD = new SlotDAO(this.slot);
+            Area area = new Area();this.slot.setArea(area);
+            Parqueadero parqueadero = new Parqueadero();
+            slot.setParqueadero(parqueadero);
+            try {
+                slotBD.buscarSlot();
+                slot.setI_estado(true);
+                slotBD.modificarSlot();
+            } catch (CaException ee) {
+                System.out.println(ee);
+            } finally {
+                this.vista.dispose();
+                mostrarHome();
+            }
         }
         if (e.getSource().equals(this.vista.getBtnVolver())) {
             this.vista.dispose();
