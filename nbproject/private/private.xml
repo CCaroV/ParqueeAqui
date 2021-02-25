@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Sebastian%20Wilches/Documents/NetBeansProjects/ParqueeAqui/src/modelo/Parqueadero.java</file>
+            <file>file:/C:/Users/Sebastian%20Wilches/Documents/NetBeansProjects/ParqueeAqui/src/modelo/Pago.java</file>
+            <file>file:/C:/Users/Sebastian%20Wilches/Documents/NetBeansProjects/ParqueeAqui/src/DAO/ParqueaderoDAO.java</file>
             <file>file:/C:/Users/Sebastian%20Wilches/Documents/NetBeansProjects/ParqueeAqui/src/DAO/SlotDAO.java</file>
+            <file>file:/C:/Users/Sebastian%20Wilches/Documents/NetBeansProjects/ParqueeAqui/src/controlador/ControladorParqueadero_VistaRegistroParqueadero.java</file>
+            <file>file:/C:/Users/Sebastian%20Wilches/Documents/NetBeansProjects/ParqueeAqui/src/DAO/ServiceLocator.java</file>
+            <file>file:/C:/Users/Sebastian%20Wilches/Documents/NetBeansProjects/ParqueeAqui/src/proyectofinal/ProyectoFinal.java</file>
         </group>
     </open-files>
 </project-private>

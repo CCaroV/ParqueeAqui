@@ -16,8 +16,8 @@ public class Parqueadero {
     private String n_parqueadero;
     private int k_parqueadero;
     private String n_direccion;
-    private int v_pisos;
-    private int v_area;
+    private int q_pisos;
+    private int q_area;
     private boolean i_subterraneo;
 
     public Parqueadero() {
@@ -26,8 +26,8 @@ public class Parqueadero {
         this.n_nivelServicio = 0.8f;
         this.n_direccion = "";
         this.n_parqueadero = null;
-        this.v_pisos = 0;
-        this.v_area = 0;
+        this.q_pisos = 0;
+        this.q_area = 0;
         this.i_subterraneo = false;
     }
 
@@ -51,12 +51,12 @@ public class Parqueadero {
         return n_direccion;
     }
 
-    public int getV_pisos() {
-        return v_pisos;
+    public int getQ_pisos() {
+        return q_pisos;
     }
 
-    public int getV_areas() {
-        return v_area;
+    public int getQ_areas() {
+        return q_area;
     }
 
     public boolean isI_subterraneo() {
@@ -91,12 +91,12 @@ public class Parqueadero {
         this.n_direccion = n_direccion;
     }
 
-    public void setV_pisos(int v_pisos) {
-        this.v_pisos = v_pisos;
+    public void setQ_pisos(int q_pisos) {
+        this.q_pisos = q_pisos;
     }
 
-    public void setV_areas(int v_areas) {
-        this.v_area = v_areas;
+    public void setQ_areas(int q_areas) {
+        this.q_area = q_areas;
     }
 
     public void setI_subterraneo(boolean i_subterraneo) {

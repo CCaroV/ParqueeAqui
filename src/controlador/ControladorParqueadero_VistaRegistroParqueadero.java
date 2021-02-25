@@ -40,15 +40,15 @@ public class ControladorParqueadero_VistaRegistroParqueadero implements ActionLi
             this.parqueadero.setN_nivelServicio(this.parqueadero.getN_localidad());
             this.parqueadero.setN_parqueadero(this.vista.getNomParqueadero());
             this.parqueadero.setI_subterraneo(this.vista.getCheck());
-            this.parqueadero.setV_pisos(Integer.parseInt(this.vista.getNumNiveles()));
-            this.parqueadero.setV_areas(Integer.parseInt(this.vista.getNumAreas()));
+            this.parqueadero.setQ_pisos(Integer.parseInt(this.vista.getNumNiveles()));
+            this.parqueadero.setQ_areas(Integer.parseInt(this.vista.getNumAreas()));
 
             vista.dispose();
 
             VistaRegistrarAreas vistaArea = new VistaRegistrarAreas();
             Area area = new Area();
             area.setParqueadero(parqueadero);
-            ControladorArea_VistaRegistrarAreas controlArea = new ControladorArea_VistaRegistrarAreas(area, vistaArea, this.parqueadero.getV_areas());
+            ControladorArea_VistaRegistrarAreas controlArea = new ControladorArea_VistaRegistrarAreas(area, vistaArea, this.parqueadero.getQ_areas());
             vistaArea.asignarOyente(controlArea);
             vistaArea.mostrar();
             

@@ -53,18 +53,18 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
             this.area.setQ_cuposDisponibles(this.area.getQ_cuposTotales());
             this.q_area--;
 
-            //    JOptionPane.showMessageDialog(this.vista, "Ingrese solo valores numéricos", "Error", JOptionPane.ERROR_MESSAGE);
-            //    this.vista.limpiarFields();
+            //JOptionPane.showMessageDialog(this.vista, "Ingrese solo valores numéricos", "Error", JOptionPane.ERROR_MESSAGE);
+            this.vista.limpiarFields();
             if (this.q_area != 0) {
                 JOptionPane.showMessageDialog(this.vista, "Área número " + String.valueOf(this.q_area) + " registrada", "Registro de áreas", JOptionPane.INFORMATION_MESSAGE);
                 this.vista.limpiarFields();
             } else {
 
-                //ParqueaderoDAO parqueaderoBD = new ParqueaderoDAO(this.area.getParqueadero());
-                //AreaDAO areaBD = new AreaDAO(this.area);
+                ParqueaderoDAO parqueaderoBD = new ParqueaderoDAO(this.area.getParqueadero());
+                AreaDAO areaBD = new AreaDAO(this.area);
                 try {
-                    //parqueaderoBD.registrarParquedero();
-                    //areaBD.registrarArea();
+                    parqueaderoBD.registrarParquedero();
+                    areaBD.registrarArea();
                     JOptionPane.showMessageDialog(this.vista, "Áreas registradas con éxito", "Áreas registradas", JOptionPane.INFORMATION_MESSAGE);
                     asignarIdParqueadero();
                 } catch (Exception ex) {

@@ -27,7 +27,7 @@ public class ParqueaderoDAO {
         try {
 
             String strSQL = "INSERT INTO parqueadero (k_parqueadero, n_parqueadero, n_localidad, n_nivelservicio,"
-                    + "n_direccion, v_pisos, i_subterraneo) VALUES(?,?,?,?,?,?,?)";
+                    + "n_direccion, q_piso, i_subterraneo, q_area) VALUES(?,?,?,?,?,?,?,?)";
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
             prepStmt.setInt(1, this.parqueadero.getK_parqueadero());
@@ -35,8 +35,9 @@ public class ParqueaderoDAO {
             prepStmt.setString(3, this.parqueadero.getN_localidad());
             prepStmt.setFloat(4, this.parqueadero.getN_nivelServicio());
             prepStmt.setString(5, this.parqueadero.getN_direccion());
-            prepStmt.setInt(6, this.parqueadero.getV_pisos());
+            prepStmt.setInt(6, this.parqueadero.getQ_pisos());
             prepStmt.setBoolean(7, this.parqueadero.isI_subterraneo());
+            prepStmt.setInt(8, this.parqueadero.getQ_areas());
             prepStmt.executeUpdate();
             prepStmt.close();
             ServiceLocator.getInstance().commit();
