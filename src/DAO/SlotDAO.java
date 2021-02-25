@@ -21,19 +21,21 @@ import util.CaException;
 public class SlotDAO {
 
     private Slot slot;
-
+    int cantidadSlots=0;
+    
     public SlotDAO(Slot slot) {
         this.slot = slot;
     }
 
     public void incluirSlot() throws CaException {
+        
         try {
             //QUERY a ejecutar para registrar el area
             String strSQL = "INSERT INTO slot (k_slot, i_estado, k_area, k_parqueadero) VALUES (?,?,?,?)";
             //Conexion a la BD
             Connection conexion = ServiceLocator.getInstance().tomarConexion();
             PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
-            prepStmt.setInt(1, slot.getK_slot());
+            prepStmt.setInt(1, slot.getK_slot()+cantidadSlots);
             //System.out.println(slot.getK_slot());
             prepStmt.setBoolean(2, slot.isI_estado());
             prepStmt.setInt(3, slot.getArea().getK_area());
@@ -93,5 +95,24 @@ public class SlotDAO {
         } finally {
             ServiceLocator.getInstance().liberarConexion();
         }
+    }
+    
+    public void cantidadSlots() throws CaException{
+        try{
+            String strSQL2 = "SELECT COUNT(k_slot) FROM slot";
+            Connection conexion2 = ServiceLocator.getInstance().tomarConexion();
+            PreparedStatement prepStmt2 = conexion2.prepareStatement(strSQL2);
+            ResultSet rs2 = prepStmt2.executeQuery();
+            while (rs2.next()) {
+                cantidadSlots = rs2.getInt(1);
+            }
+            prepStmt2.close();
+        }catch (SQLException e) {
+            throw new CaException("SlotDAO", "No pudo crear el slot" + e.getMessage());
+        } finally {
+            ServiceLocator.getInstance().liberarConexion();
+        }
+        
+        
     }
 }

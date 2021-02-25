@@ -74,6 +74,7 @@ public class ControladorArea_VistaRegistrarAreas implements ActionListener {
             SlotDAO slotBD = new SlotDAO(this.slot);
             try {
                 areaBD.registrarArea();
+                slotBD.cantidadSlots();
                 for (int i = area.getQ_cuposTotales(); i > 0; i--) {
                     slot.setK_slot(i + q_area *1000);
                     slot.setArea(this.area);
